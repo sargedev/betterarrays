@@ -16,4 +16,19 @@ function testFind() {
     new tests.AssertEqual(result, -1);
 }
 
+function testFindAll() {
+    // Test findAll
+    result = arrays.findAll(["a", "b", "a", "c"], "a");
+    new tests.AssertEqual(result, [0, 2]);
+
+    // Test limit
+    result = arrays.findAll(["a", "b", "a", "c"], "a", 1);
+    new tests.AssertEqual(result, [0]);
+
+    // Test not found
+    result = arrays.findAll(["a", "b", "c"], "d");
+    new tests.AssertEqual(result, []);
+}
+
 testFind();
+testFindAll();
