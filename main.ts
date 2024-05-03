@@ -91,4 +91,17 @@ namespace arrays {
         let indicies = findAll(array, item);
         array = array.map((value, index) => includes(indicies, index) ? replace : value);
     }
+
+    /**
+     * Fill array with constant item from start to end
+     * @param array Array to modify
+     * @param start Start position
+     * @param end End position
+     * @param item Item to fill with
+     */
+    export function fill(array: any[], start: number, end: number, item: any) {
+        for (let i = start; i < end; i++) {
+            array[i] = item;
+        }
+    }
 }
