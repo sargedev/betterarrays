@@ -59,4 +59,15 @@ namespace arrays {
             array.removeAt(value);
         })
     }
+
+    /**
+     * Swap two items in an array
+     * @param first Index of first item
+     * @param second Index of second item
+     */
+    export function swap(array: any[], first: number, second: number): void {
+        let temp = array[first];
+        array[first] = array[second];
+        array[second] = temp;
+    }
 }
