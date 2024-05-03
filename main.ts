@@ -46,4 +46,17 @@ namespace arrays {
         let index = find(array, item);
         if (index !== -1) array.removeAt(index);
     }
+
+    /**
+     * Remove all ocurrences of an item
+     * @param array Array to search
+     * @param item Item to remove
+     * @param max Max number of items to remove (0 for unlimited)
+     */
+    export function removeAll(array: any[], item: any, max: number): void {
+        let indicies = findAll(array, item, max);
+        indicies.forEach((value) => {
+            array.removeAt(value);
+        })
+    }
 }
