@@ -15,15 +15,25 @@ namespace arrays {
      * Find all occurences of item in array
      * @param array Array to search
      * @param item Item to find
-     * @param max Max number of ocurrences to match
+     * @param max Max number of ocurrences to match (0 for unlimited)
      * @returns Array of indicies 
      */
-    export function findAll(array: any[], item: any, max: number): number[] {
+    export function findAll(array: any[], item: any, max: number=0): number[] {
         let result = [];
         for (let i = 0; i < array.length; i++) {
             if (array[i] === item) result.push(i);
-            if (result.length >= max) break;
+            if (max !== 0 && result.length >= max) break;
         }
         return result;
+    }
+
+    /**
+     * Count the number of times an item occurs in an array
+     * @param array Array to count in
+     * @param item Item to count
+     * @returns Number of occurences
+     */
+    export function count(array: any[], item: any): number {
+        return findAll(array, item).length;
     }
 }
