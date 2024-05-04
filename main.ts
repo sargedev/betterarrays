@@ -234,4 +234,18 @@ namespace arrays {
         })
         array = result;
     }
+
+    /**
+     * Extract all occurences of an item into a new array
+     * @param array Array to search
+     * @param item Item to extract
+     * @returns Array of extracted items
+     */
+    export function extract(array: any[], item: any): any[] {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === item) result.push(item);
+        }
+        return result;
+    }
 }
