@@ -38,16 +38,6 @@ namespace arrays {
     }
 
     /**
-     * Check if array includes a value
-     * @param array Array to search
-     * @param item Item to search for
-     * @returns True if item is found, false if not
-     */
-    export function includes(array: any[], item: any): boolean {
-        return !!count(array, item);
-    }
-
-    /**
      * Find an item and remove it
      * @param array Array to search
      * @param item Item to remove
@@ -153,5 +143,15 @@ namespace arrays {
             result.push(item);
         }
         return result;
+    }
+
+    /**
+     * Check if array includes a value
+     * @param array Array to search
+     * @param item Item to search for
+     * @returns True if item is found, false if not
+     */
+    export function includes(array: any[], item: any): boolean {
+        return !!count(array, item);
     }
 }
