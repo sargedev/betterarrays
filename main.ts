@@ -222,4 +222,16 @@ namespace arrays {
     export function union(first: any[], second: any[]): any[] {
         return first.filter((value) => includes(second, value));
     }
+
+    /**
+     * Remove all duplicates from array
+     * @param array Array to purge
+     */
+    export function purge(array: any[]): void {
+        let result: any[] = [];
+        array.forEach((value) => {
+            if (!includes(result, value)) result.push(value);
+        })
+        array = result;
+    }
 }
