@@ -86,13 +86,11 @@ namespace arrays {
      * Fill array with constant item from start to end
      * @param array Array to modify
      * @param start Start position
-     * @param end End position
+     * @param end End position (not included)
      * @param item Item to fill with
      */
-    export function fill(array: any[], start: number, end: number, item: any) {
-        for (let i = start; i < end; i++) {
-            array[i] = item;
-        }
+    export function fill(array: any[], item: any, start?: number, end?: number) {
+        array.fill(item, start, end);
     }
 
     /**
@@ -213,5 +211,15 @@ namespace arrays {
      */
     export function isEmpty(array: any[]): boolean {
         return array.length === 0;
+    }
+
+    /**
+     * Returns array containing elements that are in both arrays
+     * @param first First array
+     * @param second Second array
+     * @returns Union of both arrays
+     */
+    export function union(first: any[], second: any[]): any[] {
+        return first.filter((value) => includes(second, value));
     }
 }
