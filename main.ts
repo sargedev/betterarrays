@@ -169,4 +169,21 @@ namespace arrays {
         }
         return result;
     }
+
+    /**
+     * Reverse array
+     * @param array Array to reverse
+     */
+    export function reverse(array: any[]): void {
+        array.reverse();
+    }
+
+    /**
+     * Return reversed copy of array
+     * @param array Array to reverse
+     */
+    export function reversed(array: any[]): void {
+        let result = array;
+        result.reverse();
+    }
 }
