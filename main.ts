@@ -186,4 +186,15 @@ namespace arrays {
         let result = array;
         result.reverse();
     }
+
+    /**
+     * Iterate through array elements
+     * @param handler Method ran on every iteration (takes in value and index)
+     * @param array Array to iterate through
+     */
+    export function forEach(handler: (value: any, index: number) => void, array: any[]): void {
+        for (let i = 0; i < array.length; i++) {
+            handler(array[i], i);
+        }
+    }
 }
