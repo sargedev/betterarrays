@@ -154,4 +154,19 @@ namespace arrays {
     export function includes(array: any[], item: any): boolean {
         return !!count(array, item);
     }
+
+    /**
+     * Create pairs from two arrays;
+     * arrays must be the same lengths otherwise excess items will be ignored
+     * @param first First array
+     * @param second Second array
+     * @returns Array of pairs
+     */
+    export function zip(first: any[], second: any[]): any[][] {
+        let result: any[][] = [];
+        for (let i = 0; i < first.length && i < second.length; i++) {
+            result.push([first[i], second[i]]);
+        }
+        return result;
+    }
 }
