@@ -248,4 +248,13 @@ namespace arrays {
         }
         return result;
     }
+
+    /**
+     * Convert array to string
+     * @param array Array to stringify
+     * @returns Stringified array
+     */
+    export function toString(array: any[]): string {
+        return text.stringify(array);
+    }
 }
