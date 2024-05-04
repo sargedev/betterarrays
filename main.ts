@@ -140,4 +140,18 @@ namespace arrays {
     export function inRange(array: any[], index: number): boolean {
         return index >= 0 && index < array.length;
     }
+
+    /**
+     * Create array by repeating a single item
+     * @param item Item to repeat
+     * @param times Final array length
+     * @returns Resulting array
+     */
+    export function repeat(item: any, times: number): any[] {
+        let result = [];
+        for (let i = 0; i < times; i++) {
+            result.push(item);
+        }
+        return result;
+    }
 }
