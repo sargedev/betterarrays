@@ -104,4 +104,40 @@ namespace arrays {
             array[i] = item;
         }
     }
+
+    /**
+     * Concatenate two arrays
+     * @param first First array
+     * @param second Second array
+     * @returns Concatenated array
+     */
+    export function concat(first: any[], second: any[]): any[] {
+        return first.concat(second);
+    }
+
+    /**
+     * Return a sliced section of the array
+     * @param array Array to slice
+     * @param start Starting index
+     * @param stop Stopping index
+     * @param step Stepping value
+     * @returns Slice of array
+     */
+    export function slice(array: any[], start?: number, stop?: number, step: number=1): any[] {
+        let result = [];
+        for (let i = start; i < stop; i += step) {
+            result.push(array[i]);
+        }
+        return result;
+    }
+
+    /**
+     * Check if index is in range
+     * @param array Array to check against
+     * @index Index to validate
+     * @returns True if index is within array bounds, false if not
+     */
+    export function inRange(array: any[], index: number): boolean {
+        return index >= 0 && index < array.length;
+    }
 }
