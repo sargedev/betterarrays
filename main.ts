@@ -197,4 +197,21 @@ namespace arrays {
             handler(array[i], i);
         }
     }
+
+    /**
+     * Removes all items from array
+     * @param array Array to clear
+     */
+    export function clear(array: any[]): void {
+        array = [];
+    }
+
+    /**
+     * Checks if array is empty
+     * @param array Array to check
+     * @returns True if array length is 0, false if not
+     */
+    export function isEmpty(array: any[]): boolean {
+        return array.length === 0;
+    }
 }
