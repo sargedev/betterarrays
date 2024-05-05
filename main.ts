@@ -44,6 +44,13 @@ namespace arrays {
      * @param item Item to remove
      * @param max Max number of items to remove (0 for unlimited)
      */
+    //% blockId=arrays_removeAll
+    //% block="remove ocurrences of $item in $array || up to $max"
+    //% group="Modify"
+    //% expandableArgumentMode=toggle
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% max.defl=0
     export function removeAll(array: any[], item: any, max: number): void {
         let indicies = findAll(array, item, max);
         indicies.forEach((value) => {
