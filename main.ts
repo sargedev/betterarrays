@@ -102,6 +102,7 @@ namespace arrays {
     //% blockId=arrays_fill
     //% block="fill $array with $item || from $start | to $end"
     //% group="Modify"
+    //% expandableArgumentMode=enabled
     //% inlineInputMode=inline
     //% array.shadow=variables_get
     //% array.defl=list
@@ -132,13 +133,23 @@ namespace arrays {
      * Return a sliced section of the array
      * @param array Array to slice
      * @param start Starting index
-     * @param stop Stopping index
+     * @param end Stopping index
      * @param step Stepping value
      * @returns Slice of array
      */
-    export function slice(array: any[], start?: number, stop?: number, step: number=1): any[] {
+    //% blockId=arrays_slice
+    //% block="slice $array || from $start | to $end | with step $step"
+    //% group="Operations"
+    //% expandableArgumentMode=enabled
+    //% inlineInputMode=inline
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% start.defl=0
+    //% end.defl=1
+    //% step.defl=1
+    export function slice(array: any[], start?: number, end?: number, step: number=1): any[] {
         let result = [];
-        for (let i = start; i < stop; i += step) {
+        for (let i = start; i < end; i += step) {
             result.push(array[i]);
         }
         return result;
