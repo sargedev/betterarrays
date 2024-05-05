@@ -11,8 +11,8 @@ namespace arrays {
     //% block="find occurences of $item in $array || up to $max"
     //% group="Operations"
     //% expandableArgumentMode=toggle
-    //% array.shadow=variables_get
     //% array.defl=list
+    //% array.shadow=variables_get
     //% max.defl=0
     export function findAll(array: any[], item: any, max: number=0): number[] {
         let result = [];
@@ -63,6 +63,13 @@ namespace arrays {
      * @param first Index of first item
      * @param second Index of second item
      */
+    //% blockId=arrays_swap
+    //% block="swap items at indicies $first and $second in $array"
+    //% group="Modify"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% first.defl=0
+    //% second.defl=1
     export function swap(array: any[], first: number, second: number): void {
         let temp = array[first];
         array[first] = array[second];
