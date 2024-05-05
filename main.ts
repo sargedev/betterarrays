@@ -29,6 +29,11 @@ namespace arrays {
      * @param item Item to count
      * @returns Number of occurences
      */
+    //% blockId=arrays_count
+    //% block="count occurences of $item in $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function count(array: any[], item: any): number {
         return findAll(array, item).length;
     }
