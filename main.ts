@@ -7,6 +7,13 @@ namespace arrays {
      * @param max Max number of ocurrences to match (0 for unlimited)
      * @returns Array of indicies 
      */
+    //% blockId=arrays_findAll
+    //% block="find occurences of $item in $array || up to $max"
+    //% group="Operations"
+    //% expandableArgumentMode=toggle
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% max.defl=0
     export function findAll(array: any[], item: any, max: number=0): number[] {
         let result = [];
         for (let i = 0; i < array.length; i++) {
