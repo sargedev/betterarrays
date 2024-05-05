@@ -117,6 +117,13 @@ namespace arrays {
      * @param second Second array
      * @returns Concatenated array
      */
+    //% blockId=arrays_concat
+    //% block="$first concatenated with $second"
+    //% group="Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
     export function concat(first: any[], second: any[]): any[] {
         return first.concat(second);
     }
