@@ -166,6 +166,12 @@ namespace arrays {
      * @index Index to validate
      * @returns True if index is within array bounds, false if not
      */
+    //% blockId=arrays_inRange
+    //% block="$index is in range of $array"
+    //% group="Read"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% index.defl=0
     export function inRange(array: any[], index: number): boolean {
         return index >= 0 && index < array.length;
     }
