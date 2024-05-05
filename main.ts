@@ -1,4 +1,9 @@
 
+enum SortOrder {
+    Ascending,
+    Descending
+}
+
 namespace arrays {
     /**
      * Find all occurences of item in array
@@ -284,5 +289,17 @@ namespace arrays {
      */
     export function toString(array: any[]): string {
         return text.stringify(array);
+    }
+
+    /**
+     * Sorts array
+     * @param array Array to sort
+     * @param order Order (default is ascending)
+     */
+    export function sort(array: any[], order: SortOrder=SortOrder.Ascending): void {
+        array.sort();
+        if (order === SortOrder.Descending) {
+            array.reverse();
+        }
     }
 }
