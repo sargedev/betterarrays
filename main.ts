@@ -82,6 +82,11 @@ namespace arrays {
      * @param item Item to replace
      * @param replace Item to replace with
      */
+    //% blockId=arrays_replace
+    //% block="replace all occurences of $item with $replace in $array"
+    //% group="Modify"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function replace(array: any[], item: any, replace: any): void {
         let indicies = findAll(array, item);
         array = array.map((value, index) => includes(indicies, index) ? replace : value);
@@ -94,6 +99,14 @@ namespace arrays {
      * @param end End position (not included)
      * @param item Item to fill with
      */
+    //% blockId=arrays_fill
+    //% block="fill $array with $item || from $start | to $end"
+    //% group="Modify"
+    //% inlineInputMode=inline
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% start.defl=0
+    //% end.defl=1
     export function fill(array: any[], item: any, start?: number, end?: number) {
         array.fill(item, start, end);
     }
