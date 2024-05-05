@@ -1,17 +1,6 @@
 
 namespace arrays {
     /**
-     * Find first occurence of item in array
-     * @param array Array to search
-     * @param item Item to find
-     * @returns Index of found item
-     */
-    export function find(array: any[], item: any): number {
-        let result = findAll(array, item, 1);
-        return result.length ? result[0] : -1;
-    }
-
-    /**
      * Find all occurences of item in array
      * @param array Array to search
      * @param item Item to find
@@ -35,16 +24,6 @@ namespace arrays {
      */
     export function count(array: any[], item: any): number {
         return findAll(array, item).length;
-    }
-
-    /**
-     * Find an item and remove it
-     * @param array Array to search
-     * @param item Item to remove
-     */
-    export function remove(array: any[], item: any): void {
-        let index = find(array, item);
-        if (index !== -1) array.removeAt(index);
     }
 
     /**
@@ -166,14 +145,6 @@ namespace arrays {
             result.push([first[i], second[i]]);
         }
         return result;
-    }
-
-    /**
-     * Reverse array
-     * @param array Array to reverse
-     */
-    export function reverse(array: any[]): void {
-        array.reverse();
     }
 
     /**
