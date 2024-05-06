@@ -237,9 +237,15 @@ namespace arrays {
      * Return reversed copy of array
      * @param array Array to reverse
      */
-    export function reversed(array: any[]): void {
+    //% blockId=arrays_reversed
+    //% block="reversed $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function reversed(array: any[]): any[] {
         let result = array;
         result.reverse();
+        return result;
     }
 
     /**
