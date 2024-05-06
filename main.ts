@@ -317,6 +317,11 @@ namespace arrays {
      * Remove all duplicates from array
      * @param array Array to purge
      */
+    //% blockId=arrays_purge
+    //% block="remove duplicates from $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function purge(array: any[]): void {
         let result: any[] = [];
         array.forEach((value) => {
