@@ -217,6 +217,14 @@ namespace arrays {
      * @param second Second array
      * @returns Array of pairs
      */
+    //% blockId=arrays_zip
+    //% block="zip $first with $second"
+    //% blockSetVariable=zipped
+    //% group="Create"
+    //% first.shadow=variables_get
+    //% first.defl=list
+    //% second.shadow=variables_get
+    //% second.defl=list
     export function zip(first: any[], second: any[]): any[][] {
         let result: any[][] = [];
         for (let i = 0; i < first.length && i < second.length; i++) {
