@@ -203,7 +203,7 @@ namespace arrays {
      */
     //% blockId=arrays_includes
     //% block="$array includes $item"
-    //% group="Operations"
+    //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
     export function includes(array: any[], item: any): boolean {
