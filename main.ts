@@ -182,6 +182,11 @@ namespace arrays {
      * @param times Final array length
      * @returns Resulting array
      */
+    //% blockId=arrays_repeat
+    //% block="create array from $item repeated $times times"
+    //% blockSetVariable=list
+    //% group="Create"
+    //% times.defl=5
     export function repeat(item: any, times: number): any[] {
         let result = [];
         for (let i = 0; i < times; i++) {
