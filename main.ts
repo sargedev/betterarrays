@@ -201,6 +201,11 @@ namespace arrays {
      * @param item Item to search for
      * @returns True if item is found, false if not
      */
+    //% blockId=arrays_includes
+    //% block="$array includes $item"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function includes(array: any[], item: any): boolean {
         return !!count(array, item);
     }
