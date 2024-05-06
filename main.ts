@@ -284,6 +284,11 @@ namespace arrays {
      * @param array Array to check
      * @returns True if array length is 0, false if not
      */
+    //% blockId=arrays_isEmpty
+    //% block="$array is empty"
+    //% group="Read"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function isEmpty(array: any[]): boolean {
         return array.length === 0;
     }
