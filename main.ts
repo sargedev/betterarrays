@@ -253,6 +253,13 @@ namespace arrays {
      * @param handler Method ran on every iteration (takes in value and index)
      * @param array Array to iterate through
      */
+    //% blockId=arrays_forEach
+    //% block="for each $value $index in $array"
+    //% draggableParameters
+    //% handlerStatement
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function forEach(handler: (value: any, index: number) => void, array: any[]): void {
         for (let i = 0; i < array.length; i++) {
             handler(array[i], i);
