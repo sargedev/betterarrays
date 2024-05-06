@@ -294,13 +294,23 @@ namespace arrays {
     }
 
     /**
-     * Returns array containing elements that are in both arrays
+     * Returns array containing elements that are in both arrays;
+     * Removes all duplicates
      * @param first First array
      * @param second Second array
      * @returns Union of both arrays
      */
+    //% blockId=arrays_union
+    //% block="union of $first and $second"
+    //% group="Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list
+    //% second.shadow=variables_get
+    //% second.defl=list
     export function union(first: any[], second: any[]): any[] {
-        return first.filter((value) => includes(second, value));
+        let result = first.filter((value) => includes(second, value));
+        purge(result);
+        return result;
     }
 
     /**
