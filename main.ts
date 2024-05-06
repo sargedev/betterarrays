@@ -270,6 +270,11 @@ namespace arrays {
      * Removes all items from array
      * @param array Array to clear
      */
+    //% blockId=arrays_clear
+    //% block="clear $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function clear(array: any[]): void {
         array = [];
     }
