@@ -363,6 +363,11 @@ namespace arrays {
      * @param array Array to sort
      * @param order Order (default is ascending)
      */
+    //% blockId=arrays_sort
+    //% block="sort $array in order $order"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function sort(array: any[], order: SortOrder=SortOrder.Ascending): void {
         array.sort();
         if (order === SortOrder.Descending) {
