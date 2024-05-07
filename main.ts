@@ -260,7 +260,7 @@ namespace arrays {
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
-    export function forEach(handler: (value: any, index: number) => void, array: any[]): void {
+    export function forEach(array: any[], handler: (value: any, index: number) => void): void {
         for (let i = 0; i < array.length; i++) {
             handler(array[i], i);
         }
