@@ -336,6 +336,11 @@ namespace arrays {
      * @param item Item to extract
      * @returns Array of extracted items
      */
+    //% blockId=arrays_extract
+    //% block="extract $item from $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function extract(array: any[], item: any): any[] {
         let result = [];
         for (let i = 0; i < array.length; i++) {
