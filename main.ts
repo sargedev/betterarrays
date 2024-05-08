@@ -56,11 +56,23 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     //% max.defl=0
-    export function removeAll(array: any[], item: any, max: number): void {
+    export function removeAll(array: any[], item: any, max: number=0): void {
         let indicies = findAll(array, item, max);
         indicies.forEach((value) => {
             array.removeAt(value);
         })
+    }
+
+    /**
+     * Remove all occurences of an item from a copy of the array and return it
+     * @param array Array to copy and remove from
+     * @param item Item to remove
+     * @param max Max number of items to remove (0 for unlimited)
+     */
+    export function toRemoveAll(array: any[], item: any, max: number=0): any[] {
+        let result = array;
+        removeAll(result, item, max);
+        return result;
     }
 
     /**
