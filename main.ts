@@ -112,16 +112,29 @@ namespace arrays {
      * Replaces all occurences of item with a replacement
      * @param array Array to modify
      * @param item Item to replace
-     * @param replace Item to replace with
+     * @param replacement Item to replace with
      */
     //% blockId=arrays_replace
     //% block="replace all occurences of $item with $replace in $array"
     //% group="Modify"
     //% array.shadow=variables_get
     //% array.defl=list
-    export function replace(array: any[], item: any, replace: any): void {
+    export function replace(array: any[], item: any, replacement: any): void {
         let indicies = findAll(array, item);
-        array = array.map((value, index) => includes(indicies, index) ? replace : value);
+        array = array.map((value, index) => includes(indicies, index) ? replacement : value);
+    }
+
+    /**
+     * Replaces all occurences of item with a replacement in a copy and returns it
+     * @param array Array to modify and return
+     * @param item Item to replace
+     * @param replacement Item to replace with
+     * @returns Array with replaced items
+     */
+    export function toReplaced(array: any[], item: any, replacement: any): any[] {
+        let result = array;
+        replace(result, item, replacement);
+        return result;
     }
 
     /**
