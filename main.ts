@@ -446,4 +446,13 @@ namespace arrays {
     export function allTrue(array: any[]): boolean {
         return array.every((value) => !!value);
     }
+
+    /**
+     * Check if any element in array is true
+     * @param array Array to check
+     * @returns True if any item evaluates to true
+     */
+    export function anyTrue(array: any[]): boolean {
+        return array.filter((value) => !!value).length >= 1;
+    }
 }
