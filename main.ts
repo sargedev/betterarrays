@@ -437,4 +437,13 @@ namespace arrays {
             array.reverse();
         }
     }
+
+    /**
+     * Check if every element in array is true
+     * @param array Array to check
+     * @returns True if all items evaluate to true
+     */
+    export function allTrue(array: any[]): boolean {
+        return array.every((value) => !!value);
+    }
 }
