@@ -457,6 +457,16 @@ namespace arrays {
     }
 
     /**
+     * Check if every element in array equals a given item
+     * @param array Array to check
+     * @param item Item to compare against
+     * @returns True if all elements match item
+     */
+    export function allEqual(array: any[], item: any): boolean {
+        return array.every((value) => value === item);
+    }
+
+    /**
      * Return sum of all elements; works only on number arrays
      * @param array Number array to sum
      * @returns Sum of all elements
