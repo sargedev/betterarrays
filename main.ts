@@ -172,7 +172,16 @@ namespace arrays {
     }
 
     /**
-     * Concatenate two arrays
+     * Concatenate one array to another
+     * @param first First array (modified)
+     * @param second Second array
+     */
+    export function concat(first: any[], second: any[]): void {
+        first = first.concat(second);
+    }
+
+    /**
+     * Return concatenation of two arrays
      * @param first First array
      * @param second Second array
      * @returns Concatenated array
