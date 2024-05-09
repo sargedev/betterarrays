@@ -508,4 +508,14 @@ namespace arrays {
         if (array.length === 0) return 0; // todo: throw error
         return Math.randomRange(0, array.length - 1);
     }
+
+    /**
+     * Join all array elements and return the string (string array only)
+     * @param array String array to join
+     * @param separator String used to separate items (optional)
+     * @returns Joined string
+     */
+    export function join(array: string[], separator: string): string {
+        return array.join(separator);
+    }
 }
