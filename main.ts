@@ -469,9 +469,24 @@ namespace arrays {
     /**
      * Return sum of all elements; works only on number arrays
      * @param array Number array to sum
-     * @returns Sum of all elements
+     * @returns Sum of all elements (number)
      */
     export function sum(array: number[]): number {
         return array.reduce((prev, value) => prev + value, 0);
+    }
+
+    /**
+     * Return a range of numbers
+     * @param start Starting value
+     * @param end Stopping value
+     * @param step Stepping value (default is 1)
+     * @returns Number array
+     */
+    export function range(start: number, end: number, step: number=1): number[] {
+        let result: number[] = [];
+        for (let i = start; i < end; i += step) {
+            result.push(i);
+        }
+        return result;
     }
 }
