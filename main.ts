@@ -158,6 +158,20 @@ namespace arrays {
     }
 
     /**
+     * Fill array copy with constant item from start to end and return it
+     * @param array Array to modify and return
+     * @param start Start position
+     * @param end End position (not included)
+     * @param item Item to fill with
+     * @returns Array copy filled with items
+     */
+    export function toFilled(array: any[], item: any, start?: number, end?: number): any[] {
+        let result = array;
+        fill(result, item, start, end);
+        return result;
+    }
+
+    /**
      * Concatenate two arrays
      * @param first First array
      * @param second Second array
