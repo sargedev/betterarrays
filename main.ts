@@ -184,7 +184,7 @@ namespace arrays {
     //% first.defl=list1
     //% second.shadow=variables_get
     //% second.defl=list2
-    export function concat(first: any[], second: any[]): any[] {
+    export function toConcated(first: any[], second: any[]): any[] {
         return first.concat(second);
     }
 
