@@ -518,4 +518,30 @@ namespace arrays {
     export function join(array: string[], separator: string): string {
         return array.join(separator);
     }
+
+    /**
+     * Returns index smallest number in array (number array only)
+     * @param array Number array to search
+     * @retuns Index of smallest number
+     */
+    export function minIndex(array: number[]): number {
+        if (array.length === 0) return 0; //todo: throw error
+        
+        let smallestIndex;
+        for (let i = 0; i < array.length; i++) {
+            if (i === 0) smallestIndex = i;
+            else if (array[i] < array[smallestIndex]) smallestIndex = i;
+        }
+        return smallestIndex;
+    }
+
+    /**
+     * Returns smallest number in array (number array only)
+     * @param array Number array to search
+     * @returns Smallest number in array
+     */
+    export function min(array: any[]): number {
+        if (array.length === 0) return 0; //todo: throw error
+        return array[minIndex(array)];
+    }
 }
