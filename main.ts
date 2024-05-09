@@ -69,7 +69,7 @@ namespace arrays {
      * @param item Item to remove
      * @param max Max number of items to remove (0 for unlimited)
      */
-    export function toRemoveAll(array: any[], item: any, max: number=0): any[] {
+    export function toRemovedAll(array: any[], item: any, max: number=0): any[] {
         let result = array;
         removeAll(result, item, max);
         return result;
@@ -91,6 +91,19 @@ namespace arrays {
         let temp = array[first];
         array[first] = array[second];
         array[second] = temp;
+    }
+
+    /**
+     * Swap items in array copy and return it
+     * @param array Array to copy and modify
+     * @param first Index of first item
+     * @param second Index of second item
+     * @returns Array with swapped elements
+     */
+    export function toSwapped(array: any[], first: number, second: number): any[] {
+        let result = array;
+        swap(result, first, second);
+        return result;
     }
 
     /**
