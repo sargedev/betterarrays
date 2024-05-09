@@ -578,4 +578,17 @@ namespace arrays {
     export function splice(array: any[], index: number, count: number): void {
         array.splice(index, count);
     }
+
+    /**
+     * Return spliced copy of array
+     * @param array Array to splice
+     * @param index Starting index
+     * @param count Delete count
+     * @returns Spliced array
+     */
+    export function toSpliced(array: any[], index: number, count: number): any[] {
+        let result = array;
+        result.splice(index, count);
+        return result;
+    }
 }
