@@ -455,4 +455,13 @@ namespace arrays {
     export function anyTrue(array: any[]): boolean {
         return array.filter((value) => !!value).length >= 1;
     }
+
+    /**
+     * Return sum of all elements; works only on number arrays
+     * @param array Number array to sum
+     * @returns Sum of all elements
+     */
+    export function sum(array: number[]): number {
+        return array.reduce((prev, value) => prev + value, 0);
+    }
 }
