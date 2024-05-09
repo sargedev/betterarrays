@@ -520,7 +520,7 @@ namespace arrays {
     }
 
     /**
-     * Returns index smallest number in array (number array only)
+     * Returns index of smallest number in array (number array only)
      * @param array Number array to search
      * @retuns Index of smallest number
      */
@@ -540,8 +540,32 @@ namespace arrays {
      * @param array Number array to search
      * @returns Smallest number in array
      */
-    export function min(array: any[]): number {
-        if (array.length === 0) return 0; //todo: throw error
+    export function min(array: number[]): number {
         return array[minIndex(array)];
+    }
+
+    /**
+     * Returns index of biggest number in array (number array only)
+     * @param array Number array to search
+     * @returns Index of biggest number in array
+     */
+    export function maxIndex(array: number[]): number {
+        if (array.length === 0) return 0;
+
+        let biggestIndex;
+        for (let i = 0; i < array.length; i++) {
+            if (i === 0) biggestIndex = i;
+            else if (array[i] > array[biggestIndex]) biggestIndex = i;
+        }
+        return biggestIndex;
+    }
+
+    /**
+     * Returns biggest number in array (number array only)
+     * @param array Number array to search
+     * @returns Biggest number in array
+     */
+    export function max(array: number[]): number {
+        return array[maxIndex(array)];
     }
 }
