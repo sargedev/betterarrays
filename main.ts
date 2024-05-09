@@ -498,4 +498,14 @@ namespace arrays {
     export function enumerate(array: any[]): any[] {
         return zip(array, range(0, array.length));
     }
+
+    /**
+     * Return random index from array
+     * @param array Array to generate index from
+     * @returns Array index
+     */
+    export function randomIndex(array: any[]): number {
+        if (array.length === 0) return 0; // todo: throw error
+        return Math.randomRange(0, array.length - 1);
+    }
 }
