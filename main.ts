@@ -68,6 +68,7 @@ namespace arrays {
      * @param array Array to copy and remove from
      * @param item Item to remove
      * @param max Max number of items to remove (0 for unlimited)
+     * @returns Array with removed items
      */
     export function toRemovedAll(array: any[], item: any, max: number=0): any[] {
         let result = array;
@@ -77,6 +78,7 @@ namespace arrays {
 
     /**
      * Swap two items in an array
+     * @param array Array to modify
      * @param first Index of first item
      * @param second Index of second item
      */
