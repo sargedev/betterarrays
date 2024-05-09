@@ -568,4 +568,14 @@ namespace arrays {
     export function max(array: number[]): number {
         return array[maxIndex(array)];
     }
+
+    /**
+     * Splice the array
+     * @param array Array to splice
+     * @param index Starting index
+     * @param count Delete count
+     */
+    export function splice(array: any[], index: number, count: number): void {
+        array.splice(index, count);
+    }
 }
