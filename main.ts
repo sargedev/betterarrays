@@ -489,4 +489,13 @@ namespace arrays {
         }
         return result;
     }
+
+    /**
+     * Return enumerated array (index-value pairs)
+     * @param array Array to enumerate
+     * @returns Enumeration
+     */
+    export function enumerate(array: any[]): any[] {
+        return zip(array, range(0, array.length));
+    }
 }
