@@ -5,6 +5,18 @@ enum SortOrder {
 }
 
 namespace arrays {
+
+    /**
+     * Return reversed copy of array
+     * @param array Array to copy and reverse
+     * @returns Reversed array
+     */
+    export function toReversed(array: any[]): any[] {
+        let result = array;
+        result.reverse();
+        return result;
+    }
+
     /**
      * Find all occurences of item in array
      * @param array Array to search
