@@ -608,4 +608,14 @@ namespace arrays {
         }
         return result;
     }
+
+    /**
+     * Shift array backwards by given distance
+     * @param array Array to shift
+     * @param elements Number of elements to shift
+     */
+    export function shift(array: any[], elements: number=1): void {
+        if (array.length < elements) return; // todo: throw error
+        array = array.slice(elements);
+    }
 }
