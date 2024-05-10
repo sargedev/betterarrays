@@ -18,6 +18,18 @@ namespace arrays {
     }
 
     /**
+     * Find last occurence of item in array
+     * @param array Array to search
+     * @param item Item to find
+     * @returns Index of found item (-1 if not found)
+     */
+    export function findLast(array: any[], item: any): number {
+        let reversed = toReversed(array);
+        let result = reversed.find((value) => value === item);
+        return result === undefined ? -1 : result;
+    }
+
+    /**
      * Find all occurences of item in array
      * @param array Array to search
      * @param item Item to find
