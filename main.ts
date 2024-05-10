@@ -591,4 +591,21 @@ namespace arrays {
         result.splice(index, count);
         return result;
     }
+
+    /**
+     * Reverse of zip method
+     * @param array Array to unzip
+     * @param target Index of desired pair element to retrieve
+     * @returns Array containing extracted elements
+     */
+    export function unzip(array: any[], target: number): any[] {
+        let result: any[] = [];
+        for (let i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i])) {
+                if (array[i].length > target) result.push(array[i][target]);
+                else return []; // todo: throw error
+            } else return []; // todo: throw error
+        }
+        return result;
+    }
 }
