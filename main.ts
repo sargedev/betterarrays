@@ -198,6 +198,17 @@ namespace arrays {
     }
 
     /**
+     * Slice an array
+     * @param array Array to slice
+     * @param start Starting index
+     * @param end Stopping index
+     * @param step Stepping value
+     */
+    export function slice(array: any[], start?: number, end?: number, step: number=1) {
+        array = toSliced(array, start, end, step);
+    }
+
+    /**
      * Return a sliced section of the array
      * @param array Array to slice
      * @param start Starting index
