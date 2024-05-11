@@ -683,7 +683,7 @@ namespace arrays {
         let result: any[] = [];
         for (let i = 0; i < array.length; i++) {
             if (Array.isArray(array[i])) {
-                if (array[i].length > target) result.push(array[i][target]);
+                if ((array[i] as any[]).length > target) result.push((array[i] as any[])[target]);
                 else return []; // todo: throw error
             } else return []; // todo: throw error
         }
@@ -730,6 +730,20 @@ namespace arrays {
         let result: any[] = [];
         for (let i = 0; i < arrays.length; i++) {
             concat(result, arrays[i]);
+        }
+        return result;
+    }
+
+    /**
+     * Create pairs of n-length from multiple arrays;
+     * arrays must be the same lengths otherwise excess items will be ignored
+     * @param arrays Array of arrays to zip
+     * @returns Array of n-length pairs
+     */
+    export function zipMany(arrays: any[][]): any[][] {
+        let result: any[][] = [];
+        for (let i = 0; arrays.every((value) => i < value.length); i++) {
+            result.push(toUnzipped(arrays, i));
         }
         return result;
     }
