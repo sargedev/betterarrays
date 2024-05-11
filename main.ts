@@ -322,11 +322,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list
     export function toZipped(first: any[], second: any[]): any[][] {
-        let result: any[][] = [];
-        for (let i = 0; i < first.length && i < second.length; i++) {
-            result.push([first[i], second[i]]);
-        }
-        return result;
+        return zipMany([first, second]);
     }
 
     /**
