@@ -309,6 +309,15 @@ namespace arrays {
     }
 
     /**
+     * Create pairs from two arrays
+     * @param first First array
+     * @param second Second array
+     */
+    export function zip(first: any[], second: any[]): void {
+        first = toZipped(first, second);
+    }
+
+    /**
      * Create pairs from two arrays;
      * arrays must be the same lengths otherwise excess items will be ignored
      * @param first First array
@@ -323,7 +332,7 @@ namespace arrays {
     //% first.defl=list
     //% second.shadow=variables_get
     //% second.defl=list
-    export function zip(first: any[], second: any[]): any[][] {
+    export function toZipped(first: any[], second: any[]): any[][] {
         let result: any[][] = [];
         for (let i = 0; i < first.length && i < second.length; i++) {
             result.push([first[i], second[i]]);
@@ -531,7 +540,7 @@ namespace arrays {
      * @returns Enumeration
      */
     export function enumerate(array: any[]): any[] {
-        return zip(array, range(0, array.length));
+        return toZipped(array, range(0, array.length));
     }
 
     /**
