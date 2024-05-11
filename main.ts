@@ -653,4 +653,14 @@ namespace arrays {
         if (array.length < elements) return; // todo: throw error
         array = array.slice(elements);
     }
+
+    /**
+     * Check if two array are equal
+     * @param first First array
+     * @param second Second array
+     * @returns True if all elements are equal
+     */
+    export function equal(first: any[], second: any[]): boolean {
+        return checkEquality.equal(first, second);
+    }
 }
