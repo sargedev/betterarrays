@@ -720,4 +720,17 @@ namespace arrays {
     export function equal(first: any[], second: any[]): boolean {
         return checkEquality.equal(first, second);
     }
+
+    /**
+     * Concatenate multiple arrays together and return the result
+     * @param arrays Array containing arrays to be concatenated
+     * @returns Concatenated array
+     */
+    export function concatMany(arrays: any[][]): any[] {
+        let result: any[] = [];
+        for (let i = 0; i < arrays.length; i++) {
+            concat(result, arrays[i]);
+        }
+        return result;
+    }
 }
