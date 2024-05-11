@@ -701,6 +701,17 @@ namespace arrays {
     }
 
     /**
+     * Return shifted copy of array
+     * @param array Array to shift
+     * @param elements Number of elements to shift
+     */
+    export function toShifted(array: any[], elements: number=1): any[] {
+        let result = array;
+        shift(result, elements);
+        return result;
+    }
+
+    /**
      * Check if two array are equal
      * @param first First array
      * @param second Second array
