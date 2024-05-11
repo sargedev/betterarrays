@@ -666,11 +666,20 @@ namespace arrays {
 
     /**
      * Reverse of zip method
+     * @param Array to unzip
+     * @param target Index of desired pair element to retrieve
+     */
+    export function unzip(array: any[], target: number): void {
+        array = toUnzipped(array, target);
+    }
+
+    /**
+     * Return reverse of zip method
      * @param array Array to unzip
      * @param target Index of desired pair element to retrieve
      * @returns Array containing extracted elements
      */
-    export function unzip(array: any[], target: number): any[] {
+    export function toUnzipped(array: any[], target: number): any[] {
         let result: any[] = [];
         for (let i = 0; i < array.length; i++) {
             if (Array.isArray(array[i])) {
