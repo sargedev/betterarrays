@@ -390,6 +390,16 @@ namespace arrays {
     }
 
     /**
+     * Adds elements from second array to first array;
+     * Removes all duplicates
+     * @param first First array
+     * @param second Second array
+     */
+    export function union(first: any[], second: any[]): void {
+        first = toUnion(first, second);
+    }
+
+    /**
      * Returns array containing elements that are in both arrays;
      * Removes all duplicates
      * @param first First array
@@ -403,7 +413,7 @@ namespace arrays {
     //% first.defl=list
     //% second.shadow=variables_get
     //% second.defl=list
-    export function union(first: any[], second: any[]): any[] {
+    export function toUnion(first: any[], second: any[]): any[] {
         let result = first.filter((value) => includes(second, value));
         purge(result);
         return result;
