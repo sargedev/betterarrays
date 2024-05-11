@@ -7,17 +7,6 @@ enum SortOrder {
 namespace arrays {
 
     /**
-     * Return reversed copy of array
-     * @param array Array to copy and reverse
-     * @returns Reversed array
-     */
-    export function toReversed(array: any[]): any[] {
-        let result = array;
-        result.reverse();
-        return result;
-    }
-
-    /**
      * Find last occurence of item in array
      * @param array Array to search
      * @param item Item to find
@@ -349,7 +338,7 @@ namespace arrays {
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
-    export function reversed(array: any[]): any[] {
+    export function toReversed(array: any[]): any[] {
         let result = array;
         result.reverse();
         return result;
