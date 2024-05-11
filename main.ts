@@ -555,11 +555,19 @@ namespace arrays {
     }
 
     /**
+     * Enumerate array
+     * @param Array to enumerate
+     */
+    export function enumerate(array: any[]): void {
+        array = toEnumerate(array);
+    }
+    
+    /**
      * Return enumerated array (index-value pairs)
      * @param array Array to enumerate
      * @returns Enumeration
      */
-    export function enumerate(array: any[]): any[] {
+    export function toEnumerate(array: any[]): any[] {
         return toZipped(array, range(0, array.length));
     }
 
