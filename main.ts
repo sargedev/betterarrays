@@ -437,6 +437,17 @@ namespace arrays {
     }
 
     /**
+     * Returns copy of array with all duplicates removed
+     * @param array Array to copy and purge
+     * @returns Array copy with removed duplicates
+     */
+    export function toPurged(array: any[]): any[] {
+        let result = array;
+        purge(result);
+        return result;
+    }
+
+    /**
      * Extract all occurences of an item into a new array
      * @param array Array to search
      * @param item Item to extract
