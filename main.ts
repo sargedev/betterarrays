@@ -491,6 +491,18 @@ namespace arrays {
     }
 
     /**
+     * Return sorted copy of array
+     * @param array Array to copy and sort
+     * @param order Order (default is ascending)
+     * @returns Sorted array
+     */
+    export function toSorted(array: any[], order: SortOrder=SortOrder.Ascending): any[] {
+        let result = array;
+        sort(result, order);
+        return result;
+    }
+
+    /**
      * Check if every element in array is true
      * @param array Array to check
      * @returns True if all items evaluate to true
