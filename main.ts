@@ -414,9 +414,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list
     export function toUnion(first: any[], second: any[]): any[] {
-        let result = first.filter((value) => includes(second, value));
-        purge(result);
-        return result;
+        return toPurged(first.filter((value) => includes(second, value)));
     }
 
     /**
