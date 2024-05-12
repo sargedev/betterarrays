@@ -514,6 +514,25 @@ namespace arrays {
     }
 
     /**
+     * Subtract second array from first
+     * @param first First array
+     * @param second Second array
+     */
+    export function difference(first: any[], second: any[]): void {
+        first = toDifference(first, second);
+    }
+
+    /**
+     * Returns array containing elements from the first, but not the second array
+     * @param first First array
+     * @param second Second array
+     * @returns Difference of arrays
+     */
+    export function toDifference(first: any[], second: any[]): any[] {
+        return first.filter((value) => !includes(second, value));
+    }
+
+    /**
      * Remove all duplicates from array
      * @param array Array to purge
      */
