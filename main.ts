@@ -711,6 +711,15 @@ namespace arrays {
      * @param step Stepping value (default is 1)
      * @returns Number array
      */
+    //% blockId=arrays_range
+    //% block="range from $start to $end || with step $step"
+    //% blockSetVariable=range
+    //% inlineInputMode=inline
+    //% expandableArgumentMode=enabled
+    //% group="Create"
+    //% start.defl=0
+    //% end.defl=5
+    //% step.defl=1
     export function range(start: number, end: number, step: number=1): number[] {
         let result: number[] = [];
         for (let i = start; i < end; i += step) {
@@ -723,8 +732,13 @@ namespace arrays {
      * Enumerate array
      * @param Array to enumerate
      */
+    //% blockId=arrays_enumerate
+    //% block="enumerate $array"
+    //% group="Modify"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function enumerate(array: any[]): void {
-        array = toEnumerate(array);
+        array = toEnumerated(array);
     }
     
     /**
@@ -732,7 +746,12 @@ namespace arrays {
      * @param array Array to enumerate
      * @returns Enumeration
      */
-    export function toEnumerate(array: any[]): any[] {
+    //% blockId=arrays_toEnumerated
+    //% block="enumerated $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function toEnumerated(array: any[]): any[] {
         return toZipped(array, range(0, array.length));
     }
 
