@@ -449,6 +449,13 @@ namespace arrays {
      * @param first First array
      * @param second Second array
      */
+    //% blockId=arrays_union
+    //% block="unionize $first with $second"
+    //% group="Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list
+    //% second.shadow=variables_get
+    //% second.defl=list
     export function union(first: any[], second: any[]): void {
         first = toUnion(first, second);
     }
@@ -495,6 +502,11 @@ namespace arrays {
      * @param array Array to copy and purge
      * @returns Array copy with removed duplicates
      */
+    //% blockId=arrays_toPurged
+    //% block="remove duplicates from $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function toPurged(array: any[]): any[] {
         let result = array;
         purge(result);
@@ -525,6 +537,10 @@ namespace arrays {
      * @param array Array to stringify
      * @returns Stringified array
      */
+    //% blockId=arrays_toString
+    //% block="convert $array to string"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function toString(array: any[]): string {
         return text.stringify(array);
     }
