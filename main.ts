@@ -793,6 +793,11 @@ namespace arrays {
      * @param array Number array to search
      * @retuns Index of smallest number
      */
+    //% blockId=arrays_minIndex
+    //% block="index of smallest element of $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function minIndex(array: number[]): number {
         if (array.length === 0) return 0; //todo: throw error
         
@@ -809,6 +814,11 @@ namespace arrays {
      * @param array Number array to search
      * @returns Smallest number in array
      */
+    //% blockId=arrays_min
+    //% block="smallest element of $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function min(array: number[]): number {
         return array[minIndex(array)];
     }
@@ -818,6 +828,11 @@ namespace arrays {
      * @param array Number array to search
      * @returns Index of biggest number in array
      */
+    //% blockId=arrays_maxIndex
+    //% block="index of biggest element in $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function maxIndex(array: number[]): number {
         if (array.length === 0) return 0;
 
@@ -834,6 +849,11 @@ namespace arrays {
      * @param array Number array to search
      * @returns Biggest number in array
      */
+    //% blockId=arrays_max
+    //% block="biggest element in array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function max(array: number[]): number {
         return array[maxIndex(array)];
     }
