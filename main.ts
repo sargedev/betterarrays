@@ -76,9 +76,9 @@ namespace arrays {
     //% max.defl=0
     export function removeAll(array: any[], item: any, max: number=0): void {
         let indicies = findAll(array, item, max);
-        indicies.forEach((value) => {
-            array.removeAt(value);
-        })
+        for (let i = 0; i < indicies.length; i++) {
+            indicies.removeAt(array[i]);
+        }
     }
 
     /**
@@ -436,9 +436,11 @@ namespace arrays {
     //% array.defl=list
     export function purge(array: any[]): void {
         let result: any[] = [];
-        array.forEach((value) => {
-            if (!includes(result, value)) result.push(value);
-        })
+        for (let i = 0; i < array.length; i++) {
+            if (!includes(result, array[i])) {
+                result.push(array[i]);
+            }
+        }
         array = result;
     }
 
