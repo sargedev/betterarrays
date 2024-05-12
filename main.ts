@@ -938,6 +938,12 @@ namespace arrays {
      * @param array Array to shift
      * @param elements Number of elements to shift
      */
+    //% blockId=arrays_shift
+    //% block="shift $array by $elements"
+    //% group="Modify"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% elements.defl=1
     export function shift(array: any[], elements: number=1): void {
         if (array.length < elements) return; // todo: throw error
         array = array.slice(elements);
@@ -948,6 +954,12 @@ namespace arrays {
      * @param array Array to shift
      * @param elements Number of elements to shift
      */
+    //% blockId=arrays_toShifted
+    //% block="shift $array by $elements"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% elements.defl=1
     export function toShifted(array: any[], elements: number=1): any[] {
         let result = array;
         shift(result, elements);
