@@ -12,6 +12,11 @@ namespace arrays {
      * @param item Item to find
      * @returns Index of found item (-1 if not found)
      */
+    //% blockId=arrays_findLast
+    //% block="find last occurence of $item in $array"
+    //% group="Read"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function findLast(array: any[], item: any): number {
         let reversed = toReversed(array);
         let result = reversed.find((value) => value === item);
@@ -28,7 +33,7 @@ namespace arrays {
     //% blockId=arrays_findAll
     //% block="find occurences of $item in $array || up to $max"
     //% group="Operations"
-    //% expandableArgumentMode=toggle
+    //% expandableArgumentMode=enabled
     //% array.defl=list
     //% array.shadow=variables_get
     //% max.defl=0
@@ -65,7 +70,7 @@ namespace arrays {
     //% blockId=arrays_removeAll
     //% block="remove ocurrences of $item in $array || up to $max"
     //% group="Modify"
-    //% expandableArgumentMode=toggle
+    //% expandableArgumentMode=enabled
     //% array.shadow=variables_get
     //% array.defl=list
     //% max.defl=0
@@ -83,6 +88,13 @@ namespace arrays {
      * @param max Max number of items to remove (0 for unlimited)
      * @returns Array with removed items
      */
+    //% blockId=arrays_toRemovedAll
+    //% block="remove ocurrences of $item in $array || up to $max"
+    //% group="Operations"
+    //% expandableArgumentMode=enabled
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% max.defl=0
     export function toRemovedAll(array: any[], item: any, max: number=0): any[] {
         let result = array;
         removeAll(result, item, max);
@@ -313,7 +325,7 @@ namespace arrays {
      * @param second Second array
      * @returns Array of pairs
      */
-    //% blockId=arrays_zip
+    //% blockId=arrays_toZipped
     //% block="zip $first with $second"
     //% blockSetVariable=zipped
     //% group="Create"
@@ -329,7 +341,7 @@ namespace arrays {
      * Return reversed copy of array
      * @param array Array to reverse
      */
-    //% blockId=arrays_reversed
+    //% blockId=arrays_toReversed
     //% block="reversed $array"
     //% group="Operations"
     //% array.shadow=variables_get
@@ -402,7 +414,7 @@ namespace arrays {
      * @param second Second array
      * @returns Union of both arrays
      */
-    //% blockId=arrays_union
+    //% blockId=arrays_toUnion
     //% block="union of $first and $second"
     //% group="Operations"
     //% first.shadow=variables_get
