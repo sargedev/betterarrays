@@ -859,25 +859,39 @@ namespace arrays {
     }
 
     /**
-     * Splice the array
+     * Delete multiple elements from given index
      * @param array Array to splice
-     * @param index Starting index
+     * @param start Starting index
      * @param count Delete count
      */
-    export function splice(array: any[], index: number, count: number): void {
-        array.splice(index, count);
+    //% blockId=arrays_splice
+    //% block="delete $count elements from $start in $array"
+    //% group="Modify"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% start.defl=0
+    //$ count.defl=1
+    export function splice(array: any[], start: number, count: number): void {
+        array.splice(start, count);
     }
 
     /**
      * Return spliced copy of array
      * @param array Array to splice
-     * @param index Starting index
+     * @param start Starting index
      * @param count Delete count
      * @returns Spliced array
      */
-    export function toSpliced(array: any[], index: number, count: number): any[] {
+    //% blockId=arrays_toSpliced
+    //% block="delete $count elements from $start in $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% start.defl=0
+    //$ count.defl=1
+    export function toSpliced(array: any[], start: number, count: number): any[] {
         let result = array;
-        result.splice(index, count);
+        result.splice(start, count);
         return result;
     }
 
@@ -886,6 +900,12 @@ namespace arrays {
      * @param Array to unzip
      * @param target Index of desired pair element to retrieve
      */
+    //% blockId=arrays_unzip
+    //% block="unzip index $target from $array"
+    //% group="Modify"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% target.defl=0
     export function unzip(array: any[], target: number): void {
         array = toUnzipped(array, target);
     }
@@ -896,6 +916,12 @@ namespace arrays {
      * @param target Index of desired pair element to retrieve
      * @returns Array containing extracted elements
      */
+    //% blockId=arrays_toUnzipped
+    //% block="unzip index $target from $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% target.defl=0
     export function toUnzipped(array: any[], target: number): any[] {
         let result: any[] = [];
         for (let i = 0; i < array.length; i++) {
