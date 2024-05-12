@@ -1019,4 +1019,36 @@ namespace arrays {
         }
         return result;
     }
+
+    function _flatten(array: any[], max: number, depth: number=0): any[] {
+        let result: any[] = [];
+
+        for (let i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i]) && (max === 0 || depth <= max)) {
+                result = result.concat(_flatten(array[i], max, depth + 1));
+            } else {
+                result.push(array[i]);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Flatten array from n-dimensional array to 1D array
+     * @param array Array to flatten
+     * @param max Maximum depth (0 is unlimited)
+     */
+    export function flatten(array: any[], max: number=0): void {
+        array = toFlattened(array, max);
+    }
+
+    /**
+     * Return flattened 1D array from n-dimensional array
+     * @param array Array to flatten
+     * @param max Maximum depth (0 is unlimited)
+     * @returns Flattened array
+     */
+    export function toFlattened(array: any[], max: number=0): any[] {
+        return _flatten(array, max);
+    }
 }
