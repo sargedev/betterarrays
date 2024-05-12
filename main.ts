@@ -1037,6 +1037,12 @@ namespace arrays {
      * @param array Array to flatten
      * @param max Maximum depth (0 is unlimited)
      */
+    //% blockId=arrays_flatten
+    //% block="flatten $array"
+    //% group="Modify"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% max.defl=0
     export function flatten(array: any[], max: number=0): void {
         array = toFlattened(array, max);
     }
@@ -1047,6 +1053,12 @@ namespace arrays {
      * @param max Maximum depth (0 is unlimited)
      * @returns Flattened array
      */
+    //% blockId=arrays_toFlattened
+    //% block="flattened $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% max.defl=0
     export function toFlattened(array: any[], max: number=0): any[] {
         return _flatten(array, max);
     }
