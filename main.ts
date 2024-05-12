@@ -652,6 +652,11 @@ namespace arrays {
      * @param array Array to check
      * @returns True if all items evaluate to true
      */
+    //% blockId=arrays_allTrue
+    //% block="all elements in $array are true"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function allTrue(array: any[]): boolean {
         return array.every((value) => !!value);
     }
@@ -661,6 +666,11 @@ namespace arrays {
      * @param array Array to check
      * @returns True if any item evaluates to true
      */
+    //% blockId=arrays_anyTrue
+    //% block="any element in $array is true"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function anyTrue(array: any[]): boolean {
         return array.filter((value) => !!value).length >= 1;
     }
@@ -671,6 +681,11 @@ namespace arrays {
      * @param item Item to compare against
      * @returns True if all elements match item
      */
+    //% blockId=arrays_allEqual
+    //% block="all elements in $array = $item"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function allEqual(array: any[], item: any): boolean {
         return array.every((value) => checkEquality.equal(value, item));
     }
@@ -680,6 +695,11 @@ namespace arrays {
      * @param array Number array to sum
      * @returns Sum of all elements (number)
      */
+    //% blockId=arrays_sum
+    //% block="sum of $array elements"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function sum(array: number[]): number {
         return array.reduce((prev, value) => prev + value, 0);
     }
