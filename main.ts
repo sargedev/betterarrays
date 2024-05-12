@@ -451,11 +451,11 @@ namespace arrays {
      */
     //% blockId=arrays_union
     //% block="unionize $first with $second"
-    //% group="Operations"
+    //% group="Modify"
     //% first.shadow=variables_get
-    //% first.defl=list
+    //% first.defl=list1
     //% second.shadow=variables_get
-    //% second.defl=list
+    //% second.defl=list2
     export function union(first: any[], second: any[]): void {
         first = toUnion(first, second);
     }
@@ -471,9 +471,9 @@ namespace arrays {
     //% block="union of $first and $second"
     //% group="Operations"
     //% first.shadow=variables_get
-    //% first.defl=list
+    //% first.defl=list1
     //% second.shadow=variables_get
-    //% second.defl=list
+    //% second.defl=list2
     export function toUnion(first: any[], second: any[]): any[] {
         return toPurged(toConcated(first, second));
     }
@@ -484,6 +484,13 @@ namespace arrays {
      * @param first First array
      * @param second Second array
      */
+    //% blockId=arrays_intersection
+    //% block="intersect $first with $second"
+    //% group="Modify"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
     export function intersection(first: any[], second: any[]): void {
         first = toIntersection(first, second);
     }
@@ -495,6 +502,13 @@ namespace arrays {
      * @param second Second array
      * @returns Intersection of arrays
      */
+    //% blockId=arrays_toIntersection
+    //% block="intersection of $first and $second"
+    //% group="Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
     export function toIntersection(first: any[], second: any[]): any[] {
         return toPurged(first.filter((value) => includes(second, value)));
     }
