@@ -967,11 +967,18 @@ namespace arrays {
     }
 
     /**
-     * Check if two array are equal
+     * Check if two arrays are equal
      * @param first First array
      * @param second Second array
-     * @returns True if all elements are equal
+     * @returns True if arrays are equal
      */
+    //% blockId=arrays_equal
+    //% block="$first = $second"
+    //% group="Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
     export function equal(first: any[], second: any[]): boolean {
         return checkEquality.equal(first, second);
     }
@@ -981,6 +988,11 @@ namespace arrays {
      * @param arrays Array containing arrays to be concatenated
      * @returns Concatenated array
      */
+    //% blockId=arrays_concatMany
+    //% block="concatenate $arrays"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function concatMany(arrays: any[][]): any[] {
         let result: any[] = [];
         for (let i = 0; i < arrays.length; i++) {
@@ -995,6 +1007,11 @@ namespace arrays {
      * @param arrays Array of arrays to zip
      * @returns Array of n-length pairs
      */
+    //% blockId=arrays_zipMany
+    //% block="zip $arrays"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function zipMany(arrays: any[][]): any[][] {
         let result: any[][] = [];
         for (let i = 0; arrays.every((value) => i < value.length); i++) {
