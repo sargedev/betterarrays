@@ -354,7 +354,7 @@ namespace arrays {
      */
     //% blockId=arrays_zip
     //% block="zip $first with $second"
-    //% group="Create"
+    //% group="Modify"
     //% first.shadow=variables_get
     //% first.defl=list
     //% second.shadow=variables_get
