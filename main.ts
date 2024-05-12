@@ -552,7 +552,7 @@ namespace arrays {
      */
     //% blockId=arrays_sort
     //% block="sort $array in order $order"
-    //% group="Operations"
+    //% group="Modify"
     //% array.shadow=variables_get
     //% array.defl=list
     export function sort(array: any[], order: SortOrder=SortOrder.Ascending): void {
@@ -568,6 +568,11 @@ namespace arrays {
      * @param order Order (default is ascending)
      * @returns Sorted array
      */
+    //% blockId=arrays_toSorted
+    //% block="sorted $array in order $order"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function toSorted(array: any[], order: SortOrder=SortOrder.Ascending): any[] {
         let result = array;
         sort(result, order);
