@@ -461,7 +461,7 @@ namespace arrays {
     }
 
     /**
-     * Returns array containing elements that are in both arrays;
+     * Returns array containing elements that are in either one or other array;
      * Removes all duplicates
      * @param first First array
      * @param second Second array
@@ -476,6 +476,27 @@ namespace arrays {
     //% second.defl=list
     export function toUnion(first: any[], second: any[]): any[] {
         return toPurged(toConcated(first, second));
+    }
+
+    /**
+     * Creates intersection of two arrays
+     * Removes all duplicates
+     * @param first First array
+     * @param second Second array
+     */
+    export function intersection(first: any[], second: any[]): void {
+        first = toIntersection(first, second);
+    }
+
+    /**
+     * Returns array containing elements that are in both arrays;
+     * Removes all duplicates
+     * @param first First array
+     * @param second Second array
+     * @returns Intersection of arrays
+     */
+    export function toIntersection(first: any[], second: any[]): any[] {
+        return toPurged(first.filter((value) => includes(second, value)));
     }
 
     /**
