@@ -518,6 +518,13 @@ namespace arrays {
      * @param first First array
      * @param second Second array
      */
+    //% blockId=arrays_difference
+    //% block="subtract $second from $first"
+    //% group="Modify"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
     export function difference(first: any[], second: any[]): void {
         first = toDifference(first, second);
     }
@@ -528,6 +535,13 @@ namespace arrays {
      * @param second Second array
      * @returns Difference of arrays
      */
+    //% blockId=arrays_toDifference
+    //% block="difference of $first and $second"
+    //% group="Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
     export function toDifference(first: any[], second: any[]): any[] {
         return first.filter((value) => !includes(second, value));
     }
