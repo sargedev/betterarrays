@@ -19,7 +19,7 @@ namespace arrays {
     //% array.defl=list
     export function findLast(array: any[], item: any): number {
         let reversed = toReversed(array);
-        let result = reversed.find((value) => value === item);
+        let result = reversed.find((value) => checkEquality.equal(value, item));
         return result === undefined ? -1 : result;
     }
 
@@ -40,7 +40,7 @@ namespace arrays {
     export function findAll(array: any[], item: any, max: number=0): number[] {
         let result = [];
         for (let i = 0; i < array.length; i++) {
-            if (array[i] === item) result.push(i);
+            if (checkEquality.equal(array[i], item)) result.push(i);
             if (max !== 0 && result.length >= max) break;
         }
         return result;
@@ -469,7 +469,7 @@ namespace arrays {
     export function extract(array: any[], item: any): any[] {
         let result = [];
         for (let i = 0; i < array.length; i++) {
-            if (array[i] === item) result.push(item);
+            if (checkEquality.equal(array[i], item)) result.push(item);
         }
         return result;
     }
@@ -537,7 +537,7 @@ namespace arrays {
      * @returns True if all elements match item
      */
     export function allEqual(array: any[], item: any): boolean {
-        return array.every((value) => value === item);
+        return array.every((value) => checkEquality.equal(value, item));
     }
 
     /**
