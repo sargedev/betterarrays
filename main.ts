@@ -127,6 +127,13 @@ namespace arrays {
      * @param second Index of second item
      * @returns Array with swapped elements
      */
+    //% blockId="arrays_toSwapped"
+    //% block="swap items at indicies $first and $second in $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% first.defl=0
+    //% second.defl=1
     export function toSwapped(array: any[], first: number, second: number): any[] {
         let result = array;
         swap(result, first, second);
