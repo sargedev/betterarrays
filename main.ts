@@ -178,7 +178,7 @@ namespace arrays {
     //% array.defl=list
     //% start.defl=0
     //% end.defl=1
-    export function fill(array: any[], item: any, start?: number, end?: number) {
+    export function fill(array: any[], item: any, start?: number, end?: number): void {
         array.fill(item, start, end);
     }
 
@@ -229,7 +229,7 @@ namespace arrays {
      * @param end Stopping index
      * @param step Stepping value
      */
-    export function slice(array: any[], start?: number, end?: number, step: number=1) {
+    export function slice(array: any[], start?: number, end?: number, step: number=1): void {
         array = toSliced(array, start, end, step);
     }
 
