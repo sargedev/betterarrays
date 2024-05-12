@@ -760,6 +760,11 @@ namespace arrays {
      * @param array Array to generate index from
      * @returns Array index
      */
+    //% blockId=arrays_randomIndex
+    //% block="random index in $array"
+    //% group="Read"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function randomIndex(array: any[]): number {
         if (array.length === 0) return 0; // todo: throw error
         return Math.randomRange(0, array.length - 1);
@@ -771,7 +776,15 @@ namespace arrays {
      * @param separator String used to separate items (optional)
      * @returns Joined string
      */
-    export function join(array: string[], separator: string): string {
+    //% blockId=arrays_join
+    //% block="join $array || with $separator"
+    //% inlineInputMode=inline
+    //% expandableArgumentMode=enabled
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% separator.defl=""
+    export function join(array: string[], separator?: string): string {
         return array.join(separator);
     }
 
