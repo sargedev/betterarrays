@@ -475,7 +475,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list
     export function toUnion(first: any[], second: any[]): any[] {
-        return toPurged(first.filter((value) => includes(second, value)));
+        return toPurged(toConcated(first, second));
     }
 
     /**
