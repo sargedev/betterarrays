@@ -163,6 +163,11 @@ namespace arrays {
      * @param replacement Item to replace with
      * @returns Array with replaced items
      */
+    //% blockId=arrays_toReplaced
+    //% block="replace all occurences of $item with $replace in $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function toReplaced(array: any[], item: any, replacement: any): any[] {
         let result = array;
         replace(result, item, replacement);
@@ -197,6 +202,15 @@ namespace arrays {
      * @param item Item to fill with
      * @returns Array copy filled with items
      */
+    //% blockId=arrays_toFilled
+    //% block="fill $array with $item || from $start | to $end"
+    //% group="Operations"
+    //% expandableArgumentMode=enabled
+    //% inlineInputMode=inline
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% start.defl=0
+    //% end.defl=1
     export function toFilled(array: any[], item: any, start?: number, end?: number): any[] {
         let result = array;
         fill(result, item, start, end);
@@ -208,6 +222,13 @@ namespace arrays {
      * @param first First array (modified)
      * @param second Second array
      */
+    //% blockId=arrays_toConcated
+    //% block="$first concatenated with $second"
+    //% group="Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
     export function concat(first: any[], second: any[]): void {
         first = first.concat(second);
     }
@@ -236,6 +257,16 @@ namespace arrays {
      * @param end Stopping index
      * @param step Stepping value
      */
+    //% blockId=arrays_slice
+    //% block="slice $array || from $start | to $end | with step $step"
+    //% group="Operations"
+    //% expandableArgumentMode=enabled
+    //% inlineInputMode=inline
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% start.defl=0
+    //% end.defl=1
+    //% step.defl=1
     export function slice(array: any[], start?: number, end?: number, step: number=1): void {
         array = toSliced(array, start, end, step);
     }
@@ -321,6 +352,14 @@ namespace arrays {
      * @param first First array
      * @param second Second array
      */
+    //% blockId=arrays_zip
+    //% block="zip $first with $second"
+    //% blockSetVariable=zipped
+    //% group="Create"
+    //% first.shadow=variables_get
+    //% first.defl=list
+    //% second.shadow=variables_get
+    //% second.defl=list
     export function zip(first: any[], second: any[]): void {
         first = toZipped(first, second);
     }
