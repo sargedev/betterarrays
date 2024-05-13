@@ -147,7 +147,7 @@ namespace arrays {
      * @param replacement Item to replace with
      */
     //% blockId=arrays_replace
-    //% block="replace all occurences of $item with $replace in $array"
+    //% block="replace all occurences of $item with $replacement in $array"
     //% group="Modify"
     //% array.shadow=variables_get
     //% array.defl=list
