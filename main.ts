@@ -164,7 +164,7 @@ namespace arrays {
      * @returns Array with replaced items
      */
     //% blockId=arrays_toReplaced
-    //% block="replace all occurences of $item with $replace in $array"
+    //% block="replace all occurences of $item with $replacement in $array"
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
