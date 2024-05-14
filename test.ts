@@ -9,22 +9,32 @@ function testFindLast() {
     // Test finding last of multiple items
     result = arrays.findLast(["a", "b", "a"], "a");
     new tests.AssertEqual(result, 2);
-    // Test 
+    // Test finding non-existent item
     result = arrays.findLast(["a", "b", "c"], "d");
     new tests.AssertEqual(result, -1);
 }
 
 function testFindAll() {
-    // Test findAll
+    // Test finding items
     result = arrays.findAll(["a", "b", "a", "c"], "a");
     new tests.AssertEqual(result, [0, 2]);
     // Test limit
     result = arrays.findAll(["a", "b", "a", "c"], "a", 1);
     new tests.AssertEqual(result, [0]);
-    // Test not found
+    // Test finding non-existent item
     result = arrays.findAll(["a", "b", "c"], "d");
     new tests.AssertEqual(result, []);
 }
 
+function testCount() {
+    // Test counting item
+    result = arrays.count(["a", "b", "a", "c", "a"], "a");
+    new tests.AssertEqual(result, 3);
+    // Test counting non-existent item
+    result = arrays.count(["a"], "b");
+    new tests.AssertEqual(result, 0);
+}
+
 testFindLast();
 testFindAll();
+testCount();
