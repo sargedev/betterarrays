@@ -78,7 +78,7 @@ namespace arrays {
     export function removeAll(array: any[], item: any, max: number=0): void {
         let indicies = findAll(array, item, max);
         for (let i = 0; i < indicies.length; i++) {
-            indicies.removeAt(array[i]);
+            array.removeAt(indicies[i]);
         }
     }
 
