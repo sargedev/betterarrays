@@ -44,6 +44,7 @@ function testRemoveAll() {
 }
 
 function testToRemovedAll() {
+    // Test removing all items
     array = ["a", "b", "c", "a", "d"];
     result = arrays.toRemovedAll(array, "a");
     new tests.AssertEqual(result, ["b", "c", "d"]);

@@ -109,7 +109,7 @@ namespace arrays {
     //% array.defl=list
     //% max.defl=0
     export function toRemovedAll(array: any[], item: any, max: number=0): any[] {
-        let result = array;
+        let result = copy(array);
         removeAll(result, item, max);
         return result;
     }
