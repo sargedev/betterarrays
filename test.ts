@@ -35,6 +35,13 @@ function testCount() {
     new tests.AssertEqual(result, 0);
 }
 
+function testRemoveAll() {
+    result = ["a", "b", "c", "a", "d"];
+    arrays.removeAll(result, "a");
+    new tests.AssertEqual(result, ["b", "c", "d"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
+testRemoveAll();
