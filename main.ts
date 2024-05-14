@@ -7,6 +7,18 @@ enum SortOrder {
 namespace arrays {
 
     /**
+     * Internal method; create shallow copy of array
+     * @param array Array to copy
+     */
+    function copy(array: any[]): any[] {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+            result.push(array[i]);
+        }
+        return result;
+    }
+
+    /**
      * Find last occurence of item in array
      * @param array Array to search
      * @param item Item to find

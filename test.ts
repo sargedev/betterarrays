@@ -1,5 +1,6 @@
 // tests go here; this will not be compiled when this package is used as an extension.
 
+let array;
 let result;
 
 function testFindLast() {
@@ -36,12 +37,21 @@ function testCount() {
 }
 
 function testRemoveAll() {
+    // Test removing all items
     result = ["a", "b", "c", "a", "d"];
     arrays.removeAll(result, "a");
     new tests.AssertEqual(result, ["b", "c", "d"]);
+}
+
+function testToRemovedAll() {
+    array = ["a", "b", "c", "a", "d"];
+    result = arrays.toRemovedAll(array, "a");
+    new tests.AssertEqual(result, ["b", "c", "d"]);
+    new tests.AssertEqual(array, ["a", "b", "c", "a", "d"]);
 }
 
 testFindLast();
 testFindAll();
 testCount();
 testRemoveAll();
+testToRemovedAll();
