@@ -18,9 +18,10 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function findLast(array: any[], item: any): number {
-        let reversed = toReversed(array);
-        let result = reversed.find((value) => checkEquality.equal(value, item));
-        return result === undefined ? -1 : result;
+        for (let i = array.length - 1; i >= 0; i--) {
+            if (array[i] === item) return i;
+        }
+        return -1;
     }
 
     /**
