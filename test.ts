@@ -126,8 +126,17 @@ function testToConcated() {
 function testSlice() {
     // Test slice
     result = ["a", "b", "c", "d"];
-    arrays.slice(result, 1, 2);
+    arrays.slice(result, 1, 3);
     new tests.AssertEqual(result, ["b", "c"]);
+}
+
+function testToSliced() {
+    // Test slice
+    array = ["a", "b", "c", "d"];
+    result = arrays.toSliced(array, 1, 3);
+    new tests.AssertEqual(result, ["b", "c"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c", "d"]);
 }
 
 testFindLast();
@@ -142,4 +151,5 @@ testToReplaced();
 testFill();
 testConcat();
 testToConcated();
-//testSlice();
+testSlice();
+testToSliced();

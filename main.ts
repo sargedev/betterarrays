@@ -281,7 +281,7 @@ namespace arrays {
      * Slice an array
      * @param array Array to slice
      * @param start Starting index
-     * @param end Stopping index
+     * @param end Stopping index (not included)
      * @param step Stepping value
      */
     //% blockId=arrays_slice
@@ -302,7 +302,7 @@ namespace arrays {
      * Return a sliced section of the array
      * @param array Array to slice
      * @param start Starting index
-     * @param end Stopping index
+     * @param end Stopping index (not included)
      * @param step Stepping value
      * @returns Slice of array
      */
