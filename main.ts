@@ -295,10 +295,7 @@ namespace arrays {
     //% end.defl=1
     //% step.defl=1
     export function slice(array: any[], start?: number, end?: number, step: number=1): void {
-        let result = toSliced(array, start, end, step);
-        for (let i = 0; i < array.length; i++) {
-            array[i] = result[i];
-        }
+        reassign(array, toSliced(array, start, end, step));
     }
 
     /**
