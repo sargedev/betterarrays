@@ -69,7 +69,7 @@ function testSwap() {
 function testToSwapped() {
     // Test swapping indicies
     array = ["a", "b", "c"];
-    result = arrays.toSwapped(array, 0, 1);
+    result = arrays.toSwapped(array, 0, 2);
     new tests.AssertEqual(result, ["c", "b", "a"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c"]);
@@ -81,3 +81,4 @@ testCount();
 testRemoveAll();
 testToRemovedAll();
 testSwap();
+testToSwapped();

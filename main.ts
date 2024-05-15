@@ -148,7 +148,7 @@ namespace arrays {
     //% first.defl=0
     //% second.defl=1
     export function toSwapped(array: any[], first: number, second: number): any[] {
-        let result = array;
+        let result = copy(array);
         swap(result, first, second);
         return result;
     }
