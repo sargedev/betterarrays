@@ -245,7 +245,10 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list2
     export function concat(first: any[], second: any[]): void {
-        first = first.concat(second);
+        let result = first.concat(second);
+        for (let i = 0; i < result.length; i++) {
+            first[i] = result[i];
+        }
     }
 
     /**

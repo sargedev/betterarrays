@@ -107,6 +107,22 @@ function testToFilled() {
     new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
 }
 
+function testConcat() {
+    // Test concat
+    result = ["a", "b", "c"];
+    arrays.concat(result, ["d", "e", "f"]);
+    new tests.AssertEqual(result, ["a", "b", "c", "d", "e", "f"]);
+}
+
+function testToConcated() {
+    // Test concat
+    array = ["a", "b", "c"];
+    result = arrays.toConcated(array, ["d", "e", "f"]);
+    new tests.AssertEqual(result, ["a", "b", "c", "d", "e", "f"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -117,3 +133,5 @@ testToSwapped();
 testReplace();
 testToReplaced();
 testFill();
+testConcat();
+testToConcated();
