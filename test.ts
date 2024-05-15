@@ -82,6 +82,15 @@ function testReplace() {
     new tests.AssertEqual(result, ["d", "b", "d", "c", "d"]);
 }
 
+function testToReplaced() {
+    // Test replacing items
+    array = ["a", "b", "a", "c", "a"];
+    result = arrays.toReplaced(array, "a", "d");
+    new tests.AssertEqual(result, ["d", "b", "d", "c", "d"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "a", "c", "a"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -90,3 +99,4 @@ testToRemovedAll();
 testSwap();
 testToSwapped();
 testReplace();
+testToReplaced();
