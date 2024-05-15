@@ -166,7 +166,9 @@ namespace arrays {
     //% array.defl=list
     export function replace(array: any[], item: any, replacement: any): void {
         let indicies = findAll(array, item);
-        array = array.map((value, index) => includes(indicies, index) ? replacement : value);
+        for (let i = 0; i < indicies.length; i++) {
+            array[indicies[i]] = replacement;
+        }
     }
 
     /**
@@ -182,7 +184,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function toReplaced(array: any[], item: any, replacement: any): any[] {
-        let result = array;
+        let result = copy(array);
         replace(result, item, replacement);
         return result;
     }
