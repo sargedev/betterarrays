@@ -91,6 +91,22 @@ function testToReplaced() {
     new tests.AssertEqual(array, ["a", "b", "a", "c", "a"]);
 }
 
+function testFill() {
+    // Test fill
+    result = ["a", "b", "c", "d", "e"];
+    arrays.fill(result, "f", 1, 4);
+    new tests.AssertEqual(result, ["a", "f", "f", "f", "e"]);
+}
+
+function testToFilled() {
+    // Test fill
+    array = ["a", "b", "c", "d", "e"];
+    result = arrays.fill(array, "f", 1, 4);
+    new tests.AssertEqual(result, ["a", "f", "f", "f", "e"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -100,3 +116,4 @@ testSwap();
 testToSwapped();
 testReplace();
 testToReplaced();
+testFill();
