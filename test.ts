@@ -41,6 +41,10 @@ function testRemoveAll() {
     result = ["a", "b", "c", "a", "d"];
     arrays.removeAll(result, "a");
     new tests.AssertEqual(result, ["b", "c", "d"]);
+    // Test limit
+    result = ["a", "b", "c", "a", "d"];
+    arrays.removeAll(result, "a", 1);
+    new tests.AssertEqual(result, ["b", "c", "a", "d"]);
 }
 
 function testToRemovedAll() {
@@ -48,7 +52,11 @@ function testToRemovedAll() {
     array = ["a", "b", "c", "a", "d"];
     result = arrays.toRemovedAll(array, "a");
     new tests.AssertEqual(result, ["b", "c", "d"]);
+    // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c", "a", "d"]);
+    // Test limit
+    result = arrays.toRemovedAll(array, "a", 1);
+    new tests.AssertEqual(result, ["b", "c", "a", "d"]);
 }
 
 testFindLast();
