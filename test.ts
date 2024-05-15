@@ -59,8 +59,25 @@ function testToRemovedAll() {
     new tests.AssertEqual(result, ["b", "c", "a", "d"]);
 }
 
+function testSwap() {
+    // Test swapping indicies
+    result = ["a", "b", "c"];
+    arrays.swap(result, 0, 2);
+    new tests.AssertEqual(result, ["c", "b", "a"]);
+}
+
+function testToSwapped() {
+    // Test swapping indicies
+    array = ["a", "b", "c"];
+    result = arrays.toSwapped(array, 0, 1);
+    new tests.AssertEqual(result, ["c", "b", "a"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
 testRemoveAll();
 testToRemovedAll();
+testSwap();
