@@ -19,6 +19,18 @@ namespace arrays {
     }
 
     /**
+     * Internal method; modify array directly with new items
+     * @param array Original array
+     * @param items New items
+     */
+    function reassign(array: any[], items: any[]): void {
+        array.splice(0, array.length);
+        for (let i = 0; i < items.length; i++) {
+            array[i] = items[i];
+        }
+    }
+
+    /**
      * Find last occurence of item in array
      * @param array Array to search
      * @param item Item to find
@@ -245,10 +257,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list2
     export function concat(first: any[], second: any[]): void {
-        let result = first.concat(second);
-        for (let i = 0; i < result.length; i++) {
-            first[i] = result[i];
-        }
+        reassign(first, first.concat(second));
     }
 
     /**
@@ -286,7 +295,10 @@ namespace arrays {
     //% end.defl=1
     //% step.defl=1
     export function slice(array: any[], start?: number, end?: number, step: number=1): void {
-        array = toSliced(array, start, end, step);
+        let result = toSliced(array, start, end, step);
+        for (let i = 0; i < array.length; i++) {
+            array[i] = result[i];
+        }
     }
 
     /**

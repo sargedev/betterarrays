@@ -123,6 +123,13 @@ function testToConcated() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testSlice() {
+    // Test slice
+    result = ["a", "b", "c", "d"];
+    arrays.slice(result, 1, 2);
+    new tests.AssertEqual(result, ["b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -135,3 +142,4 @@ testToReplaced();
 testFill();
 testConcat();
 testToConcated();
+//testSlice();
