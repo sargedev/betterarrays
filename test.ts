@@ -148,6 +148,12 @@ function testInRange() {
     new tests.AssertFalse(result);
 }
 
+function testRepeat() {
+    // Test repeat
+    result = arrays.repeat("a", 3);
+    new tests.AssertEqual(result, ["a", "a", "a"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -163,3 +169,4 @@ testToConcated();
 testSlice();
 testToSliced();
 testInRange();
+testRepeat();
