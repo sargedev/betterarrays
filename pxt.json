@@ -3,9 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "Tests": "github:sargedev/tests#8e6cf9aad98c0ce96d559cb0e55af07b538a7b98",
         "Stringify": "github:sargedev/stringify#fa05269e440fcd3b4dd21bfe2c5f9de4cd755c69",
-        "CheckEquality": "github:sargedev/checkequality#cf52410fc1ed6110a280e70f02aeab242003a862"
+        "Tests": "github:sargedev/tests#b6e8f6b9179be23201a7b97ab115fa5eaefae7f1"
     },
     "files": [
         "main.ts",
