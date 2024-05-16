@@ -1,7 +1,7 @@
 // tests go here; this will not be compiled when this package is used as an extension.
 
-let array;
-let result;
+let array: any[];
+let result: any;
 
 function testFindLast() {
     // Test finding single item
@@ -188,6 +188,14 @@ function testToReversed() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testForEach() {
+    // Test foreach loop
+    array = ["a", "b", "c"];
+    arrays.forEach(array, (value, index) => {
+        new tests.AssertEqual(value, array[index]);
+    })
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -208,3 +216,4 @@ testIncludes();
 testZip();
 testToZipped();
 testToReversed();
+testForEach();
