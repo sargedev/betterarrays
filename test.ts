@@ -139,6 +139,15 @@ function testToSliced() {
     new tests.AssertEqual(array, ["a", "b", "c", "d"]);
 }
 
+function testInRange() {
+    // Test in range
+    result = arrays.inRange(["a", "b", "c"], 2);
+    new tests.AssertTrue(result);
+    // Test not in range
+    result = arrays.inRange(["a", "b", "c"], 3);
+    new tests.AssertFalse(result);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -153,3 +162,4 @@ testConcat();
 testToConcated();
 testSlice();
 testToSliced();
+testInRange();
