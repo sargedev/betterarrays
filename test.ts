@@ -163,6 +163,22 @@ function testIncludes() {
     new tests.AssertFalse(result);
 }
 
+function testZip() {
+    // Test zip
+    result = ["a", "b", "c"];
+    arrays.zip(result, [0, 1, 2]);
+    new tests.AssertEqual(result, [["a", 0], ["b", 1], ["c", 2]]);
+}
+
+function testToZipped() {
+    // Test zip
+    array = ["a", "b", "c"];
+    result = arrays.toZipped(array, [0, 1, 2]);
+    new tests.AssertEqual(result, [["a", 0], ["b", 1], ["c", 2]]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -180,3 +196,5 @@ testToSliced();
 testInRange();
 testRepeat();
 testIncludes();
+testZip();
+testToZipped();

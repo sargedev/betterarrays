@@ -387,7 +387,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list
     export function zip(first: any[], second: any[]): void {
-        first = toZipped(first, second);
+        reassign(first, toZipped(first, second));
     }
 
     /**
