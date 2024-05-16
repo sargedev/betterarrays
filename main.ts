@@ -419,7 +419,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function toReversed(array: any[]): any[] {
-        let result = array;
+        let result = copy(array);
         result.reverse();
         return result;
     }

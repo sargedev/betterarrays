@@ -179,6 +179,15 @@ function testToZipped() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testToReversed() {
+    // Test reversing
+    array = ["a", "b", "c"];
+    result = arrays.toReversed(array);
+    new tests.AssertEqual(result, ["c", "b", "a"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -198,3 +207,4 @@ testRepeat();
 testIncludes();
 testZip();
 testToZipped();
+testToReversed();
