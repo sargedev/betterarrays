@@ -154,6 +154,15 @@ function testRepeat() {
     new tests.AssertEqual(result, ["a", "a", "a"]);
 }
 
+function testIncludes() {
+    // Test existing item
+    result = arrays.includes(["a", "b", "c"], "b");
+    new tests.AssertTrue(result);
+    // Test non-exsitent item
+    result = arrays.includes(["a", "b", "c"], "d");
+    new tests.AssertFalse(result);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -170,3 +179,4 @@ testSlice();
 testToSliced();
 testInRange();
 testRepeat();
+testIncludes();
