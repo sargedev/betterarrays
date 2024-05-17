@@ -332,6 +332,12 @@ function testAllEqual() {
     new tests.AssertFalse(result);
 }
 
+function testSum() {
+    // Test sum
+    result = arrays.sum([1, 2, 3]);
+    new tests.AssertEqual(result, 6);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -369,3 +375,4 @@ testToSorted();
 testAllTrue();
 testAnyTrue();
 testAllEqual();
+testSum();
