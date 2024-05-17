@@ -235,6 +235,15 @@ function testIntersection() {
     new tests.AssertEqual(array, ["b", "c"]);
 }
 
+function testToIntersection() {
+    // Test intersection
+    array = ["a", "b", "c"];
+    result = arrays.toIntersection(array, ["b", "c", "d"]);
+    new tests.AssertEqual(result, ["b", "c"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -261,3 +270,4 @@ testIsEmpty();
 testUnion();
 testToUnion();
 testIntersection();
+testToIntersection();
