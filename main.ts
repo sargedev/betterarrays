@@ -668,7 +668,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function toSorted(array: any[], order: SortOrder=SortOrder.Ascending): any[] {
-        let result = array;
+        let result = copy(array);
         sort(result, order);
         return result;
     }

@@ -282,6 +282,29 @@ function testExtract() {
     new tests.AssertEqual(result, ["a", "a", "a"]);
 }
 
+function testSort() {
+    // Test sorting ascending
+    array = [4, 2, 3, 1, 5];
+    arrays.sort(array, SortOrder.Ascending);
+    new tests.AssertEqual(array, [1, 2, 3, 4, 5]);
+    // Test sorting descending
+    array = [4, 2, 3, 1, 5];
+    arrays.sort(array, SortOrder.Descending);
+    new tests.AssertEqual(array, [5, 4, 3, 2, 1]);
+}
+
+function testToSorted() {
+    // Test sorting ascending
+    array = [4, 2, 3, 1, 5];
+    result = arrays.toSorted(array, SortOrder.Ascending);
+    new tests.AssertEqual(result, [1, 2, 3, 4, 5]);
+    // Test sorting descending
+    result = arrays.toSorted(array, SortOrder.Descending);
+    new tests.AssertEqual(result, [5, 4, 3, 2, 1]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, [4, 2, 3, 1, 5]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -314,3 +337,5 @@ testToDifference();
 testPurge();
 testToPurged();
 testExtract();
+testSort();
+testToSorted();
