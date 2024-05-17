@@ -305,6 +305,33 @@ function testToSorted() {
     new tests.AssertEqual(array, [4, 2, 3, 1, 5]);
 }
 
+function testAllTrue() {
+    // Test all true
+    result = arrays.allTrue(["a", "b", "c"]);
+    new tests.AssertTrue(result);
+    // Test not all true
+    result = arrays.allTrue(["a", "b", 0]);
+    new tests.AssertFalse(result);
+}
+
+function testAnyTrue() {
+    // Test any true
+    result = arrays.anyTrue(["a", 0, false]);
+    new tests.AssertTrue(result);
+    // Test none true
+    result = arrays.anyTrue([false, 0, null]);
+    new tests.AssertFalse(result);
+}
+
+function testAllEqual() {
+    // Test all equal
+    result = arrays.allEqual(["a", "a"], "a");
+    new tests.AssertTrue(result);
+    // Test not all equal
+    result = arrays.allEqual(["a", "b"], "a");
+    new tests.AssertFalse(result);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -339,3 +366,6 @@ testToPurged();
 testExtract();
 testSort();
 testToSorted();
+testAllTrue();
+testAnyTrue();
+testAllEqual();
