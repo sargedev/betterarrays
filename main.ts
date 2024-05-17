@@ -811,7 +811,7 @@ namespace arrays {
     //% array.defl=list
     //% separator.defl=""
     export function join(array: string[], separator?: string): string {
-        return array.join(separator);
+        return array.join(separator || "");
     }
 
     /**

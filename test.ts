@@ -373,6 +373,15 @@ function testRandomIndex() {
     }
 }
 
+function testJoin() {
+    // Test joining
+    result = arrays.join(["a", "b", "c"]);
+    new tests.AssertEqual(result, "abc");
+    // Test separator
+    result = arrays.join(["a", "b", "c"], ".");
+    new tests.AssertEqual(result, "a.b.c");
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -415,3 +424,4 @@ testRange();
 testEnumerate();
 testToEnumerated();
 testRandomIndex();
+testJoin();
