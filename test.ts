@@ -196,6 +196,24 @@ function testForEach() {
     })
 }
 
+function testClear() {
+    // Test clearing
+    result = ["a", "b", "c"];
+    arrays.clear(result);
+    new tests.AssertEqual(result, []);
+}
+
+function testIsEmpty() {
+    // Test empty array
+    array = [];
+    result = arrays.isEmpty(array);
+    new tests.AssertTrue(result);
+    // Test non-empty array
+    array = ["a", "b", "c"];
+    result = arrays.isEmpty(array);
+    new tests.AssertFalse(result);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -217,3 +235,5 @@ testZip();
 testToZipped();
 testToReversed();
 testForEach();
+testClear();
+testIsEmpty();

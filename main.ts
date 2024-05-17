@@ -452,7 +452,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function clear(array: any[]): void {
-        array = [];
+        reassign(array, []);
     }
 
     /**
