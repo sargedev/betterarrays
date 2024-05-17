@@ -363,6 +363,16 @@ function testToEnumerated() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testRandomIndex() {
+    // Test random index
+    array = ["a", "b", "c"];
+    for (let i = 0; i < 10; i++) {
+        result = arrays.randomIndex(array);
+        new tests.AssertGreaterEqual(result, 0);
+        new tests.AssertLess(result, array.length);
+    }
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -404,3 +414,4 @@ testSum();
 testRange();
 testEnumerate();
 testToEnumerated();
+testRandomIndex();

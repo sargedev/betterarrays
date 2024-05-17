@@ -4,7 +4,7 @@
     "dependencies": {
         "device": "*",
         "Stringify": "github:sargedev/stringify#fa05269e440fcd3b4dd21bfe2c5f9de4cd755c69",
-        "Tests": "github:sargedev/tests#b6e8f6b9179be23201a7b97ab115fa5eaefae7f1"
+        "Tests": "github:sargedev/tests#f8e799d1b5711912e07db080e31847405340f702"
     },
     "files": [
         "main.ts",
