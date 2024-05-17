@@ -406,6 +406,32 @@ function testMax() {
     new tests.AssertEqual(result, 5);
 }
 
+function testSplice() {
+    // Test splice
+    array = ["a", "b", "c", "d", "e"];
+    arrays.splice(array, 0, 2);
+    new tests.AssertEqual(array, ["c", "d", "e"]);
+    // Test splice offset
+    array = ["a", "b", "c", "d", "e"];
+    arrays.splice(array, 2, 2);
+    new tests.AssertEqual(array, ["a", "b", "e"]);
+}
+
+function testToSpliced() {
+    // Test splice
+    array = ["a", "b", "c", "d", "e"];
+    result = arrays.toSpliced(array, 0, 2);
+    new tests.AssertEqual(result, ["c", "d", "e"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
+    // Test splice offset
+    array = ["a", "b", "c", "d", "e"];
+    result = arrays.toSpliced(array, 2, 2);
+    new tests.AssertEqual(result, ["a", "b", "e"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -453,3 +479,5 @@ testMinIndex();
 testMin();
 testMaxIndex();
 testMax();
+testSplice();
+testToSpliced();

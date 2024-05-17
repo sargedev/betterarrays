@@ -896,7 +896,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     //% start.defl=0
-    //$ count.defl=1
+    //% count.defl=1
     export function splice(array: any[], start: number, count: number): void {
         array.splice(start, count);
     }
@@ -916,7 +916,7 @@ namespace arrays {
     //% start.defl=0
     //$ count.defl=1
     export function toSpliced(array: any[], start: number, count: number): any[] {
-        let result = array;
+        let result = copy(array);
         result.splice(start, count);
         return result;
     }
