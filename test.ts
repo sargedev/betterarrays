@@ -347,6 +347,22 @@ function testRange() {
     new tests.AssertEqual(result, [0, 2, 4, 6]);
 }
 
+function testEnumerate() {
+    // Test enumeration
+    array = ["a", "b", "c"];
+    arrays.enumerate(array);
+    new tests.AssertEqual(array, [[0, "a"], [1, "b"], [2, "c"]]);
+}
+
+function testToEnumerated() {
+    // Test enumeration
+    array = ["a", "b", "c"];
+    result = arrays.toEnumerated(array);
+    new tests.AssertEqual(result, [[0, "a"], [1, "b"], [2, "c"]]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -386,3 +402,5 @@ testAnyTrue();
 testAllEqual();
 testSum();
 testRange();
+testEnumerate();
+testToEnumerated();

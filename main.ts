@@ -764,7 +764,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function enumerate(array: any[]): void {
-        array = toEnumerated(array);
+        reassign(array, toEnumerated(array));
     }
     
     /**
@@ -778,7 +778,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function toEnumerated(array: any[]): any[] {
-        return toZipped(array, range(0, array.length));
+        return toZipped(range(0, array.length), array);
     }
 
     /**
