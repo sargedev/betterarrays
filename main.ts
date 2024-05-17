@@ -552,7 +552,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list2
     export function difference(first: any[], second: any[]): void {
-        first = toDifference(first, second);
+        reassign(first, toDifference(first, second));
     }
 
     /**

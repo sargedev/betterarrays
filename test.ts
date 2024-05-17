@@ -244,6 +244,22 @@ function testToIntersection() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testDifference() {
+    // Test difference
+    array = ["a", "b", "c"];
+    arrays.difference(array, ["b", "c", "d"]);
+    new tests.AssertEqual(array, ["a"]);
+}
+
+function testToDifference() {
+    // Test difference
+    array = ["a", "b", "c"];
+    result = arrays.toDifference(array, ["b", "c", "d"]);
+    new tests.AssertEqual(result, ["a"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -271,3 +287,5 @@ testUnion();
 testToUnion();
 testIntersection();
 testToIntersection();
+testDifference();
+testToDifference();
