@@ -260,6 +260,22 @@ function testToDifference() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testPurge() {
+    // Test removing duplicates
+    array = ["a", "a", "b", "b", "c"];
+    arrays.purge(array);
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
+function testToPurged() {
+    // Test removing duplicates
+    array = ["a", "a", "b", "b", "c"];
+    result = arrays.toPurged(array);
+    new tests.AssertEqual(result, ["a", "b", "c"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "a", "b", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -289,3 +305,5 @@ testIntersection();
 testToIntersection();
 testDifference();
 testToDifference();
+testPurge();
+testToPurged();
