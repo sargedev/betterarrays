@@ -382,6 +382,30 @@ function testJoin() {
     new tests.AssertEqual(result, "a.b.c");
 }
 
+function testMinIndex() {
+    // Test finding min index
+    result = arrays.minIndex([4, 3, 1, 2, 5]);
+    new tests.AssertEqual(result, 2);
+}
+
+function testMin() {
+    // Test finding min element
+    result = arrays.min([4, 3, 1, 2, 5]);
+    new tests.AssertEqual(result, 1);
+}
+
+function testMaxIndex() {
+    // Test finding max index
+    result = arrays.maxIndex([4, 3, 1, 2, 5]);
+    new tests.AssertEqual(result, 4);
+}
+
+function testMax() {
+    // Test finding max element
+    result = arrays.max([4, 3, 1, 2, 5]);
+    new tests.AssertEqual(result, 5);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -425,3 +449,7 @@ testEnumerate();
 testToEnumerated();
 testRandomIndex();
 testJoin();
+testMinIndex();
+testMin();
+testMaxIndex();
+testMax();
