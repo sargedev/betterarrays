@@ -483,7 +483,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list2
     export function union(first: any[], second: any[]): void {
-        first = toUnion(first, second);
+        reassign(first, toUnion(first, second));
     }
 
     /**
@@ -588,7 +588,7 @@ namespace arrays {
                 result.push(array[i]);
             }
         }
-        array = result;
+        reassign(array, result);
     }
 
     /**
@@ -602,7 +602,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function toPurged(array: any[]): any[] {
-        let result = array;
+        let result = copy(array);
         purge(result);
         return result;
     }

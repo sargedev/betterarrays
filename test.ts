@@ -205,13 +205,27 @@ function testClear() {
 
 function testIsEmpty() {
     // Test empty array
-    array = [];
-    result = arrays.isEmpty(array);
+    result = arrays.isEmpty([]);
     new tests.AssertTrue(result);
     // Test non-empty array
-    array = ["a", "b", "c"];
-    result = arrays.isEmpty(array);
+    result = arrays.isEmpty(["a", "b", "c"]);
     new tests.AssertFalse(result);
+}
+
+function testUnion() {
+    // Test union
+    array = ["a", "b", "c"];
+    arrays.union(array, ["b", "c", "d"]);
+    new tests.AssertEqual(array, ["a", "b", "c", "d"]);
+}
+
+function testToUnion() {
+    // Test union
+    array = ["a", "b", "c"];
+    result = arrays.toUnion(array, ["b", "c", "d"]);
+    new tests.AssertEqual(result, ["a", "b", "c", "d"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
 testFindLast();
@@ -237,3 +251,5 @@ testToReversed();
 testForEach();
 testClear();
 testIsEmpty();
+testUnion();
+testToUnion();
