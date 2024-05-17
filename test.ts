@@ -276,6 +276,12 @@ function testToPurged() {
     new tests.AssertEqual(array, ["a", "a", "b", "b", "c"]);
 }
 
+function testExtract() {
+    // Test extracting
+    result = arrays.extract(["a", "b", "a", "c", "a"], "a");
+    new tests.AssertEqual(result, ["a", "a", "a"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -307,3 +313,4 @@ testDifference();
 testToDifference();
 testPurge();
 testToPurged();
+testExtract();
