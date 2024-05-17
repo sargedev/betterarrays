@@ -733,7 +733,7 @@ namespace arrays {
     /**
      * Return a range of numbers
      * @param start Starting value
-     * @param end Stopping value
+     * @param end Stopping value (not included)
      * @param step Stepping value (default is 1)
      * @returns Number array
      */

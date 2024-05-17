@@ -338,6 +338,15 @@ function testSum() {
     new tests.AssertEqual(result, 6);
 }
 
+function testRange() {
+    // Test range
+    result = arrays.range(0, 4);
+    new tests.AssertEqual(result, [0, 1, 2, 3]);
+    // Test stepping
+    result = arrays.range(0, 8, 2);
+    new tests.AssertEqual(result, [0, 2, 4, 6]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -376,3 +385,4 @@ testAllTrue();
 testAnyTrue();
 testAllEqual();
 testSum();
+testRange();
