@@ -228,6 +228,13 @@ function testToUnion() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testIntersection() {
+    // Test intersection
+    array = ["a", "b", "c"];
+    arrays.intersection(array, ["b", "c", "d"]);
+    new tests.AssertEqual(array, ["b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -253,3 +260,4 @@ testClear();
 testIsEmpty();
 testUnion();
 testToUnion();
+testIntersection();

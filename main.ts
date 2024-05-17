@@ -518,7 +518,7 @@ namespace arrays {
     //% second.shadow=variables_get
     //% second.defl=list2
     export function intersection(first: any[], second: any[]): void {
-        first = toIntersection(first, second);
+        reassign(first, toIntersection(first, second));
     }
 
     /**
