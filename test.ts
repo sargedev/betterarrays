@@ -453,6 +453,17 @@ function testToUnzipped() {
     new tests.AssertEqual(array, [[0, "a"], [1, "b"], [2, "c"]]);
 }
 
+function testShift() {
+    // Test shift
+    array = ["a", "b", "c"];
+    arrays.shift(array);
+    new tests.AssertEqual(array, ["b", "c"]);
+    // Test number of elements
+    array = ["a", "b", "c"];
+    arrays.shift(array, 2);
+    new tests.AssertEqual(array, ["c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -504,3 +515,4 @@ testSplice();
 testToSpliced();
 testUnzip();
 testToUnzipped();
+testShift();

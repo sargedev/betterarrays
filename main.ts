@@ -972,7 +972,7 @@ namespace arrays {
     //% elements.defl=1
     export function shift(array: any[], elements: number=1): void {
         if (array.length < elements) return; // todo: throw error
-        array = array.slice(elements);
+        reassign(array, array.slice(elements));
     }
 
     /**
@@ -987,7 +987,7 @@ namespace arrays {
     //% array.defl=list
     //% elements.defl=1
     export function toShifted(array: any[], elements: number=1): any[] {
-        let result = array;
+        let result = copy(array);
         shift(result, elements);
         return result;
     }
