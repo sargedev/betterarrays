@@ -485,6 +485,12 @@ function testEqual() {
     new tests.AssertFalse(result);
 }
 
+function testConcatMany() {
+    // Test concat many
+    result = arrays.concatMany([[0, 1], [2, 3], [4, 5]]);
+    new tests.AssertEqual(result, [0, 1, 2, 3, 4, 5]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -538,3 +544,4 @@ testUnzip();
 testToUnzipped();
 testShift();
 testToShifted();
+testConcatMany();
