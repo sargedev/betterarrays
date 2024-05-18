@@ -491,6 +491,12 @@ function testConcatMany() {
     new tests.AssertEqual(result, [0, 1, 2, 3, 4, 5]);
 }
 
+function testZipMany() {
+    // Test zip many
+    result = arrays.zipMany([[0, 1, 2], ["a", "b", "c"], ["A", "B", "C"]]);
+    new tests.AssertEqual(result, [[0, "a", "A"], [1, "b", "B"], [2, "c", "C"]]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -545,3 +551,4 @@ testToUnzipped();
 testShift();
 testToShifted();
 testConcatMany();
+testZipMany();
