@@ -422,14 +422,35 @@ function testToSpliced() {
     array = ["a", "b", "c", "d", "e"];
     result = arrays.toSpliced(array, 0, 2);
     new tests.AssertEqual(result, ["c", "d", "e"]);
-    // Test that original array is not modified
-    new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
     // Test splice offset
     array = ["a", "b", "c", "d", "e"];
     result = arrays.toSpliced(array, 2, 2);
     new tests.AssertEqual(result, ["a", "b", "e"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
+}
+
+function testUnzip() {
+    // Test unzip
+    array = [[0, "a"], [1, "b"], [2, "c"]];
+    arrays.unzip(array, 0);
+    new tests.AssertEqual(array, [0, 1, 2]);
+    // Test target
+    array = [[0, "a"], [1, "b"], [2, "c"]];
+    arrays.unzip(array, 1);
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
+function testToUnzipped() {
+    // Test unzip
+    array = [[0, "a"], [1, "b"], [2, "c"]];
+    result = arrays.toUnzipped(array, 0);
+    new tests.AssertEqual(result, [0, 1, 2]);
+    // Test target
+    result = arrays.toUnzipped(array, 1);
+    new tests.AssertEqual(result, ["a", "b", "c"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, [[0, "a"], [1, "b"], [2, "c"]]);
 }
 
 testFindLast();
@@ -481,3 +502,5 @@ testMaxIndex();
 testMax();
 testSplice();
 testToSpliced();
+testUnzip();
+testToUnzipped();

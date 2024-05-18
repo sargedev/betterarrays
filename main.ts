@@ -933,7 +933,7 @@ namespace arrays {
     //% array.defl=list
     //% target.defl=0
     export function unzip(array: any[], target: number): void {
-        array = toUnzipped(array, target);
+        reassign(array, toUnzipped(array, target));
     }
 
     /**
