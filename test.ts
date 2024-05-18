@@ -508,6 +508,18 @@ function testFlatten() {
     new tests.AssertEqual(array, [0, 1, [2, 3], "a", "b", "c"]);
 }
 
+function testToFlattened() {
+    // Test flatten
+    array = [[0, 1, [2, 3]], ["a", "b"], "c"];
+    result = arrays.toFlattened(array);
+    new tests.AssertEqual(result, [0, 1, 2, 3, "a", "b", "c"]);
+    // Test depth
+    result = arrays.toFlattened(array, 1);
+    new tests.AssertEqual(result, [0, 1, [2, 3], "a", "b", "c"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, [[0, 1, [2, 3]], ["a", "b"], "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -564,3 +576,4 @@ testToShifted();
 testConcatMany();
 testZipMany();
 testFlatten();
+testToFlattened();
