@@ -1050,7 +1050,7 @@ namespace arrays {
         let result: any[] = [];
 
         for (let i = 0; i < array.length; i++) {
-            if (Array.isArray(array[i]) && (max === 0 || depth <= max)) {
+            if (Array.isArray(array[i]) && (max === 0 || depth < max)) {
                 result = result.concat(_flatten(array[i], max, depth + 1));
             } else {
                 result.push(array[i]);
@@ -1071,7 +1071,7 @@ namespace arrays {
     //% array.defl=list
     //% max.defl=0
     export function flatten(array: any[], max: number=0): void {
-        array = toFlattened(array, max);
+        reassign(array, toFlattened(array, max));
     }
 
     /**
