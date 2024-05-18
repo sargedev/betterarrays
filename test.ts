@@ -464,6 +464,18 @@ function testShift() {
     new tests.AssertEqual(array, ["c"]);
 }
 
+function testToShifted() {
+    // Test shift
+    array = ["a", "b", "c"];
+    result = arrays.toShifted(array);
+    new tests.AssertEqual(result, ["b", "c"]);
+    // Test number of elements
+    result = arrays.toShifted(array, 2);
+    new tests.AssertEqual(result, ["c"]);
+    // Test that original array is not modified
+    new tests.AssertEqual(array, ["a", "b", "c"]);
+}
+
 testFindLast();
 testFindAll();
 testCount();
@@ -516,3 +528,4 @@ testToSpliced();
 testUnzip();
 testToUnzipped();
 testShift();
+testToShifted();
