@@ -476,6 +476,15 @@ function testToShifted() {
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }
 
+function testEqual() {
+    // Test equal
+    result = arrays.equal(["a", [0, 1]], ["a", [0, 1]]);
+    new tests.AssertTrue(result);
+    // Test not equal
+    result = arrays.equal(["a", [0, 1]], ["b", [0, 1]]);
+    new tests.AssertFalse(result);
+}
+
 testFindLast();
 testFindAll();
 testCount();
