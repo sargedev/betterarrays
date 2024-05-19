@@ -13,6 +13,7 @@ namespace arrays {
     const INVALID_RANGE = new text.Format("Start value ({}) must be lower than end value ({})");
     const EMPTY_ARRAY = new text.Format("Operation cannot be performed on empty array");
     const NOT_ARRAY = new text.Format("Expected array type (not {})");
+    const INVALID_SHIFT = new text.Format("Shift value ({}) cannot be bigger than array length ({})");
 
     function isInteger(value: number): boolean {
         return Math.floor(value) === value;
@@ -1076,7 +1077,10 @@ namespace arrays {
     }
 
     /**
-     * Shift array backwards by given distance
+     * Shift array backwards by given distance;
+     * Throws NON_INTEGER_VALUE if elements is not an integer;
+     * Throws NEGATIVE_VALUE if elements is less than 0;
+     * Throws INVALID_SHIFT if shift value is bigger than array length;
      * @param array Array to shift
      * @param elements Number of elements to shift
      */
@@ -1087,12 +1091,19 @@ namespace arrays {
     //% array.defl=list
     //% elements.defl=1
     export function shift(array: any[], elements: number=1): void {
-        if (array.length < elements) return; // todo: throw error
+        elements = verify(elements);
+        
+        if (array.length < elements) {
+            throw INVALID_SHIFT.format([elements.toString(), array.length.toString()]);
+        }
         reassign(array, array.slice(elements));
     }
 
     /**
-     * Return shifted copy of array
+     * Return shifted copy of array;
+     * Throws NON_INTEGER_VALUE if elements is not an integer;
+     * Throws NEGATIVE_VALUE if elements is less than 0;
+     * Throws INVALID_SHIFT if shift value is bigger than array length;
      * @param array Array to shift
      * @param elements Number of elements to shift
      */
