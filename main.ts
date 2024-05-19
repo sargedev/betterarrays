@@ -7,9 +7,14 @@ enum SortOrder {
 namespace arrays {
 
     /**
-     * Internal method; create shallow copy of array
+     * Create shallow copy of array
      * @param array Array to copy
      */
+    //% blockId=arrays_copy
+    //% block="copy $array"
+    //% group="Operations"
+    //% array.shadow=variables_get
+    //% array.defl=list
     function copy(array: any[]): any[] {
         let result = [];
         for (let i = 0; i < array.length; i++) {
