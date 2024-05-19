@@ -8,7 +8,7 @@ namespace arrays {
 
     const NON_INTEGER_VALUE = new text.Format("Value must be integer (not {})");
     const NEGATIVE_VALUE = new text.Format("Value must be non-negative (not {})");
-    const INDEX_NOT_IN_RANGE = new text.Format("Index ({}) must be in list range ({}, {})");
+    const OUT_OF_RANGE = new text.Format("Index ({}) must be in list range ({}, {})");
 
     function isInteger(value: number): boolean {
         return Math.floor(value) === value;
@@ -22,7 +22,7 @@ namespace arrays {
 
     function verifyIndex(value: number, array: any[]): number {
         value = verify(value);
-        if (!arrays.inRange(array, value)) throw INDEX_NOT_IN_RANGE.format([
+        if (!arrays.inRange(array, value)) throw OUT_OF_RANGE.format([
             value.toString(), "0", array.length.toString()
         ])
         return value;
@@ -76,7 +76,9 @@ namespace arrays {
     }
 
     /**
-     * Find all occurences of item in array
+     * Find all occurences of item in array;
+     * Throws NON_INTEGER_VALUE if max is not an integer;
+     * Throws NEGATIVE_VALUE if max is less than 0;
      * @param array Array to search
      * @param item Item to find
      * @param max Max number of ocurrences to match (0 for unlimited)
@@ -116,7 +118,9 @@ namespace arrays {
     }
 
     /**
-     * Remove all ocurrences of an item
+     * Remove all ocurrences of an item;
+     * Throws NON_INTEGER_VALUE if max is not an integer;
+     * Throws NEGATIVE_VALUE if max is less than 0;
      * @param array Array to search
      * @param item Item to remove
      * @param max Max number of items to remove (0 for unlimited)
@@ -158,7 +162,10 @@ namespace arrays {
     }
 
     /**
-     * Swap two items in an array
+     * Swap two items in an array;
+     * Throws NON_INTEGER_VALUE if first or second is not an integer;
+     * Throws NEGATIVE_VALUE if first or second is less than 0;
+     * Throws OUT_OF_RANGE if first or second is out of list range;
      * @param array Array to modify
      * @param first Index of first item
      * @param second Index of second item
