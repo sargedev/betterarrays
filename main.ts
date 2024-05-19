@@ -271,6 +271,7 @@ namespace arrays {
     export function fill(array: any[], item: any, start?: number, end?: number): void {
         start = verifyIndex(start, array);
         end = verifyIndex(end, array);
+        if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
 
         array.fill(item, start, end);
     }
@@ -399,7 +400,9 @@ namespace arrays {
     }
 
     /**
-     * Check if index is in range
+     * Check if index is in range;
+     * Throws NON_INTEGER_VALUE if index is not an integer;
+     * Throws NEGATIVE_VALUE if index is less than 0;
      * @param array Array to check against
      * @index Index to validate
      * @returns True if index is within array bounds, false if not
@@ -411,13 +414,16 @@ namespace arrays {
     //% array.defl=list
     //% index.defl=0
     export function inRange(array: any[], index: number): boolean {
+        index = verify(index);
         return index >= 0 && index < array.length;
     }
 
     /**
-     * Create array by repeating a single item
+     * Create array by repeating a single item;
+     * Throws NON_INTEGER_VALUE if repeat is not an integer;
+     * Throws NEGATIVE_VALUE if repeat is less than 0;
      * @param item Item to repeat
-     * @param times Final array length
+     * @param repeat Final array length
      * @returns Resulting array
      */
     //% blockId=arrays_repeat
@@ -425,9 +431,11 @@ namespace arrays {
     //% blockSetVariable=list
     //% group="Create"
     //% times.defl=5
-    export function repeat(item: any, times: number): any[] {
+    export function repeat(item: any, repeat: number): any[] {
+        repeat = verify(repeat);
+
         let result = [];
-        for (let i = 0; i < times; i++) {
+        for (let i = 0; i < repeat; i++) {
             result.push(item);
         }
         return result;
