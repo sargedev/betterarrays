@@ -252,6 +252,9 @@ namespace arrays {
     //% start.defl=0
     //% end.defl=1
     export function fill(array: any[], item: any, start?: number, end?: number): void {
+        start = verifyIndex(start, array);
+        end = verifyIndex(end, array);
+
         array.fill(item, start, end);
     }
 
