@@ -6,6 +6,28 @@ enum SortOrder {
 
 namespace arrays {
 
+    const NON_INTEGER_VALUE = new text.Format("Value must be integer (not {})");
+    const NEGATIVE_VALUE = new text.Format("Value must be non-negative (not {})");
+    const INDEX_NOT_IN_RANGE = new text.Format("Index ({}) must be in list range ({}, {})");
+
+    function isInteger(value: number): boolean {
+        return Math.floor(value) === value;
+    }
+
+    function verify(value: number): number {
+        if (!isInteger(value)) throw NON_INTEGER_VALUE.format([value.toString()]);
+        if (value < 0) throw NEGATIVE_VALUE.format([value.toString()]);
+        return value;
+    }
+
+    function verifyIndex(value: number, array: any[]): number {
+        value = verify(value);
+        if (!arrays.inRange(array, value)) throw INDEX_NOT_IN_RANGE.format([
+            value.toString(), "0", array.length.toString()
+        ])
+        return value;
+    }
+
     /**
      * Create shallow copy of array
      * @param array Array to copy
@@ -68,6 +90,8 @@ namespace arrays {
     //% array.shadow=variables_get
     //% max.defl=0
     export function findAll(array: any[], item: any, max: number=0): number[] {
+        max = verify(max);
+
         let result = [];
         for (let i = 0; i < array.length; i++) {
             if (checkEquality.equal(array[i], item)) result.push(i);
@@ -105,6 +129,8 @@ namespace arrays {
     //% array.defl=list
     //% max.defl=0
     export function removeAll(array: any[], item: any, max: number=0): void {
+        max = verify(max);
+
         let indicies = findAll(array, item, max);
         for (let i = indicies.length - 1; i >= 0; i--) {
             array.removeAt(indicies[i]);
@@ -145,6 +171,9 @@ namespace arrays {
     //% first.defl=0
     //% second.defl=1
     export function swap(array: any[], first: number, second: number): void {
+        first = verifyIndex(first, array);
+        second = verifyIndex(second, array);
+
         let temp = array[first];
         array[first] = array[second];
         array[second] = temp;
