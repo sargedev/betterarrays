@@ -393,8 +393,8 @@ namespace arrays {
     //% end.defl=1
     //% step.defl=1
     export function toSliced(array: any[], start?: number, end?: number, step: number=1): any[] {
-        start = verifyIndex(start, array);
-        end = verifyIndex(end, array);
+        start = verifyIndex(start || 0, array);
+        end = verifyIndex(end || array.length, array);
         if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
 
         step = verify(step);
