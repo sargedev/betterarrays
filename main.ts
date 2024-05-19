@@ -980,7 +980,10 @@ namespace arrays {
     }
 
     /**
-     * Delete multiple elements from given index
+     * Delete multiple elements from given index;
+     * Throws NON_INTEGER_VALUE if start or count are not integers;
+     * Throws NEGATIVE_VALUE if start or count are less than 0;
+     * Throws OUT_OF_RANGE if start is out of list range;
      * @param array Array to splice
      * @param start Starting index
      * @param count Delete count
@@ -993,11 +996,17 @@ namespace arrays {
     //% start.defl=0
     //% count.defl=1
     export function splice(array: any[], start: number, count: number): void {
+        start = verifyIndex(start, array);
+        count = verify(count);
+        
         array.splice(start, count);
     }
 
     /**
-     * Return spliced copy of array
+     * Return spliced copy of array;
+     * Throws NON_INTEGER_VALUE if start or count are not integers;
+     * Throws NEGATIVE_VALUE if start or count are less than 0;
+     * Throws OUT_OF_RANGE if start is out of list range;
      * @param array Array to splice
      * @param start Starting index
      * @param count Delete count
