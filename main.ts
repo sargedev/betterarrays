@@ -1175,7 +1175,6 @@ namespace arrays {
 
     function _flatten(array: any[], max: number, depth: number=0): any[] {
         let result: any[] = [];
-
         for (let i = 0; i < array.length; i++) {
             if (Array.isArray(array[i]) && (max === 0 || depth < max)) {
                 result = result.concat(_flatten(array[i], max, depth + 1));
@@ -1187,7 +1186,9 @@ namespace arrays {
     }
 
     /**
-     * Flatten array from n-dimensional array to 1D array
+     * Flatten array from n-dimensional array to 1D array;
+     * Throws NON_INTEGER_VALUE if max is not an integer;
+     * Throws NEGATIVE_VALUE if max is less than 0;
      * @param array Array to flatten
      * @param max Maximum depth (0 is unlimited)
      */
@@ -1202,7 +1203,9 @@ namespace arrays {
     }
 
     /**
-     * Return flattened 1D array from n-dimensional array
+     * Return flattened 1D array from n-dimensional array;
+     * Throws NON_INTEGER_VALUE if max is not an integer;
+     * Throws NEGATIVE_VALUE if max is less than 0;
      * @param array Array to flatten
      * @param max Maximum depth (0 is unlimited)
      * @returns Flattened array
@@ -1214,6 +1217,7 @@ namespace arrays {
     //% array.defl=list
     //% max.defl=0
     export function toFlattened(array: any[], max: number=0): any[] {
+        max = verify(max);
         return _flatten(array, max);
     }
 }
