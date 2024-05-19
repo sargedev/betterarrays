@@ -11,6 +11,7 @@ namespace arrays {
     const OUT_OF_RANGE = new text.Format("Index ({}) must be in list range ({}, {})");
     const ZERO_STEP = new text.Format("Stepping value cannot be 0");
     const INVALID_RANGE = new text.Format("Start value ({}) must be lower than end value ({})");
+    const EMPTY_ARRAY = new text.Format("Operation cannot be performed on empty array");
 
     function isInteger(value: number): boolean {
         return Math.floor(value) === value;
@@ -875,7 +876,8 @@ namespace arrays {
     }
 
     /**
-     * Return random index from array
+     * Return random index from array;
+     * Throws EMPTY_ARRAY if array is empty;
      * @param array Array to generate index from
      * @returns Array index
      */
@@ -885,7 +887,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function randomIndex(array: any[]): number {
-        if (array.length === 0) return 0; // todo: throw error
+        if (array.length === 0) throw EMPTY_ARRAY;
         return Math.randomRange(0, array.length - 1);
     }
 
