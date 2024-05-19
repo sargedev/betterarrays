@@ -920,7 +920,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function minIndex(array: number[]): number {
-        if (array.length === 0) return 0; //todo: throw error
+        if (array.length === 0) throw EMPTY_ARRAY;
         
         let smallestIndex;
         for (let i = 0; i < array.length; i++) {
@@ -955,7 +955,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function maxIndex(array: number[]): number {
-        if (array.length === 0) return 0;
+        if (array.length === 0) throw EMPTY_ARRAY;
 
         let biggestIndex;
         for (let i = 0; i < array.length; i++) {
