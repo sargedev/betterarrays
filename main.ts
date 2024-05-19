@@ -12,6 +12,7 @@ namespace arrays {
     const ZERO_STEP = new text.Format("Stepping value cannot be 0");
     const INVALID_RANGE = new text.Format("Start value ({}) must be lower than end value ({})");
     const EMPTY_ARRAY = new text.Format("Operation cannot be performed on empty array");
+    const NOT_ARRAY = new text.Format("Expected array type (not {})");
 
     function isInteger(value: number): boolean {
         return Math.floor(value) === value;
@@ -1026,7 +1027,11 @@ namespace arrays {
     }
 
     /**
-     * Reverse of zip method
+     * Reverse of zip method;
+     * Throws NON_INTEGER_VALUE if target is not an integer;
+     * Throws NEGATIVE_VALUE if target is less than 0;
+     * Throws NOT_ARRAY if element to unpack is not an array;
+     * Throws OUT_OF_RANGE if target index is bigger than pair length;
      * @param Array to unzip
      * @param target Index of desired pair element to retrieve
      */
@@ -1041,7 +1046,11 @@ namespace arrays {
     }
 
     /**
-     * Return reverse of zip method
+     * Return extracted values from zipped pairs;
+     * Throws NON_INTEGER_VALUE if target is not an integer;
+     * Throws NEGATIVE_VALUE if target is less than 0;
+     * Throws NOT_ARRAY if element to unpack is not an array;
+     * Throws OUT_OF_RANGE if target index is bigger than pair length;
      * @param array Array to unzip
      * @param target Index of desired pair element to retrieve
      * @returns Array containing extracted elements
@@ -1053,12 +1062,15 @@ namespace arrays {
     //% array.defl=list
     //% target.defl=0
     export function toUnzipped(array: any[], target: number): any[] {
+        target = verify(target);
+
         let result: any[] = [];
         for (let i = 0; i < array.length; i++) {
-            if (Array.isArray(array[i])) {
-                if ((array[i] as any[]).length > target) result.push((array[i] as any[])[target]);
-                else return []; // todo: throw error
-            } else return []; // todo: throw error
+            if (!Array.isArray(array[i])) throw NOT_ARRAY.format([typeof array[i]]);
+            if ((array[i] as any[]).length <= target) throw OUT_OF_RANGE.format([
+                target.toString(), "0", (array[i] as any[]).length.toString()
+            ])
+            result.push((array[i] as any[])[target]);
         }
         return result;
     }
