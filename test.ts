@@ -3,6 +3,14 @@
 let array: any[];
 let result: any;
 
+function testCopy() {
+    // Test copy
+    array = ["a", "b", "c"];
+    result = arrays.copy(array);
+    (result as any[]).splice(0, 2);
+    new tests.AssertNotEqual(array, result);
+}
+
 function testFindLast() {
     // Test finding single item
     result = arrays.findLast(["a", "b", "c"], "b");
@@ -520,6 +528,7 @@ function testToFlattened() {
     new tests.AssertEqual(array, [[0, 1, [2, 3]], ["a", "b"], "c"]);
 }
 
+testCopy();
 testFindLast();
 testFindAll();
 testCount();

@@ -15,7 +15,7 @@ namespace arrays {
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
-    function copy(array: any[]): any[] {
+    export function copy(array: any[]): any[] {
         let result = [];
         for (let i = 0; i < array.length; i++) {
             result.push(array[i]);
