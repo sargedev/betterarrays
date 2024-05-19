@@ -16,6 +16,11 @@ namespace arrays {
         return Math.floor(value) === value;
     }
 
+    function verifyInteger(value: number): number {
+        if (!isInteger(value)) throw NON_INTEGER_VALUE.format([value.toString()]);
+        return value;
+    }
+
     function verify(value: number): number {
         if (!isInteger(value)) throw NON_INTEGER_VALUE.format([value.toString()]);
         if (value < 0) throw NEGATIVE_VALUE.format([value.toString()]);
@@ -813,7 +818,9 @@ namespace arrays {
     }
 
     /**
-     * Return a range of numbers
+     * Return a range of numbers;
+     * Throws NON_INTEGER_VALUE if start or end are not integers;
+     * Throws INVALID_RANGE if end value is smaller than start value;
      * @param start Starting value
      * @param end Stopping value (not included)
      * @param step Stepping value (default is 1)
@@ -829,6 +836,10 @@ namespace arrays {
     //% end.defl=5
     //% step.defl=1
     export function range(start: number, end: number, step: number=1): number[] {
+        start = verifyInteger(start);
+        end = verifyInteger(end);
+        if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
+
         let result: number[] = [];
         for (let i = start; i < end; i += step) {
             result.push(i);
