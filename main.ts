@@ -9,6 +9,8 @@ namespace arrays {
     const NON_INTEGER_VALUE = new text.Format("Value must be integer (not {})");
     const NEGATIVE_VALUE = new text.Format("Value must be non-negative (not {})");
     const OUT_OF_RANGE = new text.Format("Index ({}) must be in list range ({}, {})");
+    const ZERO_STEP = new text.Format("Stepping value cannot be 0");
+    const INVALID_RANGE = new text.Format("Start value ({}) must be lower than end value ({})");
 
     function isInteger(value: number): boolean {
         return Math.floor(value) === value;
@@ -142,7 +144,9 @@ namespace arrays {
     }
 
     /**
-     * Remove all occurences of an item from a copy of the array and return it
+     * Remove all occurences of an item from a copy of the array and return it;
+     * Throws NON_INTEGER_VALUE if max is not an integer;
+     * Throws NEGATIVE_VALUE if max is less than 0;
      * @param array Array to copy and remove from
      * @param item Item to remove
      * @param max Max number of items to remove (0 for unlimited)
@@ -163,9 +167,9 @@ namespace arrays {
 
     /**
      * Swap two items in an array;
-     * Throws NON_INTEGER_VALUE if first or second is not an integer;
-     * Throws NEGATIVE_VALUE if first or second is less than 0;
-     * Throws OUT_OF_RANGE if first or second is out of list range;
+     * Throws NON_INTEGER_VALUE if first or second are not integers;
+     * Throws NEGATIVE_VALUE if first or second are less than 0;
+     * Throws OUT_OF_RANGE if first or second are out of list range;
      * @param array Array to modify
      * @param first Index of first item
      * @param second Index of second item
@@ -187,7 +191,10 @@ namespace arrays {
     }
 
     /**
-     * Swap items in array copy and return it
+     * Swap items in array copy and return it;
+     * Throws NON_INTEGER_VALUE if first or second are not integers;
+     * Throws NEGATIVE_VALUE if first or second are less than 0;
+     * Throws OUT_OF_RANGE if first or second are out of list range;
      * @param array Array to copy and modify
      * @param first Index of first item
      * @param second Index of second item
@@ -243,7 +250,10 @@ namespace arrays {
     }
 
     /**
-     * Fill array with constant item from start to end
+     * Fill array with constant item from start to end;
+     * Throws NON_INTEGER_VALUE if start or end are not integers;
+     * Throws NEGATIVE_VALUE if start or end are less than 0;
+     * Throws OUT_OF_RANGE if start or end are out of list range;
      * @param array Array to modify
      * @param start Start position
      * @param end End position (not included)
@@ -266,7 +276,10 @@ namespace arrays {
     }
 
     /**
-     * Fill array copy with constant item from start to end and return it
+     * Fill array copy with constant item from start to end and return it;
+     * Throws NON_INTEGER_VALUE if start or end are not integers;
+     * Throws NEGATIVE_VALUE if start or end are less than 0;
+     * Throws OUT_OF_RANGE if start or end are out of list range;
      * @param array Array to modify and return
      * @param start Start position
      * @param end End position (not included)
@@ -322,7 +335,12 @@ namespace arrays {
     }
 
     /**
-     * Slice an array
+     * Slice an array;
+     * Throws NON_INTEGER_VALUE if start, end or step are not integers;
+     * Throws NEGATIVE_VALUE if start, end or step are less than 0;
+     * Throws OUT_OF_RANGE if start or end are out of list range;
+     * Throws ZERO_STEP if stepping value is 0;
+     * Throws INVALID_RANGE if end value is smaller than start value;
      * @param array Array to slice
      * @param start Starting index
      * @param end Stopping index (not included)
@@ -343,7 +361,12 @@ namespace arrays {
     }
 
     /**
-     * Return a sliced section of the array
+     * Return a sliced section of the array;
+     * Throws NON_INTEGER_VALUE if start, end or step are not integers;
+     * Throws NEGATIVE_VALUE if start, end or step are less than 0;
+     * Throws OUT_OF_RANGE if start or end are out of list range;
+     * Throws ZERO_STEP if stepping value is 0;
+     * Throws INVALID_RANGE if end value is smaller than start value;
      * @param array Array to slice
      * @param start Starting index
      * @param end Stopping index (not included)
@@ -361,6 +384,13 @@ namespace arrays {
     //% end.defl=1
     //% step.defl=1
     export function toSliced(array: any[], start?: number, end?: number, step: number=1): any[] {
+        start = verifyIndex(start, array);
+        end = verifyIndex(end, array);
+        if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
+
+        step = verify(step);
+        if (step === 0) throw ZERO_STEP;
+
         let result = [];
         for (let i = start; i < end; i += step) {
             result.push(array[i]);
