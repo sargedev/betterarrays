@@ -1140,8 +1140,8 @@ namespace arrays {
     //% blockId=arrays_concatMany
     //% block="concatenate $arrays"
     //% group="Operations"
-    //% array.shadow=variables_get
-    //% array.defl=list
+    //% arrays.shadow=variables_get
+    //% arrays.defl=list
     export function concatMany(arrays: any[][]): any[] {
         let result: any[] = [];
         for (let i = 0; i < arrays.length; i++) {
