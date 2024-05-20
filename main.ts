@@ -709,11 +709,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function extract(array: any[], item: any): any[] {
-        let result = [];
-        for (let i = 0; i < array.length; i++) {
-            if (checkEquality.equal(array[i], item)) result.push(item);
-        }
-        return result;
+        return repeat(item, count(array, item));
     }
 
     /**
