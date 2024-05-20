@@ -152,7 +152,7 @@ namespace arrays {
     }
 
     /**
-     * Remove all occurences of an item from a copy of the array and return it;
+     * Return array copy with removed occurences of item;
      * Throws NON_INTEGER_VALUE if max is not an integer;
      * Throws NEGATIVE_VALUE if max is less than 0;
      * @param array Array to copy and remove from
@@ -183,7 +183,7 @@ namespace arrays {
      * @param second Index of second item
      */
     //% blockId=arrays_swap
-    //% block="swap items at indicies $first and $second in $array"
+    //% block="swap items at $first and $second in $array"
     //% group="Modify"
     //% array.shadow=variables_get
     //% array.defl=list
@@ -199,7 +199,7 @@ namespace arrays {
     }
 
     /**
-     * Swap items in array copy and return it;
+     * Return array copy with swapped items;
      * Throws NON_INTEGER_VALUE if first or second are not integers;
      * Throws NEGATIVE_VALUE if first or second are less than 0;
      * Throws OUT_OF_RANGE if first or second are out of list range;
@@ -209,7 +209,7 @@ namespace arrays {
      * @returns Array with swapped elements
      */
     //% blockId="arrays_toSwapped"
-    //% block="swap items at indicies $first and $second in $array"
+    //% block="swap items at $first and $second in $array"
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
@@ -240,7 +240,7 @@ namespace arrays {
     }
 
     /**
-     * Replaces all occurences of item with a replacement in a copy and returns it
+     * Returns array copy with all occurences of item replaced with a replacement
      * @param array Array to modify and return
      * @param item Item to replace
      * @param replacement Item to replace with
@@ -285,7 +285,7 @@ namespace arrays {
     }
 
     /**
-     * Fill array copy with constant item from start to end and return it;
+     * Return array copy with constant item filled from start to end;
      * Throws NON_INTEGER_VALUE if start or end are not integers;
      * Throws NEGATIVE_VALUE if start or end are less than 0;
      * Throws OUT_OF_RANGE if start or end are out of list range;
