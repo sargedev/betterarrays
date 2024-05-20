@@ -880,7 +880,7 @@ namespace arrays {
      * @returns Array index
      */
     //% blockId=arrays_randomIndex
-    //% block="random index in $array"
+    //% block="random index from $array"
     //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
@@ -913,7 +913,7 @@ namespace arrays {
      * @retuns Index of smallest number
      */
     //% blockId=arrays_minIndex
-    //% block="index of smallest element of $array"
+    //% block="index of smallest element in $array"
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
@@ -934,7 +934,7 @@ namespace arrays {
      * @returns Smallest number in array
      */
     //% blockId=arrays_min
-    //% block="smallest element of $array"
+    //% block="smallest element in $array"
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
@@ -1024,7 +1024,7 @@ namespace arrays {
     }
 
     /**
-     * Reverse of zip method;
+     * Extract values from zipped pairs;
      * Throws NON_INTEGER_VALUE if target is not an integer;
      * Throws NEGATIVE_VALUE if target is less than 0;
      * Throws NOT_ARRAY if element to unpack is not an array;
