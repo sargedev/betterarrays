@@ -311,7 +311,7 @@ namespace arrays {
     }
 
     /**
-     * Concatenate one array to another
+     * Concatenate second array to first
      * @param first First array (modified)
      * @param second Second array
      */
@@ -435,7 +435,7 @@ namespace arrays {
      * @returns Resulting array
      */
     //% blockId=arrays_repeat
-    //% block="create array from $item repeated $times times"
+    //% block=" repeat $item $times times"
     //% blockSetVariable=list
     //% group="Create"
     //% times.defl=5
@@ -465,7 +465,7 @@ namespace arrays {
     }
 
     /**
-     * Create pairs from two arrays
+     * Zip second array with first
      * @param first First array
      * @param second Second array
      */
