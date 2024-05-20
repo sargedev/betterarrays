@@ -263,8 +263,8 @@ namespace arrays {
      * Throws NEGATIVE_VALUE if start or end are less than 0;
      * Throws OUT_OF_RANGE if start or end are out of list range;
      * @param array Array to modify
-     * @param start Start position
-     * @param end End position (not included)
+     * @param start Start position (optional)
+     * @param end End position (optional, not included)
      * @param item Item to fill with
      */
     //% blockId=arrays_fill
@@ -290,8 +290,8 @@ namespace arrays {
      * Throws NEGATIVE_VALUE if start or end are less than 0;
      * Throws OUT_OF_RANGE if start or end are out of list range;
      * @param array Array to modify and return
-     * @param start Start position
-     * @param end End position (not included)
+     * @param start Start position (optional)
+     * @param end End position (optional, not included)
      * @param item Item to fill with
      * @returns Array copy filled with items
      */
