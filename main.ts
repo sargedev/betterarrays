@@ -726,7 +726,7 @@ namespace arrays {
     }
 
     /**
-     * Sorts array
+     * Sort array
      * @param array Array to sort
      * @param order Order (default is ascending)
      */
@@ -847,7 +847,7 @@ namespace arrays {
     }
 
     /**
-     * Enumerate array
+     * Enumerate array (index-value pairs)
      * @param Array to enumerate
      */
     //% blockId=arrays_enumerate
