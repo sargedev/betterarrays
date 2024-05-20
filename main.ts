@@ -520,7 +520,7 @@ namespace arrays {
      * @param array Array to iterate through
      */
     //% blockId=arrays_forEach
-    //% block="for each $value $index in $array"
+    //% block="for $value $index in $array"
     //% draggableParameters
     //% handlerStatement
     //% group="Operations"
@@ -533,7 +533,7 @@ namespace arrays {
     }
 
     /**
-     * Removes all items from array
+     * Remove all items from array
      * @param array Array to clear
      */
     //% blockId=arrays_clear
@@ -546,7 +546,7 @@ namespace arrays {
     }
 
     /**
-     * Checks if array is empty
+     * Check if array is empty
      * @param array Array to check
      * @returns True if array length is 0, false if not
      */
@@ -560,8 +560,8 @@ namespace arrays {
     }
 
     /**
-     * Adds elements from second array to first array;
-     * Removes all duplicates
+     * Unionize first array with second;
+     * Removes all duplicates;
      * @param first First array
      * @param second Second array
      */
@@ -577,11 +577,11 @@ namespace arrays {
     }
 
     /**
-     * Returns array containing elements that are in either one or other array;
+     * Return union of two arrays;
      * Removes all duplicates
      * @param first First array
      * @param second Second array
-     * @returns Union of both arrays
+     * @returns Union of two arrays
      */
     //% blockId=arrays_toUnion
     //% block="union of $first and $second"
@@ -595,7 +595,7 @@ namespace arrays {
     }
 
     /**
-     * Creates intersection of two arrays
+     * Intersect first array with second;
      * Removes all duplicates
      * @param first First array
      * @param second Second array
@@ -612,7 +612,7 @@ namespace arrays {
     }
 
     /**
-     * Returns array containing elements that are in both arrays;
+     * Return intersection of two arrays;
      * Removes all duplicates
      * @param first First array
      * @param second Second array
@@ -646,7 +646,7 @@ namespace arrays {
     }
 
     /**
-     * Returns array containing elements from the first, but not the second array
+     * Returns difference of two arrays
      * @param first First array
      * @param second Second array
      * @returns Difference of arrays
