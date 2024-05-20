@@ -359,14 +359,14 @@ function testEnumerate() {
     // Test enumeration
     array = ["a", "b", "c"];
     arrays.enumerate(array);
-    new tests.AssertEqual(array, [[0, "a"], [1, "b"], [2, "c"]]);
+    new tests.AssertEqual(array, [["a", 0], ["b", 1], ["c", 2]]);
 }
 
 function testToEnumerated() {
     // Test enumeration
     array = ["a", "b", "c"];
     result = arrays.toEnumerated(array);
-    new tests.AssertEqual(result, [[0, "a"], [1, "b"], [2, "c"]]);
+    new tests.AssertEqual(result, [["a", 0], ["b", 1], ["c", 2]]);
     // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c"]);
 }

@@ -847,7 +847,7 @@ namespace arrays {
     }
 
     /**
-     * Enumerate array (index-value pairs)
+     * Enumerate array (value-index pairs)
      * @param Array to enumerate
      */
     //% blockId=arrays_enumerate
@@ -860,7 +860,7 @@ namespace arrays {
     }
     
     /**
-     * Return enumerated array (index-value pairs)
+     * Return enumerated array (value-index pairs)
      * @param array Array to enumerate
      * @returns Enumeration
      */
@@ -870,7 +870,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function toEnumerated(array: any[]): any[] {
-        return toZipped(range(0, array.length), array);
+        return toZipped(array, range(0, array.length));
     }
 
     /**
