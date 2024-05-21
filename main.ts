@@ -410,7 +410,6 @@ namespace arrays {
     /**
      * Check if index is in range;
      * Throws NON_INTEGER_VALUE if index is not an integer;
-     * Throws NEGATIVE_VALUE if index is less than 0;
      * @param array Array to check against
      * @index Index to validate
      * @returns True if index is within array bounds, false if not
@@ -422,7 +421,7 @@ namespace arrays {
     //% array.defl=list
     //% index.defl=0
     export function inRange(array: any[], index: number): boolean {
-        index = verify(index);
+        index = verifyInteger(index);
         return index >= 0 && index < array.length;
     }
 
