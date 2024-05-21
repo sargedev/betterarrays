@@ -33,6 +33,12 @@ function testFindAll() {
     // Test finding non-existent item
     result = arrays.findAll(["a", "b", "c"], "d");
     new tests.AssertEqual(result, []);
+
+    // Test exception
+    new tests.AssertRaises(
+        () => arrays.findAll(["a", "b", "a", "c"], "a", 0.5),
+        "Value must be integer (not 0.5)"
+    )
 }
 
 function testCount() {
