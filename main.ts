@@ -25,7 +25,7 @@ namespace arrays {
     }
 
     function verify(value: number): number {
-        if (!isInteger(value)) throw NON_INTEGER_VALUE.format([value.toString()]);
+        value = verifyInteger(value);
         if (value < 0) throw NEGATIVE_VALUE.format([value.toString()]);
         return value;
     }
