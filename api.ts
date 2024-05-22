@@ -1160,8 +1160,8 @@ namespace arrays {
     //% blockId=arrays_zipMany
     //% block="zip $arrays"
     //% group="Operations"
-    //% array.shadow=variables_get
-    //% array.defl=list
+    //% arrays.shadow=variables_get
+    //% arrays.defl=list
     export function zipMany(arrays: any[][]): any[][] {
         let result: any[][] = [];
         for (let i = 0; arrays.every((value) => i < value.length); i++) {
