@@ -152,6 +152,41 @@ function testToSwapped() {
     new tests.AssertEqual(result, ["c", "b", "a"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c"]);
+
+    // Test exceptions
+    // Test non-integer value
+    // First index
+    new tests.AssertRaises(
+        () => arrays.toSwapped(["a", "b"], 0.5, 0),
+        "Value must be integer (not 0.5)"
+    )
+    // Second index
+    new tests.AssertRaises(
+        () => arrays.toSwapped(["a", "b"], 0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    // First index
+    new tests.AssertRaises(
+        () => arrays.toSwapped(["a", "b"], -1, 0),
+        "Value must not be negative (not -1)"
+    )
+    // Second index
+    new tests.AssertRaises(
+        () => arrays.toSwapped(["a", "b"], -1, 0),
+        "Value must not be negative (not -1)"
+    )
+    // Test out of range
+    // First index
+    new tests.AssertRaises(
+        () => arrays.toSwapped(["a", "b"], 0, 2),
+        "Index (2) must be in list range (0, 2)"
+    )
+    // Second index
+    new tests.AssertRaises(
+        () => arrays.toSwapped(["a", "b"], 2, 0),
+        "Index (2) must be in list range (0, 2)"
+    )
 }
 
 function testReplace() {
