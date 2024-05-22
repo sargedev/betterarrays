@@ -318,7 +318,7 @@ namespace arrays {
      * @param second Second array
      */
     //% blockId=arrays_toConcated
-    //% block="$first concatenated with $second"
+    //% block="concatenate $second to $first"
     //% group="Operations"
     //% first.shadow=variables_get
     //% first.defl=list1
