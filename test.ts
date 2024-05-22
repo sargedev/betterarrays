@@ -89,6 +89,18 @@ function testToRemovedAll() {
     // Test limit
     result = arrays.toRemovedAll(array, "a", 1);
     new tests.AssertEqual(result, ["b", "c", "a", "d"]);
+
+    // Test exceptions
+    // Test non-integer value
+    new tests.AssertRaises(
+        () => arrays.toRemovedAll([], null, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    new tests.AssertRaises(
+        () => arrays.toRemovedAll([], null, -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testSwap() {
