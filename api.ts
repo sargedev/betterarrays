@@ -262,6 +262,7 @@ namespace arrays {
      * Throws NON_INTEGER_VALUE if start or end are not integers;
      * Throws NEGATIVE_VALUE if start or end are less than 0;
      * Throws OUT_OF_RANGE if start or end are out of list range;
+     * Throws INVALID_RANGE if end value is smaller than start value;
      * @param array Array to modify
      * @param start Start position (optional)
      * @param end End position (optional, not included)
@@ -289,6 +290,7 @@ namespace arrays {
      * Throws NON_INTEGER_VALUE if start or end are not integers;
      * Throws NEGATIVE_VALUE if start or end are less than 0;
      * Throws OUT_OF_RANGE if start or end are out of list range;
+     * Throws INVALID_RANGE if end value is smaller than start value;
      * @param array Array to modify and return
      * @param start Start position (optional)
      * @param end End position (optional, not included)
