@@ -39,6 +39,10 @@ function testFindAll() {
         () => arrays.findAll(["a", "b", "a", "c"], "a", 0.5),
         "Value must be integer (not 0.5)"
     )
+    new tests.AssertRaises(
+        () => arrays.findAll(["a", "b", "a", "c"], "a", -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testCount() {

@@ -7,7 +7,7 @@ enum SortOrder {
 namespace arrays {
 
     const NON_INTEGER_VALUE = new text.Format("Value must be integer (not {})");
-    const NEGATIVE_VALUE = new text.Format("Value must be non-negative (not {})");
+    const NEGATIVE_VALUE = new text.Format("Value must not be negative (not {})");
     const OUT_OF_RANGE = new text.Format("Index ({}) must be in list range ({}, {})");
     const ZERO_STEP = new text.Format("Stepping value cannot be 0");
     const INVALID_RANGE = new text.Format("Start value ({}) must be lower than end value ({})");
