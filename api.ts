@@ -4,6 +4,7 @@ enum SortOrder {
     Descending
 }
 
+//% groups=["Mutual Operations", "Checks"]
 namespace arrays {
 
     const NON_INTEGER_VALUE = new text.Format("Value must be integer (not {})");
@@ -96,7 +97,7 @@ namespace arrays {
      */
     //% blockId=arrays_findAll
     //% block="find occurences of $item in $array || up to $max"
-    //% group="Operations"
+    //% group="Read"
     //% expandableArgumentMode=enabled
     //% array.defl=list
     //% array.shadow=variables_get
@@ -120,7 +121,7 @@ namespace arrays {
      */
     //% blockId=arrays_count
     //% block="count occurences of $item in $array"
-    //% group="Operations"
+    //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
     export function count(array: any[], item: any): number {
@@ -319,7 +320,7 @@ namespace arrays {
      */
     //% blockId=arrays_toConcated
     //% block="concatenate $second to $first"
-    //% group="Operations"
+    //% group="Modify"
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -359,7 +360,7 @@ namespace arrays {
      */
     //% blockId=arrays_slice
     //% block="slice $array || from $start | to $end | with step $step"
-    //% group="Operations"
+    //% group="Modify"
     //% expandableArgumentMode=enabled
     //% inlineInputMode=inline
     //% array.shadow=variables_get
@@ -418,7 +419,7 @@ namespace arrays {
      */
     //% blockId=arrays_inRange
     //% block="$index is in range of $array"
-    //% group="Read"
+    //% group="Checks"
     //% array.shadow=variables_get
     //% array.defl=list
     //% index.defl=0
@@ -436,7 +437,7 @@ namespace arrays {
      * @returns Resulting array
      */
     //% blockId=arrays_repeat
-    //% block=" repeat $item $repeat times"
+    //% block="repeat $item $repeat times"
     //% blockSetVariable=list
     //% group="Create"
     //% times.defl=5
@@ -458,7 +459,7 @@ namespace arrays {
      */
     //% blockId=arrays_includes
     //% block="$array includes $item"
-    //% group="Read"
+    //% group="Checks"
     //% array.shadow=variables_get
     //% array.defl=list
     export function includes(array: any[], item: any): boolean {
@@ -491,7 +492,7 @@ namespace arrays {
     //% blockId=arrays_toZipped
     //% block="zip $first with $second"
     //% blockSetVariable=zipped
-    //% group="Create"
+    //% group="Operations"
     //% first.shadow=variables_get
     //% first.defl=list
     //% second.shadow=variables_get
@@ -539,7 +540,7 @@ namespace arrays {
      */
     //% blockId=arrays_clear
     //% block="clear $array"
-    //% group="Operations"
+    //% group="Modify"
     //% array.shadow=variables_get
     //% array.defl=list
     export function clear(array: any[]): void {
@@ -553,7 +554,7 @@ namespace arrays {
      */
     //% blockId=arrays_isEmpty
     //% block="$array is empty"
-    //% group="Read"
+    //% group="Checks"
     //% array.shadow=variables_get
     //% array.defl=list
     export function isEmpty(array: any[]): boolean {
@@ -586,7 +587,7 @@ namespace arrays {
      */
     //% blockId=arrays_toUnion
     //% block="union of $first and $second"
-    //% group="Operations"
+    //% group="Mutual Operations"
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -621,7 +622,7 @@ namespace arrays {
      */
     //% blockId=arrays_toIntersection
     //% block="intersection of $first and $second"
-    //% group="Operations"
+    //% group="Mutual Operations"
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -654,7 +655,7 @@ namespace arrays {
      */
     //% blockId=arrays_toDifference
     //% block="difference of $first and $second"
-    //% group="Operations"
+    //% group="Mutual Operations"
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -669,7 +670,7 @@ namespace arrays {
      */
     //% blockId=arrays_purge
     //% block="remove duplicates from $array"
-    //% group="Operations"
+    //% group="Modify"
     //% array.shadow=variables_get
     //% array.defl=list
     export function purge(array: any[]): void {
@@ -720,6 +721,7 @@ namespace arrays {
      */
     //% blockId=arrays_toString
     //% block="convert $array to string"
+    //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
     export function toString(array: any[]): string {
@@ -767,7 +769,7 @@ namespace arrays {
      */
     //% blockId=arrays_allTrue
     //% block="all elements in $array are true"
-    //% group="Operations"
+    //% group="Checks"
     //% array.shadow=variables_get
     //% array.defl=list
     export function allTrue(array: any[]): boolean {
@@ -781,7 +783,7 @@ namespace arrays {
      */
     //% blockId=arrays_anyTrue
     //% block="any element in $array is true"
-    //% group="Operations"
+    //% group="Checks"
     //% array.shadow=variables_get
     //% array.defl=list
     export function anyTrue(array: any[]): boolean {
@@ -796,7 +798,7 @@ namespace arrays {
      */
     //% blockId=arrays_allEqual
     //% block="all elements in $array = $item"
-    //% group="Operations"
+    //% group="Checks"
     //% array.shadow=variables_get
     //% array.defl=list
     export function allEqual(array: any[], item: any): boolean {
@@ -915,7 +917,7 @@ namespace arrays {
      */
     //% blockId=arrays_minIndex
     //% block="index of smallest element in $array"
-    //% group="Operations"
+    //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
     export function minIndex(array: number[]): number {
@@ -936,7 +938,7 @@ namespace arrays {
      */
     //% blockId=arrays_min
     //% block="smallest element in $array"
-    //% group="Operations"
+    //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
     export function min(array: number[]): number {
@@ -950,7 +952,7 @@ namespace arrays {
      */
     //% blockId=arrays_maxIndex
     //% block="index of biggest element in $array"
-    //% group="Operations"
+    //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
     export function maxIndex(array: number[]): number {
@@ -971,7 +973,7 @@ namespace arrays {
      */
     //% blockId=arrays_max
     //% block="biggest element in $array"
-    //% group="Operations"
+    //% group="Read"
     //% array.shadow=variables_get
     //% array.defl=list
     export function max(array: number[]): number {
@@ -1124,7 +1126,7 @@ namespace arrays {
      */
     //% blockId=arrays_equal
     //% block="$first = $second"
-    //% group="Operations"
+    //% group="Checks"
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
