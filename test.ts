@@ -34,13 +34,15 @@ function testFindAll() {
     result = arrays.findAll(["a", "b", "c"], "d");
     new tests.AssertEqual(result, []);
 
-    // Test exception
+    // Test exceptions
+    // Test non-integer value
     new tests.AssertRaises(
-        () => arrays.findAll(["a", "b", "a", "c"], "a", 0.5),
+        () => arrays.findAll([], null, 0.5),
         "Value must be integer (not 0.5)"
     )
+    // Test negative value
     new tests.AssertRaises(
-        () => arrays.findAll(["a", "b", "a", "c"], "a", -1),
+        () => arrays.findAll([], null, -1),
         "Value must not be negative (not -1)"
     )
 }
@@ -63,6 +65,18 @@ function testRemoveAll() {
     result = ["a", "b", "c", "a", "d"];
     arrays.removeAll(result, "a", 1);
     new tests.AssertEqual(result, ["b", "c", "a", "d"]);
+
+    // Test exceptions
+    // Test non-integer value
+    new tests.AssertRaises(
+        () => arrays.removeAll([], null, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    new tests.AssertRaises(
+        () => arrays.removeAll([], null, -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testToRemovedAll() {
