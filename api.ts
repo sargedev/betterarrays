@@ -970,7 +970,7 @@ namespace arrays {
      * @returns Biggest number in array
      */
     //% blockId=arrays_max
-    //% block="biggest element in array"
+    //% block="biggest element in $array"
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
