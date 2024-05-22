@@ -10,7 +10,8 @@
     "files": [
         "main.ts",
         "README.md",
-        "assets.json"
+        "assets.json",
+        "api.ts"
     ],
     "testFiles": [
         "test.ts"
