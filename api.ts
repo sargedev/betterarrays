@@ -1017,7 +1017,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     //% start.defl=0
-    //$ count.defl=1
+    //% count.defl=1
     export function toSpliced(array: any[], start: number, count: number): any[] {
         let result = copy(array);
         result.splice(start, count);
