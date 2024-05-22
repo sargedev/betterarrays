@@ -132,6 +132,17 @@ function testSwap() {
         () => arrays.swap(["a", "b"], -1, 0),
         "Value must not be negative (not -1)"
     )
+    // Test out of range
+    // First index
+    new tests.AssertRaises(
+        () => arrays.swap(["a", "b"], 0, 2),
+        "Index (2) must be in list range (0, 2)"
+    )
+    // Second index
+    new tests.AssertRaises(
+        () => arrays.swap(["a", "b"], 2, 0),
+        "Index (2) must be in list range (0, 2)"
+    )
 }
 
 function testToSwapped() {
