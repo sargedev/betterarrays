@@ -491,7 +491,6 @@ namespace arrays {
      */
     //% blockId=arrays_toZipped
     //% block="zip $first with $second"
-    //% blockSetVariable=zipped
     //% group="Operations"
     //% first.shadow=variables_get
     //% first.defl=list
