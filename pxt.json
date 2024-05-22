@@ -5,7 +5,7 @@
         "device": "*",
         "Stringify": "github:sargedev/stringify#fa05269e440fcd3b4dd21bfe2c5f9de4cd755c69",
         "Tests": "github:sargedev/tests#f8e799d1b5711912e07db080e31847405340f702",
-        "String formatting": "github:sargedev/string-formatting#280a0c701bad535ded5ac9546faaa643d6800ba2"
+        "String formatting": "github:sargedev/string-formatting#5c745be130577a037594a8b3ff2e5407acf15b35"
     },
     "files": [
         "main.ts",

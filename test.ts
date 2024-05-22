@@ -236,7 +236,7 @@ function testFill() {
     )
     // Test out of range value
     // Test start value
-    /*
+    
     new tests.AssertRaises(
         () => arrays.fill(["a", "b", "c"], "a", 4, 0),
         "Index (4) must be in list range (0, 3)"
@@ -246,7 +246,7 @@ function testFill() {
         () => arrays.fill(["a", "b", "c"], "a", 0, 4),
         "Index (4) must be in list range (0, 3)"
     )
-    */
+    
     // Test invalid range values
     new tests.AssertRaises(
         () => arrays.fill(["a", "b", "c"], "a", 1, 0),
@@ -261,6 +261,53 @@ function testToFilled() {
     new tests.AssertEqual(result, ["a", "f", "f", "f", "e"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
+
+    // Test fill
+    result = ["a", "b", "c", "d", "e"];
+    arrays.fill(result, "f", 1, 4);
+    new tests.AssertEqual(result, ["a", "f", "f", "f", "e"]);
+
+    // Test exceptions
+    // Test non-integer value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.toFilled(["a", "b", "c"], "a", 0.5, 1),
+        "Value must be integer (not 0.5)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.toFilled(["a", "b", "c"], "a", 0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.toFilled(["a", "b", "c"], "a", -1, 0),
+        "Value must not be negative (not -1)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.toFilled(["a", "b", "c"], "a", 0, -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test out of range value
+    // Test start value
+
+    new tests.AssertRaises(
+        () => arrays.toFilled(["a", "b", "c"], "a", 4, 0),
+        "Index (4) must be in list range (0, 3)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.toFilled(["a", "b", "c"], "a", 0, 4),
+        "Index (4) must be in list range (0, 3)"
+    )
+
+    // Test invalid range values
+    new tests.AssertRaises(
+        () => arrays.toFilled(["a", "b", "c"], "a", 1, 0),
+        "Start value (1) must be lower than end value (0)"
+    )
 }
 
 function testConcat() {
