@@ -436,7 +436,7 @@ namespace arrays {
      * @returns Resulting array
      */
     //% blockId=arrays_repeat
-    //% block=" repeat $item $times times"
+    //% block=" repeat $item $repeat times"
     //% blockSetVariable=list
     //% group="Create"
     //% times.defl=5
