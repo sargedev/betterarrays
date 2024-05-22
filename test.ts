@@ -108,6 +108,30 @@ function testSwap() {
     result = ["a", "b", "c"];
     arrays.swap(result, 0, 2);
     new tests.AssertEqual(result, ["c", "b", "a"]);
+
+    // Test exceptions
+    // Test non-integer value
+    // First index
+    new tests.AssertRaises(
+        () => arrays.swap([], 0.5, 0),
+        "Value must be integer (not 0.5)"
+    )
+    // Second index
+    new tests.AssertRaises(
+        () => arrays.swap([], 0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    // First index
+    new tests.AssertRaises(
+        () => arrays.swap([], -1, 0),
+        "Value must not be negative (not -1)"
+    )
+    // Second index
+    new tests.AssertRaises(
+        () => arrays.swap([], -1, 0),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testToSwapped() {
