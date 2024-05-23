@@ -856,6 +856,18 @@ function testUnzip() {
     array = [[0, "a"], [1, "b"], [2, "c"]];
     arrays.unzip(array, 1);
     new tests.AssertEqual(array, ["a", "b", "c"]);
+
+    // Test exceptions
+    // Test non-integer values
+    new tests.AssertRaises(
+        () => arrays.unzip([["a"], ["b"]], 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative values
+    new tests.AssertRaises(
+        () => arrays.unzip([["a"], ["b"]], -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testToUnzipped() {
