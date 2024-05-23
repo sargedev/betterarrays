@@ -820,7 +820,9 @@ namespace arrays {
 
     /**
      * Return a range of numbers;
-     * Throws NON_INTEGER_VALUE if start or end are not integers;
+     * Throws NON_INTEGER_VALUE if start, end or step are not integers;
+     * Throws NEGATIVE_VALUE if step is less than 0;
+     * Throws ZERO_STEP if stepping value is 0;
      * Throws INVALID_RANGE if end value is smaller than start value;
      * @param start Starting value
      * @param end Stopping value (not included)
@@ -840,6 +842,9 @@ namespace arrays {
         start = verifyInteger(start);
         end = verifyInteger(end);
         if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
+
+        step = verify(step);
+        if (step === 0) throw ZERO_STEP.format();
 
         let result: number[] = [];
         for (let i = start; i < end; i += step) {
