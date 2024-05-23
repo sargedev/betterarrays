@@ -868,6 +868,11 @@ function testUnzip() {
         () => arrays.unzip([["a"], ["b"]], -1),
         "Value must not be negative (not -1)"
     )
+    // Test non-array values
+    new tests.AssertRaises(
+        () => arrays.unzip([["a"], "b"], 0),
+        "Expected array type (not string)"
+    )
 }
 
 function testToUnzipped() {
