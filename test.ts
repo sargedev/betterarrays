@@ -774,6 +774,19 @@ function testSplice() {
     array = ["a", "b", "c", "d", "e"];
     arrays.splice(array, 2, 2);
     new tests.AssertEqual(array, ["a", "b", "e"]);
+
+    // Test exceptions
+    // Test non-integer values
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.splice(["a", "b", "c"], 0.5, 0),
+        "Value must be integer (not 0.5)"
+    )
+    // Test count value
+    new tests.AssertRaises(
+        () => arrays.splice(["a", "b", "c"], 0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
 }
 
 function testToSpliced() {
