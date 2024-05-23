@@ -692,6 +692,11 @@ function testRange() {
         () => arrays.range(0, 1, 0),
         "Stepping value cannot be 0"
     )
+    // Test invalid range values
+    new tests.AssertRaises(
+        () => arrays.range(1, 0),
+        "Start value (1) must be lower than end value (0)"
+    )
 }
 
 function testEnumerate() {
