@@ -458,6 +458,13 @@ function testInRange() {
     // Test not in range
     result = arrays.inRange(["a", "b", "c"], 3);
     new tests.AssertFalse(result);
+
+    // Test exceptions
+    // Test non-integer value
+    new tests.AssertRaises(
+        () => arrays.inRange([], 0.5),
+        "Value must be integer (not 0.5)"
+    )
 }
 
 function testRepeat() {
