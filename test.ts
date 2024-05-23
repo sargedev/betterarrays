@@ -816,6 +816,35 @@ function testToSpliced() {
     new tests.AssertEqual(result, ["a", "b", "e"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c", "d", "e"]);
+
+    // Test exceptions
+    // Test non-integer values
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.toSpliced(["a", "b", "c"], 0.5, 0),
+        "Value must be integer (not 0.5)"
+    )
+    // Test count value
+    new tests.AssertRaises(
+        () => arrays.toSpliced(["a", "b", "c"], 0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative values
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.toSpliced(["a", "b", "c"], -1, 0),
+        "Value must not be negative (not -1)"
+    )
+    // Test count value
+    new tests.AssertRaises(
+        () => arrays.toSpliced(["a", "b", "c"], 0, -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test out of range value
+    new tests.AssertRaises(
+        () => arrays.toSpliced(["a", "b", "c"], 3, 0),
+        "Index (3) must be in list range (0, 3)"
+    )
 }
 
 function testUnzip() {
