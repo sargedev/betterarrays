@@ -923,6 +923,23 @@ function testShift() {
     array = ["a", "b", "c"];
     arrays.shift(array, 2);
     new tests.AssertEqual(array, ["c"]);
+
+    // Test exceptions
+    // Test non-integer values
+    new tests.AssertRaises(
+        () => arrays.shift(["a"], 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative values
+    new tests.AssertRaises(
+        () => arrays.shift(["a"], -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test invalid shift values
+    new tests.AssertRaises(
+        () => arrays.shift(["a"], 2),
+        "Shift value (2) cannot be bigger than array length (1)"
+    )
 }
 
 function testToShifted() {
