@@ -1025,6 +1025,18 @@ function testToFlattened() {
     new tests.AssertEqual(result, [0, 1, [2, 3], "a", "b", "c"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, [[0, 1, [2, 3]], ["a", "b"], "c"]);
+
+    // Test exceptions
+    // Test non-integer value
+    new tests.AssertRaises(
+        () => arrays.toFlattened([], 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    new tests.AssertRaises(
+        () => arrays.toFlattened([], -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 testCopy();
