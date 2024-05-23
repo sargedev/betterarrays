@@ -873,6 +873,11 @@ function testUnzip() {
         () => arrays.unzip([["a"], "b"], 0),
         "Expected array type (not string)"
     )
+    // Test out of range values
+    new tests.AssertRaises(
+        () => arrays.unzip([["a"],["b"]], 1),
+        "Index (1) must be in list range (0, 1)"
+    )
 }
 
 function testToUnzipped() {
