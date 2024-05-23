@@ -890,6 +890,28 @@ function testToUnzipped() {
     new tests.AssertEqual(result, ["a", "b", "c"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, [[0, "a"], [1, "b"], [2, "c"]]);
+
+    // Test exceptions
+    // Test non-integer values
+    new tests.AssertRaises(
+        () => arrays.toUnzipped([["a"], ["b"]], 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative values
+    new tests.AssertRaises(
+        () => arrays.toUnzipped([["a"], ["b"]], -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test non-array values
+    new tests.AssertRaises(
+        () => arrays.toUnzipped([["a"], "b"], 0),
+        "Expected array type (not string)"
+    )
+    // Test out of range values
+    new tests.AssertRaises(
+        () => arrays.toUnzipped([["a"], ["b"]], 1),
+        "Index (1) must be in list range (0, 1)"
+    )
 }
 
 function testShift() {
