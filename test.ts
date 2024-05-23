@@ -664,6 +664,29 @@ function testRange() {
     // Test stepping
     result = arrays.range(0, 8, 2);
     new tests.AssertEqual(result, [0, 2, 4, 6]);
+
+    // Test exceptions
+    // Test non-integer value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.range(0.5, 1),
+        "Value must be integer (not 0.5)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.range(0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test step value
+    new tests.AssertRaises(
+        () => arrays.range(0, 1, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    new tests.AssertRaises(
+        () => arrays.range(0, 1, -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testEnumerate() {
