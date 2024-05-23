@@ -394,6 +394,61 @@ function testToSliced() {
     new tests.AssertEqual(result, ["b", "c"]);
     // Test that original array is not modified
     new tests.AssertEqual(array, ["a", "b", "c", "d"]);
+
+    // Test exceptions
+    // Test non-integer value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test step value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 0, 1, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 0, -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test step value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 0, 1, -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test out of range value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 4),
+        "Index (4) must be in list range (0, 3)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 0, 4),
+        "Index (4) must be in list range (0, 3)"
+    )
+    // Test zero step value
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 0, 1, 0),
+        "Stepping value cannot be 0"
+    )
+    // Test invalid range values
+    new tests.AssertRaises(
+        () => arrays.toSliced(["a", "b", "c"], 1, 0),
+        "Start value (1) must be lower than end value (0)"
+    )
 }
 
 function testInRange() {
