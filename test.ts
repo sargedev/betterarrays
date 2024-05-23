@@ -798,6 +798,11 @@ function testSplice() {
         () => arrays.splice(["a", "b", "c"], 0, -1),
         "Value must not be negative (not -1)"
     )
+    // Test out of range value
+    new tests.AssertRaises(
+        () => arrays.splice(["a", "b", "c"], 3, 0),
+        "Index (3) must be in list range (0, 3)"
+    )
 }
 
 function testToSpliced() {
