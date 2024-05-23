@@ -892,7 +892,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function randomIndex(array: any[]): number {
-        if (array.length === 0) throw EMPTY_ARRAY;
+        if (array.length === 0) throw EMPTY_ARRAY.format();
         return Math.randomRange(0, array.length - 1);
     }
 
@@ -925,7 +925,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function minIndex(array: number[]): number {
-        if (array.length === 0) throw EMPTY_ARRAY;
+        if (array.length === 0) throw EMPTY_ARRAY.format();
 
         let smallestIndex;
         for (let i = 0; i < array.length; i++) {
@@ -960,7 +960,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function maxIndex(array: number[]): number {
-        if (array.length === 0) throw EMPTY_ARRAY;
+        if (array.length === 0) throw EMPTY_ARRAY.format();
 
         let biggestIndex;
         for (let i = 0; i < array.length; i++) {

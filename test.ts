@@ -723,6 +723,13 @@ function testRandomIndex() {
         new tests.AssertGreaterEqual(result, 0);
         new tests.AssertLess(result, array.length);
     }
+
+    // Test exceptions
+    // Test empty array
+    new tests.AssertRaises(
+        () => arrays.randomIndex([]),
+        "Operation cannot be performed on empty array"
+    )
 }
 
 function testJoin() {
