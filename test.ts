@@ -787,6 +787,17 @@ function testSplice() {
         () => arrays.splice(["a", "b", "c"], 0, 0.5),
         "Value must be integer (not 0.5)"
     )
+    // Test negative values
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.splice(["a", "b", "c"], -1, 0),
+        "Value must not be negative (not -1)"
+    )
+    // Test count value
+    new tests.AssertRaises(
+        () => arrays.splice(["a", "b", "c"], 0, -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testToSpliced() {
