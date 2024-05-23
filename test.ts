@@ -1001,6 +1001,18 @@ function testFlatten() {
     array = [[0, 1, [2, 3]], ["a", "b"], "c"];
     arrays.flatten(array, 1);
     new tests.AssertEqual(array, [0, 1, [2, 3], "a", "b", "c"]);
+
+    // Test exceptions
+    // Test non-integer value
+    new tests.AssertRaises(
+        () => arrays.flatten([], 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    new tests.AssertRaises(
+        () => arrays.flatten([], -1),
+        "Value must not be negative (not -1)"
+    )
 }
 
 function testToFlattened() {
