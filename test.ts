@@ -302,7 +302,6 @@ function testToFilled() {
         () => arrays.toFilled(["a", "b", "c"], "a", 0, 4),
         "Index (4) must be in list range (0, 3)"
     )
-
     // Test invalid range values
     new tests.AssertRaises(
         () => arrays.toFilled(["a", "b", "c"], "a", 1, 0),
@@ -331,6 +330,61 @@ function testSlice() {
     result = ["a", "b", "c", "d"];
     arrays.slice(result, 1, 3);
     new tests.AssertEqual(result, ["b", "c"]);
+
+    // Test exceptions
+    // Test non-integer value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 0, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test step value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 0, 1, 0.5),
+        "Value must be integer (not 0.5)"
+    )
+    // Test negative value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 0, -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test step value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 0, 1, -1),
+        "Value must not be negative (not -1)"
+    )
+    // Test out of range value
+    // Test start value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 4),
+        "Index (4) must be in list range (0, 3)"
+    )
+    // Test end value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 0, 4),
+        "Index (4) must be in list range (0, 3)"
+    )
+    // Test zero step value
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 0, 1, 0),
+        "Stepping value cannot be 0"
+    )
+    // Test invalid range values
+    new tests.AssertRaises(
+        () => arrays.slice(["a", "b", "c"], 1, 0),
+        "Start value (1) must be lower than end value (0)"
+    )
 }
 
 function testToSliced() {

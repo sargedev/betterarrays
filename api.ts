@@ -397,11 +397,11 @@ namespace arrays {
     //% step.defl=1
     export function toSliced(array: any[], start?: number, end?: number, step: number = 1): any[] {
         start = verifyIndex(start || 0, array);
-        end = verifyIndex(end || array.length, array);
+        end = verifyIndex(end === undefined ? array.length - 1 : end, array);
         if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
 
         step = verify(step);
-        if (step === 0) throw ZERO_STEP;
+        if (step === 0) throw ZERO_STEP.format();
 
         let result = [];
         for (let i = start; i < end; i += step) {
