@@ -687,6 +687,11 @@ function testRange() {
         () => arrays.range(0, 1, -1),
         "Value must not be negative (not -1)"
     )
+    // Test zero step value
+    new tests.AssertRaises(
+        () => arrays.range(0, 1, 0),
+        "Stepping value cannot be 0"
+    )
 }
 
 function testEnumerate() {
