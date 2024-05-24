@@ -45,6 +45,12 @@ namespace arrays {
         return step;
     }
 
+    function verifyRange(start: number, end: number): void {
+        if (end <= start) {
+            throw INVALID_RANGE.format([start.toString(), end.toString()]);
+        }
+    }
+
     /**
      * Create shallow copy of array
      * @param array Array to copy
@@ -287,7 +293,7 @@ namespace arrays {
     export function fill(array: any[], item: any, start?: number, end?: number): void {
         start = verifyIndex(start, array);
         end = verifyIndex(end, array);
-        if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
+        verifyRange(start, end);
 
         array.fill(item, start, end);
     }
@@ -404,7 +410,7 @@ namespace arrays {
     export function toSliced(array: any[], start?: number, end?: number, step: number = 1): any[] {
         start = verifyIndex(start || 0, array);
         end = verifyIndex(end === undefined ? array.length - 1 : end, array);
-        if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
+        verifyRange(start, end);
 
         step = verifyStep(step);
 
@@ -846,7 +852,7 @@ namespace arrays {
     export function range(start: number, end: number, step: number = 1): number[] {
         start = verifyInteger(start);
         end = verifyInteger(end);
-        if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
+        verifyRange(start, end);
 
         step = verifyStep(step);
 
