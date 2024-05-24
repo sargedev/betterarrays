@@ -39,6 +39,12 @@ namespace arrays {
         return value;
     }
 
+    function verifyStep(step: number): number {
+        step = verify(step);
+        if (step === 0) throw ZERO_STEP.format();
+        return step;
+    }
+
     /**
      * Create shallow copy of array
      * @param array Array to copy
@@ -400,8 +406,7 @@ namespace arrays {
         end = verifyIndex(end === undefined ? array.length - 1 : end, array);
         if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
 
-        step = verify(step);
-        if (step === 0) throw ZERO_STEP.format();
+        step = verifyStep(step);
 
         let result = [];
         for (let i = start; i < end; i += step) {
@@ -843,8 +848,7 @@ namespace arrays {
         end = verifyInteger(end);
         if (end <= start) throw INVALID_RANGE.format([start.toString(), end.toString()]);
 
-        step = verify(step);
-        if (step === 0) throw ZERO_STEP.format();
+        step = verifyStep(step);
 
         let result: number[] = [];
         for (let i = start; i < end; i += step) {
