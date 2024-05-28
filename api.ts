@@ -1206,7 +1206,7 @@ namespace arrays {
      * @param max Maximum depth (0 is unlimited)
      */
     //% blockId=arrays_flatten
-    //% block="flatten $array"
+    //% block="flatten $array with depth $max"
     //% group="Modify"
     //% array.shadow=variables_get
     //% array.defl=list
@@ -1224,7 +1224,7 @@ namespace arrays {
      * @returns Flattened array
      */
     //% blockId=arrays_toFlattened
-    //% block="flattened $array"
+    //% block="flattened $array with depth $max"
     //% group="Operations"
     //% array.shadow=variables_get
     //% array.defl=list
