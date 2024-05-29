@@ -52,6 +52,36 @@ namespace arrays {
     }
 
     /**
+     * Internal method; modify array directly with new items
+     * @param array Original array
+     * @param items New items
+     */
+    function reassign(array: any[], items: any[]): void {
+        array.splice(0, array.length);
+        for (let i = 0; i < items.length; i++) {
+            array[i] = items[i];
+        }
+    }
+
+    /**
+     * Internal method used to execute flatten logic
+     * @param array Array to flatten
+     * @param max Maximum depth
+     * @param depth Current depth
+     */
+    function _flatten(array: any[], max: number, depth: number = 0): any[] {
+        let result: any[] = [];
+        for (let i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i]) && (max === 0 || depth < max)) {
+                result = result.concat(_flatten(array[i], max, depth + 1));
+            } else {
+                result.push(array[i]);
+            }
+        }
+        return result;
+    }
+
+    /**
      * Create category
      */
 
@@ -628,6 +658,10 @@ namespace arrays {
     }
 
     /**
+     * Operations category
+     */
+
+    /**
      * Return shifted copy of array;
      * Throws NON_INTEGER_VALUE if elements is not an integer;
      * Throws NEGATIVE_VALUE if elements is less than 0;
@@ -645,23 +679,6 @@ namespace arrays {
         let result = copy(array);
         shift(result, elements);
         return result;
-    }
-
-    /**
-     * Check if two arrays are equal
-     * @param first First array
-     * @param second Second array
-     * @returns True if arrays are equal
-     */
-    //% blockId=arrays_equal
-    //% block="$first = $second"
-    //% group="Checks"
-    //% first.shadow=variables_get
-    //% first.defl=list1
-    //% second.shadow=variables_get
-    //% second.defl=list2
-    export function equal(first: any[], second: any[]): boolean {
-        return checkEquality.equal(first, second);
     }
 
     /**
@@ -701,18 +718,6 @@ namespace arrays {
         return result;
     }
 
-    function _flatten(array: any[], max: number, depth: number = 0): any[] {
-        let result: any[] = [];
-        for (let i = 0; i < array.length; i++) {
-            if (Array.isArray(array[i]) && (max === 0 || depth < max)) {
-                result = result.concat(_flatten(array[i], max, depth + 1));
-            } else {
-                result.push(array[i]);
-            }
-        }
-        return result;
-    }
-
     /**
      * Return flattened 1D array from n-dimensional array;
      * Throws NON_INTEGER_VALUE if max is not an integer;
@@ -747,18 +752,6 @@ namespace arrays {
             result.push(array[i]);
         }
         return result;
-    }
-
-    /**
-     * Internal method; modify array directly with new items
-     * @param array Original array
-     * @param items New items
-     */
-    function reassign(array: any[], items: any[]): void {
-        array.splice(0, array.length);
-        for (let i = 0; i < items.length; i++) {
-            array[i] = items[i];
-        }
     }
 
     /**
@@ -905,40 +898,6 @@ namespace arrays {
         return result;
     }
 
-
-    /**
-     * Check if index is in range;
-     * Throws NON_INTEGER_VALUE if index is not an integer;
-     * @param array Array to check against
-     * @index Index to validate
-     * @returns True if index is within array bounds, false if not
-     */
-    //% blockId=arrays_inRange
-    //% block="$index is in range of $array"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    //% index.defl=0
-    export function inRange(array: any[], index: number): boolean {
-        index = verifyInteger(index);
-        return index >= 0 && index < array.length;
-    }
-
-    /**
-     * Check if array includes a value
-     * @param array Array to search
-     * @param item Item to search for
-     * @returns True if item is found, false if not
-     */
-    //% blockId=arrays_includes
-    //% block="$array includes $item"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function includes(array: any[], item: any): boolean {
-        return !!count(array, item);
-    }
-
     /**
      * Create pairs from two arrays;
      * arrays must be the same lengths otherwise excess items will be ignored
@@ -991,73 +950,6 @@ namespace arrays {
     }
 
     /**
-     * Check if array is empty
-     * @param array Array to check
-     * @returns True if array length is 0, false if not
-     */
-    //% blockId=arrays_isEmpty
-    //% block="$array is empty"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function isEmpty(array: any[]): boolean {
-        return array.length === 0;
-    }
-
-    /**
-     * Return union of two arrays;
-     * Removes all duplicates
-     * @param first First array
-     * @param second Second array
-     * @returns Union of two arrays
-     */
-    //% blockId=arrays_toUnion
-    //% block="union of $first and $second"
-    //% group="Mutual Operations"
-    //% first.shadow=variables_get
-    //% first.defl=list1
-    //% second.shadow=variables_get
-    //% second.defl=list2
-    export function toUnion(first: any[], second: any[]): any[] {
-        return toPurged(toConcated(first, second));
-    }
-
-    /**
-     * Return intersection of two arrays;
-     * Removes all duplicates
-     * @param first First array
-     * @param second Second array
-     * @returns Intersection of arrays
-     */
-    //% blockId=arrays_toIntersection
-    //% block="intersection of $first and $second"
-    //% group="Mutual Operations"
-    //% first.shadow=variables_get
-    //% first.defl=list1
-    //% second.shadow=variables_get
-    //% second.defl=list2
-    export function toIntersection(first: any[], second: any[]): any[] {
-        return toPurged(first.filter((value) => includes(second, value)));
-    }
-
-    /**
-     * Returns difference of two arrays
-     * @param first First array
-     * @param second Second array
-     * @returns Difference of arrays
-     */
-    //% blockId=arrays_toDifference
-    //% block="difference of $first and $second"
-    //% group="Mutual Operations"
-    //% first.shadow=variables_get
-    //% first.defl=list1
-    //% second.shadow=variables_get
-    //% second.defl=list2
-    export function toDifference(first: any[], second: any[]): any[] {
-        return first.filter((value) => !includes(second, value));
-    }
-
-    /**
      * Returns copy of array with all duplicates removed
      * @param array Array to copy and purge
      * @returns Array copy with removed duplicates
@@ -1103,49 +995,6 @@ namespace arrays {
         let result = copy(array);
         sort(result, order);
         return result;
-    }
-
-    /**
-     * Check if every element in array is true
-     * @param array Array to check
-     * @returns True if all items evaluate to true
-     */
-    //% blockId=arrays_allTrue
-    //% block="all elements in $array are true"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function allTrue(array: any[]): boolean {
-        return array.every((value) => !!value);
-    }
-
-    /**
-     * Check if any element in array is true
-     * @param array Array to check
-     * @returns True if any item evaluates to true
-     */
-    //% blockId=arrays_anyTrue
-    //% block="any element in $array is true"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function anyTrue(array: any[]): boolean {
-        return array.filter((value) => !!value).length >= 1;
-    }
-
-    /**
-     * Check if every element in array equals a given item
-     * @param array Array to check
-     * @param item Item to compare against
-     * @returns True if all elements match item
-     */
-    //% blockId=arrays_allEqual
-    //% block="all elements in $array = $item"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function allEqual(array: any[], item: any): boolean {
-        return array.every((value) => checkEquality.equal(value, item));
     }
 
     /**
@@ -1245,5 +1094,165 @@ namespace arrays {
             result.push((array[i] as any[])[target]);
         }
         return result;
+    }
+
+    /**
+     * Check if two arrays are equal
+     * @param first First array
+     * @param second Second array
+     * @returns True if arrays are equal
+     */
+    //% blockId=arrays_equal
+    //% block="$first = $second"
+    //% group="Checks"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
+    export function equal(first: any[], second: any[]): boolean {
+        return checkEquality.equal(first, second);
+    }
+
+    /**
+     * Check if index is in range;
+     * Throws NON_INTEGER_VALUE if index is not an integer;
+     * @param array Array to check against
+     * @index Index to validate
+     * @returns True if index is within array bounds, false if not
+     */
+    //% blockId=arrays_inRange
+    //% block="$index is in range of $array"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    //% index.defl=0
+    export function inRange(array: any[], index: number): boolean {
+        index = verifyInteger(index);
+        return index >= 0 && index < array.length;
+    }
+
+    /**
+     * Check if array includes a value
+     * @param array Array to search
+     * @param item Item to search for
+     * @returns True if item is found, false if not
+     */
+    //% blockId=arrays_includes
+    //% block="$array includes $item"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function includes(array: any[], item: any): boolean {
+        return !!count(array, item);
+    }
+
+    /**
+     * Check if array is empty
+     * @param array Array to check
+     * @returns True if array length is 0, false if not
+     */
+    //% blockId=arrays_isEmpty
+    //% block="$array is empty"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function isEmpty(array: any[]): boolean {
+        return array.length === 0;
+    }
+
+    /**
+     * Return union of two arrays;
+     * Removes all duplicates
+     * @param first First array
+     * @param second Second array
+     * @returns Union of two arrays
+     */
+    //% blockId=arrays_toUnion
+    //% block="union of $first and $second"
+    //% group="Mutual Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
+    export function toUnion(first: any[], second: any[]): any[] {
+        return toPurged(toConcated(first, second));
+    }
+
+    /**
+     * Return intersection of two arrays;
+     * Removes all duplicates
+     * @param first First array
+     * @param second Second array
+     * @returns Intersection of arrays
+     */
+    //% blockId=arrays_toIntersection
+    //% block="intersection of $first and $second"
+    //% group="Mutual Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
+    export function toIntersection(first: any[], second: any[]): any[] {
+        return toPurged(first.filter((value) => includes(second, value)));
+    }
+
+    /**
+     * Returns difference of two arrays
+     * @param first First array
+     * @param second Second array
+     * @returns Difference of arrays
+     */
+    //% blockId=arrays_toDifference
+    //% block="difference of $first and $second"
+    //% group="Mutual Operations"
+    //% first.shadow=variables_get
+    //% first.defl=list1
+    //% second.shadow=variables_get
+    //% second.defl=list2
+    export function toDifference(first: any[], second: any[]): any[] {
+        return first.filter((value) => !includes(second, value));
+    }
+
+    /**
+     * Check if every element in array is true
+     * @param array Array to check
+     * @returns True if all items evaluate to true
+     */
+    //% blockId=arrays_allTrue
+    //% block="all elements in $array are true"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function allTrue(array: any[]): boolean {
+        return array.every((value) => !!value);
+    }
+
+    /**
+     * Check if any element in array is true
+     * @param array Array to check
+     * @returns True if any item evaluates to true
+     */
+    //% blockId=arrays_anyTrue
+    //% block="any element in $array is true"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function anyTrue(array: any[]): boolean {
+        return array.filter((value) => !!value).length >= 1;
+    }
+
+    /**
+     * Check if every element in array equals a given item
+     * @param array Array to check
+     * @param item Item to compare against
+     * @returns True if all elements match item
+     */
+    //% blockId=arrays_allEqual
+    //% block="all elements in $array = $item"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function allEqual(array: any[], item: any): boolean {
+        return array.every((value) => checkEquality.equal(value, item));
     }
 }
