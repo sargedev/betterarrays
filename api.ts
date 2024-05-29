@@ -701,6 +701,7 @@ namespace arrays {
     //% blockId=arrays_toShifted
     //% block="shift $array by $elements"
     //% group="Operations"
+    //% weight=22
     //% array.shadow=variables_get
     //% array.defl=list
     //% elements.defl=1
@@ -718,6 +719,7 @@ namespace arrays {
     //% blockId=arrays_concatMany
     //% block="concatenate $arrays"
     //% group="Operations"
+    //% weight=21
     //% arrays.shadow=variables_get
     //% arrays.defl=list
     export function concatMany(arrays: any[][]): any[] {
@@ -737,6 +739,7 @@ namespace arrays {
     //% blockId=arrays_zipMany
     //% block="zip $arrays"
     //% group="Operations"
+    //% weight=20
     //% arrays.shadow=variables_get
     //% arrays.defl=list
     export function zipMany(arrays: any[][]): any[][] {
@@ -758,6 +761,7 @@ namespace arrays {
     //% blockId=arrays_toFlattened
     //% block="flattened $array || with depth $max"
     //% group="Operations"
+    //% weight=19
     //% array.shadow=variables_get
     //% array.defl=list
     //% max.defl=0
@@ -773,6 +777,7 @@ namespace arrays {
     //% blockId=arrays_copy
     //% block="copy $array"
     //% group="Operations"
+    //% weight=18
     //% array.shadow=variables_get
     //% array.defl=list
     export function copy(array: any[]): any[] {
@@ -795,6 +800,7 @@ namespace arrays {
     //% blockId=arrays_toRemovedAll
     //% block="remove ocurrences of $item in $array || up to $max"
     //% group="Operations"
+    //% weight=17
     //% expandableArgumentMode=enabled
     //% array.shadow=variables_get
     //% array.defl=list
@@ -818,6 +824,7 @@ namespace arrays {
     //% blockId="arrays_toSwapped"
     //% block="swap items at $first and $second in $array"
     //% group="Operations"
+    //% weight=16
     //% array.shadow=variables_get
     //% array.defl=list
     //% first.defl=0
@@ -838,6 +845,7 @@ namespace arrays {
     //% blockId=arrays_toReplaced
     //% block="replace all occurences of $item with $replacement in $array"
     //% group="Operations"
+    //% weight=15
     //% array.shadow=variables_get
     //% array.defl=list
     export function toReplaced(array: any[], item: any, replacement: any): any[] {
@@ -861,6 +869,7 @@ namespace arrays {
     //% blockId=arrays_toFilled
     //% block="fill $array with $item || from $start | to $end"
     //% group="Operations"
+    //% weight=14
     //% expandableArgumentMode=enabled
     //% inlineInputMode=inline
     //% array.shadow=variables_get
@@ -882,6 +891,7 @@ namespace arrays {
     //% blockId=arrays_toConcated
     //% block="$first concatenated with $second"
     //% group="Operations"
+    //% weight=13
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -906,6 +916,7 @@ namespace arrays {
     //% blockId=arrays_toSliced
     //% block="slice $array || from $start | to $end | with step $step"
     //% group="Operations"
+    //% weight=12
     //% expandableArgumentMode=enabled
     //% inlineInputMode=inline
     //% array.shadow=variables_get
@@ -937,6 +948,7 @@ namespace arrays {
     //% blockId=arrays_toZipped
     //% block="zip $first with $second"
     //% group="Operations"
+    //% weight=11
     //% first.shadow=variables_get
     //% first.defl=list
     //% second.shadow=variables_get
@@ -952,6 +964,7 @@ namespace arrays {
     //% blockId=arrays_toReversed
     //% block="reversed $array"
     //% group="Operations"
+    //% weight=10
     //% array.shadow=variables_get
     //% array.defl=list
     export function toReversed(array: any[]): any[] {
@@ -970,6 +983,7 @@ namespace arrays {
     //% draggableParameters
     //% handlerStatement
     //% group="Operations"
+    //% weight=9
     //% array.shadow=variables_get
     //% array.defl=list
     export function forEach(array: any[], handler: (value: any, index: number) => void): void {
@@ -986,6 +1000,7 @@ namespace arrays {
     //% blockId=arrays_toPurged
     //% block="remove duplicates from $array"
     //% group="Operations"
+    //% weight=8
     //% array.shadow=variables_get
     //% array.defl=list
     export function toPurged(array: any[]): any[] {
@@ -1003,6 +1018,7 @@ namespace arrays {
     //% blockId=arrays_extract
     //% block="extract $item from $array"
     //% group="Operations"
+    //% weight=7
     //% array.shadow=variables_get
     //% array.defl=list
     export function extract(array: any[], item: any): any[] {
@@ -1018,6 +1034,7 @@ namespace arrays {
     //% blockId=arrays_toSorted
     //% block="sorted $array in order $order"
     //% group="Operations"
+    //% weight=6
     //% array.shadow=variables_get
     //% array.defl=list
     export function toSorted(array: any[], order: SortOrder = SortOrder.Ascending): any[] {
@@ -1034,6 +1051,7 @@ namespace arrays {
     //% blockId=arrays_sum
     //% block="sum of $array elements"
     //% group="Operations"
+    //% weight=5
     //% array.shadow=variables_get
     //% array.defl=list
     export function sum(array: number[]): number {
@@ -1048,6 +1066,7 @@ namespace arrays {
     //% blockId=arrays_toEnumerated
     //% block="enumerated $array"
     //% group="Operations"
+    //% weight=4
     //% array.shadow=variables_get
     //% array.defl=list
     export function toEnumerated(array: any[]): any[] {
@@ -1065,6 +1084,7 @@ namespace arrays {
     //% inlineInputMode=inline
     //% expandableArgumentMode=enabled
     //% group="Operations"
+    //% weight=3
     //% array.shadow=variables_get
     //% array.defl=list
     //% separator.defl=""
@@ -1085,6 +1105,7 @@ namespace arrays {
     //% blockId=arrays_toSpliced
     //% block="delete $count elements from $start in $array"
     //% group="Operations"
+    //% weight=2
     //% array.shadow=variables_get
     //% array.defl=list
     //% start.defl=0
@@ -1108,6 +1129,7 @@ namespace arrays {
     //% blockId=arrays_toUnzipped
     //% block="unzip index $target from $array"
     //% group="Operations"
+    //% weight=1
     //% array.shadow=variables_get
     //% array.defl=list
     //% target.defl=0
