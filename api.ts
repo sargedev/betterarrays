@@ -1279,6 +1279,7 @@ namespace arrays {
     //% blockId=arrays_toUnion
     //% block="union of $first and $second"
     //% group="Mutual Operations"
+    //% weight=3
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -1297,6 +1298,7 @@ namespace arrays {
     //% blockId=arrays_toIntersection
     //% block="intersection of $first and $second"
     //% group="Mutual Operations"
+    //% weight=2
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -1314,6 +1316,7 @@ namespace arrays {
     //% blockId=arrays_toDifference
     //% block="difference of $first and $second"
     //% group="Mutual Operations"
+    //% weight=1
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
