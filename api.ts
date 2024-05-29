@@ -1097,6 +1097,10 @@ namespace arrays {
     }
 
     /**
+     * Checks category
+     */
+
+    /**
      * Check if two arrays are equal
      * @param first First array
      * @param second Second array
@@ -1161,6 +1165,53 @@ namespace arrays {
     }
 
     /**
+     * Check if every element in array is true
+     * @param array Array to check
+     * @returns True if all items evaluate to true
+     */
+    //% blockId=arrays_allTrue
+    //% block="all elements in $array are true"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function allTrue(array: any[]): boolean {
+        return array.every((value) => !!value);
+    }
+
+    /**
+     * Check if any element in array is true
+     * @param array Array to check
+     * @returns True if any item evaluates to true
+     */
+    //% blockId=arrays_anyTrue
+    //% block="any element in $array is true"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function anyTrue(array: any[]): boolean {
+        return array.filter((value) => !!value).length >= 1;
+    }
+
+    /**
+     * Check if every element in array equals a given item
+     * @param array Array to check
+     * @param item Item to compare against
+     * @returns True if all elements match item
+     */
+    //% blockId=arrays_allEqual
+    //% block="all elements in $array = $item"
+    //% group="Checks"
+    //% array.shadow=variables_get
+    //% array.defl=list
+    export function allEqual(array: any[], item: any): boolean {
+        return array.every((value) => checkEquality.equal(value, item));
+    }
+
+    /**
+     * Mutual Operations category
+     */
+
+    /**
      * Return union of two arrays;
      * Removes all duplicates
      * @param first First array
@@ -1211,48 +1262,5 @@ namespace arrays {
     //% second.defl=list2
     export function toDifference(first: any[], second: any[]): any[] {
         return first.filter((value) => !includes(second, value));
-    }
-
-    /**
-     * Check if every element in array is true
-     * @param array Array to check
-     * @returns True if all items evaluate to true
-     */
-    //% blockId=arrays_allTrue
-    //% block="all elements in $array are true"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function allTrue(array: any[]): boolean {
-        return array.every((value) => !!value);
-    }
-
-    /**
-     * Check if any element in array is true
-     * @param array Array to check
-     * @returns True if any item evaluates to true
-     */
-    //% blockId=arrays_anyTrue
-    //% block="any element in $array is true"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function anyTrue(array: any[]): boolean {
-        return array.filter((value) => !!value).length >= 1;
-    }
-
-    /**
-     * Check if every element in array equals a given item
-     * @param array Array to check
-     * @param item Item to compare against
-     * @returns True if all elements match item
-     */
-    //% blockId=arrays_allEqual
-    //% block="all elements in $array = $item"
-    //% group="Checks"
-    //% array.shadow=variables_get
-    //% array.defl=list
-    export function allEqual(array: any[], item: any): boolean {
-        return array.every((value) => checkEquality.equal(value, item));
     }
 }
