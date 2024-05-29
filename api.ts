@@ -157,6 +157,7 @@ namespace arrays {
     //% blockId=arrays_findLast
     //% block="find last occurence of $item in $array"
     //% group="Read"
+    //% weight=9
     //% array.shadow=variables_get
     //% array.defl=list
     export function findLast(array: any[], item: any): number {
@@ -178,6 +179,7 @@ namespace arrays {
     //% blockId=arrays_findAll
     //% block="find occurences of $item in $array || up to $max"
     //% group="Read"
+    //% weight=8
     //% expandableArgumentMode=enabled
     //% array.defl=list
     //% array.shadow=variables_get
@@ -202,6 +204,7 @@ namespace arrays {
     //% blockId=arrays_count
     //% block="count occurences of $item in $array"
     //% group="Read"
+    //% weight=7
     //% array.shadow=variables_get
     //% array.defl=list
     export function count(array: any[], item: any): number {
@@ -216,6 +219,7 @@ namespace arrays {
     //% blockId=arrays_toString
     //% block="convert $array to string"
     //% group="Read"
+    //% weight=6
     //% array.shadow=variables_get
     //% array.defl=list
     export function toString(array: any[]): string {
@@ -231,6 +235,7 @@ namespace arrays {
     //% blockId=arrays_randomIndex
     //% block="random index from $array"
     //% group="Read"
+    //% weight=5
     //% array.shadow=variables_get
     //% array.defl=list
     export function randomIndex(array: any[]): number {
@@ -246,6 +251,7 @@ namespace arrays {
     //% blockId=arrays_minIndex
     //% block="index of smallest element in $array"
     //% group="Read"
+    //% weight=4
     //% array.shadow=variables_get
     //% array.defl=list
     export function minIndex(array: number[]): number {
@@ -267,6 +273,7 @@ namespace arrays {
     //% blockId=arrays_min
     //% block="smallest element in $array"
     //% group="Read"
+    //% weight=3
     //% array.shadow=variables_get
     //% array.defl=list
     export function min(array: number[]): number {
@@ -281,6 +288,7 @@ namespace arrays {
     //% blockId=arrays_maxIndex
     //% block="index of biggest element in $array"
     //% group="Read"
+    //% weight=2
     //% array.shadow=variables_get
     //% array.defl=list
     export function maxIndex(array: number[]): number {
@@ -302,6 +310,7 @@ namespace arrays {
     //% blockId=arrays_max
     //% block="biggest element in $array"
     //% group="Read"
+    //% weight=1
     //% array.shadow=variables_get
     //% array.defl=list
     export function max(array: number[]): number {
