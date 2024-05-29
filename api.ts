@@ -1160,6 +1160,7 @@ namespace arrays {
     //% blockId=arrays_equal
     //% block="$first = $second"
     //% group="Checks"
+    //% weight=7
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -1178,6 +1179,7 @@ namespace arrays {
     //% blockId=arrays_inRange
     //% block="$index is in range of $array"
     //% group="Checks"
+    //% weight=6
     //% array.shadow=variables_get
     //% array.defl=list
     //% index.defl=0
@@ -1195,6 +1197,7 @@ namespace arrays {
     //% blockId=arrays_includes
     //% block="$array includes $item"
     //% group="Checks"
+    //% weight=5
     //% array.shadow=variables_get
     //% array.defl=list
     export function includes(array: any[], item: any): boolean {
@@ -1209,6 +1212,7 @@ namespace arrays {
     //% blockId=arrays_isEmpty
     //% block="$array is empty"
     //% group="Checks"
+    //% weight=4
     //% array.shadow=variables_get
     //% array.defl=list
     export function isEmpty(array: any[]): boolean {
@@ -1223,6 +1227,7 @@ namespace arrays {
     //% blockId=arrays_allTrue
     //% block="all elements in $array are true"
     //% group="Checks"
+    //% weight=3
     //% array.shadow=variables_get
     //% array.defl=list
     export function allTrue(array: any[]): boolean {
@@ -1237,6 +1242,7 @@ namespace arrays {
     //% blockId=arrays_anyTrue
     //% block="any element in $array is true"
     //% group="Checks"
+    //% weight=2
     //% array.shadow=variables_get
     //% array.defl=list
     export function anyTrue(array: any[]): boolean {
@@ -1252,6 +1258,7 @@ namespace arrays {
     //% blockId=arrays_allEqual
     //% block="all elements in $array = $item"
     //% group="Checks"
+    //% weight=1
     //% array.shadow=variables_get
     //% array.defl=list
     export function allEqual(array: any[], item: any): boolean {
