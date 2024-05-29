@@ -332,6 +332,7 @@ namespace arrays {
     //% blockId=arrays_removeAll
     //% block="remove ocurrences of $item in $array || up to $max"
     //% group="Modify"
+    //% weight=18
     //% expandableArgumentMode=enabled
     //% array.shadow=variables_get
     //% array.defl=list
@@ -357,6 +358,7 @@ namespace arrays {
     //% blockId=arrays_swap
     //% block="swap items at $first and $second in $array"
     //% group="Modify"
+    //% weight=17
     //% array.shadow=variables_get
     //% array.defl=list
     //% first.defl=0
@@ -379,6 +381,7 @@ namespace arrays {
     //% blockId=arrays_replace
     //% block="replace all occurences of $item with $replacement in $array"
     //% group="Modify"
+    //% weight=16
     //% array.shadow=variables_get
     //% array.defl=list
     export function replace(array: any[], item: any, replacement: any): void {
@@ -402,6 +405,7 @@ namespace arrays {
     //% blockId=arrays_fill
     //% block="fill $array with $item || from $start | to $end"
     //% group="Modify"
+    //% weight=15
     //% expandableArgumentMode=enabled
     //% inlineInputMode=inline
     //% array.shadow=variables_get
@@ -424,6 +428,7 @@ namespace arrays {
     //% blockId=arrays_toConcated
     //% block="concatenate $second to $first"
     //% group="Modify"
+    //% weight=14
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -447,6 +452,7 @@ namespace arrays {
     //% blockId=arrays_slice
     //% block="slice $array || from $start | to $end | with step $step"
     //% group="Modify"
+    //% weight=13
     //% expandableArgumentMode=enabled
     //% inlineInputMode=inline
     //% array.shadow=variables_get
@@ -466,6 +472,7 @@ namespace arrays {
     //% blockId=arrays_zip
     //% block="zip $first with $second"
     //% group="Modify"
+    //% weight=12
     //% first.shadow=variables_get
     //% first.defl=list
     //% second.shadow=variables_get
@@ -481,6 +488,7 @@ namespace arrays {
     //% blockId=arrays_clear
     //% block="clear $array"
     //% group="Modify"
+    //% weight=11
     //% array.shadow=variables_get
     //% array.defl=list
     export function clear(array: any[]): void {
@@ -496,6 +504,7 @@ namespace arrays {
     //% blockId=arrays_union
     //% block="unionize $first with $second"
     //% group="Modify"
+    //% weight=10
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -513,6 +522,7 @@ namespace arrays {
     //% blockId=arrays_intersection
     //% block="intersect $first with $second"
     //% group="Modify"
+    //% weight=9
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -529,6 +539,7 @@ namespace arrays {
     //% blockId=arrays_difference
     //% block="subtract $second from $first"
     //% group="Modify"
+    //% weight=8
     //% first.shadow=variables_get
     //% first.defl=list1
     //% second.shadow=variables_get
@@ -544,6 +555,7 @@ namespace arrays {
     //% blockId=arrays_purge
     //% block="remove duplicates from $array"
     //% group="Modify"
+    //% weight=7
     //% array.shadow=variables_get
     //% array.defl=list
     export function purge(array: any[]): void {
@@ -564,6 +576,7 @@ namespace arrays {
     //% blockId=arrays_sort
     //% block="sort $array in order $order"
     //% group="Modify"
+    //% weight=6
     //% array.shadow=variables_get
     //% array.defl=list
     export function sort(array: any[], order: SortOrder = SortOrder.Ascending): void {
@@ -580,6 +593,7 @@ namespace arrays {
     //% blockId=arrays_enumerate
     //% block="enumerate $array"
     //% group="Modify"
+    //% weight=5
     //% array.shadow=variables_get
     //% array.defl=list
     export function enumerate(array: any[]): void {
@@ -598,6 +612,7 @@ namespace arrays {
     //% blockId=arrays_splice
     //% block="delete $count elements from $start in $array"
     //% group="Modify"
+    //% weight=4
     //% array.shadow=variables_get
     //% array.defl=list
     //% start.defl=0
@@ -621,6 +636,7 @@ namespace arrays {
     //% blockId=arrays_unzip
     //% block="unzip index $target from $array"
     //% group="Modify"
+    //% weight=3
     //% array.shadow=variables_get
     //% array.defl=list
     //% target.defl=0
@@ -639,6 +655,7 @@ namespace arrays {
     //% blockId=arrays_shift
     //% block="shift $array by $elements"
     //% group="Modify"
+    //% weight=2
     //% array.shadow=variables_get
     //% array.defl=list
     //% elements.defl=1
@@ -661,6 +678,7 @@ namespace arrays {
     //% blockId=arrays_flatten
     //% block="flatten $array || with depth $max"
     //% group="Modify"
+    //% weight=1
     //% array.shadow=variables_get
     //% array.defl=list
     //% max.defl=0
