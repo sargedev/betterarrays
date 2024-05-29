@@ -97,6 +97,7 @@ namespace arrays {
     //% block="repeat $item $repeat times"
     //% blockSetVariable=list
     //% group="Create"
+    //% weight=2
     //% times.defl=5
     export function repeat(item: any, repeat: number): any[] {
         repeat = verify(repeat);
@@ -125,6 +126,7 @@ namespace arrays {
     //% inlineInputMode=inline
     //% expandableArgumentMode=enabled
     //% group="Create"
+    //% weight=1
     //% start.defl=0
     //% end.defl=5
     //% step.defl=1
