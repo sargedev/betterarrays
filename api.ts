@@ -425,7 +425,7 @@ namespace arrays {
      * @param first First array (modified)
      * @param second Second array
      */
-    //% blockId=arrays_toConcated
+    //% blockId=arrays_concat
     //% block="concatenate $second to $first"
     //% group="Modify"
     //% weight=14
