@@ -325,6 +325,12 @@ namespace arrays {
      * Rearrange items in array in random order;
      * @param array Array to shuffle
      */
+    //% blockId=arrays_shuffle
+    //% block="shuffle $array"
+    //% group="Modify"
+    //% weight=19
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function shuffle(array: any[]): void {
         reassign(array, toShuffled(array));
     }
@@ -703,6 +709,12 @@ namespace arrays {
      * @param array Array to shuffle
      * @returns Shuffled array
      */
+    //% blockId=arrays_toShuffled
+    //% block="shuffle $array"
+    //% group="Operations"
+    //% weight=23
+    //% array.shadow=variables_get
+    //% array.defl=list
     export function toShuffled(array: any[]): any[] {
         let copied = copy(array);
         if (array.length === 0) return copied;
