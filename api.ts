@@ -691,6 +691,21 @@ namespace arrays {
      */
 
     /**
+     * Return array copy with items rearranged in a random order;
+     * @param array Array to shuffle
+     * @returns Shuffled array
+     */
+    export function toShuffled(array: any[]): any[] {
+        if (array.length === 0) return copy(array);
+        let result = [];
+
+        for (let i = 0; i < array.length; i++) {
+            result.push(array.removeAt(arrays.randomIndex(array)));
+        }
+        return result;
+    }
+
+    /**
      * Return shifted copy of array;
      * Throws NON_INTEGER_VALUE if elements is not an integer;
      * Throws NEGATIVE_VALUE if elements is less than 0;
