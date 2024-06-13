@@ -5,7 +5,7 @@
     "dependencies": {
         "device": "*",
         "Stringify": "github:sargedev/stringify#fa05269e440fcd3b4dd21bfe2c5f9de4cd755c69",
-        "Tests": "github:sargedev/tests#f8e799d1b5711912e07db080e31847405340f702",
+        "Tests": "github:sargedev/tests#869ecf7ac49455cb7ebd39527b78416ebffd95d3",
         "String formatting": "github:sargedev/string-formatting#51aab388ac6f40861860f401f600bb539aea51e9"
     },
     "files": [

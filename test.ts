@@ -1039,6 +1039,25 @@ function testToFlattened() {
     )
 }
 
+function testShuffle() {
+    // Test shuffle
+    array = [0, 1, 2, 3];
+    arrays.shuffle(array);
+    new tests.AssertNotEqual(array, [0, 1, 2, 3]);
+    new tests.AssertItemsEqual(array, [0, 1, 2, 3]);
+}
+
+function testToShuffled() {
+    // Test shuffle
+    array = [0, 1, 2, 3];
+    result = arrays.toShuffled(array);
+    new tests.AssertNotEqual(result, [0, 1, 2, 3]);
+    new tests.AssertItemsEqual(result, [0, 1, 2, 3]);
+
+    // Test that original array is not modified
+    new tests.AssertEqual(array, [0, 1, 2, 3]);
+}
+
 testCopy();
 testFindLast();
 testFindAll();
@@ -1097,3 +1116,5 @@ testConcatMany();
 testZipMany();
 testFlatten();
 testToFlattened();
+testShuffle();
+testToShuffled();
