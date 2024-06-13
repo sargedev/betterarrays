@@ -322,6 +322,14 @@ namespace arrays {
      */
 
     /**
+     * Rearrange items in array in random order;
+     * @param array Array to shuffle
+     */
+    export function shuffle(array: any[]): void {
+        reassign(array, toShuffled(array));
+    }
+
+    /**
      * Remove all ocurrences of an item;
      * Throws NON_INTEGER_VALUE if max is not an integer;
      * Throws NEGATIVE_VALUE if max is less than 0;
