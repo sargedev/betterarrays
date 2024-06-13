@@ -706,9 +706,14 @@ namespace arrays {
     export function toShuffled(array: any[]): any[] {
         if (array.length === 0) return copy(array);
         let result = [];
+        let index: number;
 
-        for (let i = 0; i < array.length; i++) {
-            result.push(array.removeAt(arrays.randomIndex(array)));
+        let length = array.length;
+
+        for (let i = 0; i < length; i++) {
+            index = randomIndex(array);
+            result.push(array[index]);
+            array.removeAt(index);
         }
         return result;
     }
