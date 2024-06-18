@@ -610,6 +610,10 @@ function testSort() {
     array = [4, 2, 3, 1, 5];
     arrays.sort(array, SortOrder.Descending);
     new tests.AssertEqual(array, [5, 4, 3, 2, 1]);
+    // Luke's example
+    array = [0, 100, 105, 4, 5, 10];
+    arrays.sort(array, SortOrder.Descending);
+    new tests.AssertEqual(array, [105, 100, 10, 5, 4, 0]);
 }
 
 function testToSorted() {
