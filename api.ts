@@ -82,6 +82,33 @@ namespace arrays {
     }
 
     /**
+     * Internal method for quicksorting arrays;
+     * @param array Array to flatten
+     * @param order Order to sort in
+     * @returns Sorted array
+     */
+    function _sort(array: number[]): number[] {
+        let copied = copy(array);
+        if (copied.length <= 1) {
+            return array;
+        }
+
+        let pivot = copied.pop();
+        let greater: number[] = [];
+        let lower: number[] = [];
+
+        for (let i = 0; i < copied.length; i++) {
+            if (copied[i] > pivot) {
+                greater.push(copied[i]);
+            } else {
+                lower.push(copied[i]);
+            }
+        }
+
+        return _sort(lower).concat([pivot]).concat(_sort(greater));
+    }
+
+    /**
      * Create category
      */
 
@@ -594,7 +621,7 @@ namespace arrays {
     //% array.shadow=variables_get
     //% array.defl=list
     export function sort(array: any[], order: SortOrder = SortOrder.Ascending): void {
-        array.sort();
+        reassign(array, _sort(array));
         if (order === SortOrder.Descending) {
             array.reverse();
         }
