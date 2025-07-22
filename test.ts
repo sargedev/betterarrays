@@ -552,6 +552,11 @@ function testIntersection() {
     array = ["a", "b", "c"];
     arrays.intersection(array, ["b", "c", "d"]);
     new tests.AssertEqual(array, ["b", "c"]);
+
+    // Test images
+    array = [img`1`, img`2`];
+    arrays.intersection(array, [img`2`, img`3`]);
+    new tests.AssertEqual(array, [img`2`]);
 }
 
 function testToIntersection() {
