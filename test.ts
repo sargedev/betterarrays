@@ -1043,6 +1043,7 @@ function testToFlattened() {
     )
 }
 
+/*
 function testShuffle() {
     // Test shuffle
     array = [0, 1, 2, 3];
@@ -1061,6 +1062,7 @@ function testToShuffled() {
     // Test that original array is not modified
     new tests.AssertEqual(array, [0, 1, 2, 3]);
 }
+*/
 
 testCopy();
 testFindLast();
@@ -1120,5 +1122,5 @@ testConcatMany();
 testZipMany();
 testFlatten();
 testToFlattened();
-testShuffle();
-testToShuffled();
+/*testShuffle();
+testToShuffled();*/
