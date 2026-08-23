@@ -4,8 +4,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "Stringify": "github:sargedev/stringify#fa05269e440fcd3b4dd21bfe2c5f9de4cd755c69",
-        "String formatting": "github:sargedev/string-formatting#3d2e8479efb3d5f9bcaa3e662a37acaeadb8459c"
+        "String formatting": "github:sargedev/string-formatting#bac3b6180bc9d9118ee823450a60fc17ea6f25e3"
     },
     "files": [
         "main.ts",
@@ -17,7 +16,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "2.0.56",
+        "target": "4.0.14",
         "targetId": "arcade"
     },
     "supportedTargets": [
